@@ -1,0 +1,2 @@
+//To run vscode code project
+PS D:\Analytics\Deep_learning_Tuto\potato_disease\frontend>npm run start

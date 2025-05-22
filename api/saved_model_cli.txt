@@ -1,0 +1,386 @@
+Microsoft Windows [Version 10.0.19045.3930]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\WINDOWS\system32>D:
+
+D:\>cd D:\Analytics\Deep_learning_Tuto\potato_disease
+
+D:\Analytics\Deep_learning_Tuto\potato_disease>ls
+ api   docker   models.config   potato_disease  'python - Saving model on Tensorflow 2.7.0 with data augmentation layer - Stack Overflow.pdf'   saved_models   training
+
+D:\Analytics\Deep_learning_Tuto\potato_disease>saved_model_cli
+2024-02-18 04:43:01.573956: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2024-02-18 04:43:01.574409: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+usage: saved_model_cli [-h] [-v] {show,run,scan,convert,aot_compile_cpu} ...
+saved_model_cli: error: too few arguments
+
+D:\Analytics\Deep_learning_Tuto\potato_disease>saved_model_cli show --all
+2024-02-18 04:43:34.694484: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2024-02-18 04:43:34.694711: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+usage: saved_model_cli show [-h] --dir DIR [--all] [--tag_set TAG_SET]
+                            [--signature_def SIGNATURE_DEF_KEY]
+saved_model_cli show: error: the following arguments are required: --dir
+
+D:\Analytics\Deep_learning_Tuto\potato_disease>saved_model_cli show --all --dir ./saved_models
+2024-02-18 04:49:37.740914: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2024-02-18 04:49:37.741132: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "c:\programdata\anaconda3\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\ProgramData\Anaconda3\Scripts\saved_model_cli.exe\__main__.py", line 7, in <module>
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 1192, in main
+    args.func(args)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 719, in show
+    _show_all(args.dir)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 296, in _show_all
+    tag_sets = saved_model_utils.get_saved_model_tag_sets(saved_model_dir)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_utils.py", line 91, in get_saved_model_tag_sets
+    saved_model = read_saved_model(saved_model_dir)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_utils.py", line 55, in read_saved_model
+    raise IOError("SavedModel file does not exist at: %s" % saved_model_dir)
+OSError: SavedModel file does not exist at: ./saved_models
+
+D:\Analytics\Deep_learning_Tuto\potato_disease>saved_model_cli show --all --dir ./saved_models/
+2024-02-18 04:51:19.344953: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2024-02-18 04:51:19.346129: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "c:\programdata\anaconda3\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\ProgramData\Anaconda3\Scripts\saved_model_cli.exe\__main__.py", line 7, in <module>
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 1192, in main
+    args.func(args)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 719, in show
+    _show_all(args.dir)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 296, in _show_all
+    tag_sets = saved_model_utils.get_saved_model_tag_sets(saved_model_dir)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_utils.py", line 91, in get_saved_model_tag_sets
+    saved_model = read_saved_model(saved_model_dir)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_utils.py", line 55, in read_saved_model
+    raise IOError("SavedModel file does not exist at: %s" % saved_model_dir)
+OSError: SavedModel file does not exist at: ./saved_models/
+
+D:\Analytics\Deep_learning_Tuto\potato_disease>saved_model_cli show --dir /training/serving/tensorflow_serving/servables/tensorflow/testdata/saved_model_half_plus_three/00000123
+2024-02-18 05:03:23.548193: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2024-02-18 05:03:23.548533: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "c:\programdata\anaconda3\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\ProgramData\Anaconda3\Scripts\saved_model_cli.exe\__main__.py", line 7, in <module>
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 1192, in main
+    args.func(args)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 725, in show
+    _show_tag_sets(args.dir)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 73, in _show_tag_sets
+    tag_sets = saved_model_utils.get_saved_model_tag_sets(saved_model_dir)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_utils.py", line 91, in get_saved_model_tag_sets
+    saved_model = read_saved_model(saved_model_dir)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_utils.py", line 55, in read_saved_model
+    raise IOError("SavedModel file does not exist at: %s" % saved_model_dir)
+OSError: SavedModel file does not exist at: /training/serving/tensorflow_serving/servables/tensorflow/testdata/saved_model_half_plus_three/00000123
+
+D:\Analytics\Deep_learning_Tuto\potato_disease>saved_model_cli show --dir ./training/serving/tensorflow_serving/servables/tensorflow/testdata/saved_model_half_plus_three/00000123
+2024-02-18 05:04:01.646970: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2024-02-18 05:04:01.647270: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+The given SavedModel contains the following tag-sets:
+'serve'
+
+D:\Analytics\Deep_learning_Tuto\potato_disease>saved_model_cli show --dir ./saved_models/1
+2024-02-18 05:07:32.835397: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2024-02-18 05:07:32.835703: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+The given SavedModel contains the following tag-sets:
+'serve'
+
+D:\Analytics\Deep_learning_Tuto\potato_disease>saved_model_cli show --dir ./saved_models/1 --tag_set serve
+2024-02-18 05:12:28.551733: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2024-02-18 05:12:28.552054: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+The given SavedModel MetaGraphDef contains SignatureDefs with the following keys:
+SignatureDef key: "__saved_model_init_op"
+SignatureDef key: "serving_default"
+
+D:\Analytics\Deep_learning_Tuto\potato_disease>saved_model_cli show --dir ./saved_models/1 --tag_set serve --signature_def serving_default
+2024-02-18 05:20:07.385769: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2024-02-18 05:20:07.386075: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+The given SavedModel SignatureDef contains the following input(s):
+  inputs['sequential_input'] tensor_info:
+      dtype: DT_FLOAT
+      shape: (-1, 256, 256, 3)
+      name: serving_default_sequential_input:0
+The given SavedModel SignatureDef contains the following output(s):
+  outputs['dense_1'] tensor_info:
+      dtype: DT_FLOAT
+      shape: (-1, 3)
+      name: StatefulPartitionedCall:0
+Method name is: tensorflow/serving/predict
+
+D:\Analytics\Deep_learning_Tuto\potato_disease>saved_model_cli show --dir ./saved_models/1 --all
+2024-02-18 05:26:12.424163: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2024-02-18 05:26:12.424488: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+
+MetaGraphDef with tag-set: 'serve' contains the following SignatureDefs:
+
+signature_def['__saved_model_init_op']:
+  The given SavedModel SignatureDef contains the following input(s):
+  The given SavedModel SignatureDef contains the following output(s):
+    outputs['__saved_model_init_op'] tensor_info:
+        dtype: DT_INVALID
+        shape: unknown_rank
+        name: NoOp
+  Method name is:
+
+signature_def['serving_default']:
+  The given SavedModel SignatureDef contains the following input(s):
+    inputs['sequential_input'] tensor_info:
+        dtype: DT_FLOAT
+        shape: (-1, 256, 256, 3)
+        name: serving_default_sequential_input:0
+  The given SavedModel SignatureDef contains the following output(s):
+    outputs['dense_1'] tensor_info:
+        dtype: DT_FLOAT
+        shape: (-1, 3)
+        name: StatefulPartitionedCall:0
+  Method name is: tensorflow/serving/predict
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "c:\programdata\anaconda3\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\ProgramData\Anaconda3\Scripts\saved_model_cli.exe\__main__.py", line 7, in <module>
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 1192, in main
+    args.func(args)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 719, in show
+    _show_all(args.dir)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 307, in _show_all
+    _show_defined_functions(saved_model_dir)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 187, in _show_defined_functions
+    trackable_object = load.load(saved_model_dir)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\saved_model\load.py", line 864, in load
+    result = load_internal(export_dir, tags, options)["root"]
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\saved_model\load.py", line 903, in load_internal
+    ckpt_options, options, filters)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\saved_model\load.py", line 162, in __init__
+    self._load_all()
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\saved_model\load.py", line 259, in _load_all
+    self._load_nodes()
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\saved_model\load.py", line 448, in _load_nodes
+    slot_variable = optimizer_object.add_slot(
+AttributeError: '_UserObject' object has no attribute 'add_slot'
+
+D:\Analytics\Deep_learning_Tuto\potato_disease>conda.bat activate Tensorflow
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease>conda show tensorflow-serving-api
+
+CommandNotFoundError: No command 'conda show'.
+
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease>pip show tensorflow-serving-api
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Package(s) not found: tensorflow-serving-api
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease>pip install tensorflow-serving-api==2.5.0
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Collecting tensorflow-serving-api==2.5.0
+  Using cached tensorflow_serving_api-2.5.0-py2.py3-none-any.whl (38 kB)
+Requirement already satisfied: grpcio<2,>=1.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow-serving-api==2.5.0) (1.60.1)
+Requirement already satisfied: protobuf>=3.6.0 in c:\users\admin\appdata\roaming\python\python37\site-packages (from tensorflow-serving-api==2.5.0) (3.19.0)
+Requirement already satisfied: tensorflow<3,>=2.5.0rc0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow-serving-api==2.5.0) (2.6.0)
+Requirement already satisfied: numpy~=1.19.2 in c:\programdata\anaconda3\lib\site-packages (from tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (1.19.5)
+Requirement already satisfied: absl-py~=0.10 in c:\programdata\anaconda3\lib\site-packages (from tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (0.12.0)
+Requirement already satisfied: astunparse~=1.6.3 in c:\programdata\anaconda3\lib\site-packages (from tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (1.6.3)
+Requirement already satisfied: clang~=5.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (5.0)
+Requirement already satisfied: flatbuffers~=1.12.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (1.12)
+Requirement already satisfied: google-pasta~=0.2 in c:\programdata\anaconda3\lib\site-packages (from tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (0.2.0)
+Requirement already satisfied: h5py~=3.1.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (3.1.0)
+Requirement already satisfied: keras-preprocessing~=1.1.2 in c:\programdata\anaconda3\lib\site-packages (from tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (1.1.2)
+Requirement already satisfied: opt-einsum~=3.3.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (3.3.0)
+Requirement already satisfied: six~=1.15.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (1.15.0)
+Requirement already satisfied: termcolor~=1.1.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (1.1.0)
+Collecting typing-extensions~=3.7.4 (from tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0)
+  Using cached typing_extensions-3.7.4.3-py3-none-any.whl (22 kB)
+Requirement already satisfied: wheel~=0.35 in c:\programdata\anaconda3\lib\site-packages (from tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (0.36.2)
+Requirement already satisfied: wrapt~=1.12.1 in c:\programdata\anaconda3\lib\site-packages (from tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (1.12.1)
+Requirement already satisfied: gast==0.4.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (0.4.0)
+Requirement already satisfied: tensorboard~=2.6 in c:\programdata\anaconda3\lib\site-packages (from tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (2.7.0)
+Requirement already satisfied: tensorflow-estimator~=2.6 in c:\programdata\anaconda3\lib\site-packages (from tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (2.7.0)
+Requirement already satisfied: keras~=2.6 in c:\programdata\anaconda3\lib\site-packages (from tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (2.6.0)
+Requirement already satisfied: cached-property in c:\programdata\anaconda3\lib\site-packages (from h5py~=3.1.0->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (1.5.2)
+Requirement already satisfied: google-auth<3,>=1.6.3 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (1.35.0)
+Requirement already satisfied: google-auth-oauthlib<0.5,>=0.4.1 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (0.4.6)
+Requirement already satisfied: markdown>=2.6.8 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (3.3.4)
+Requirement already satisfied: requests<3,>=2.21.0 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (2.25.1)
+Requirement already satisfied: setuptools>=41.0.0 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (52.0.0.post20210125)
+Requirement already satisfied: tensorboard-data-server<0.7.0,>=0.6.0 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (0.6.1)
+Requirement already satisfied: tensorboard-plugin-wit>=1.6.0 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (1.8.0)
+Requirement already satisfied: werkzeug>=0.11.15 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (1.0.1)
+Requirement already satisfied: cachetools<5.0,>=2.0.0 in c:\programdata\anaconda3\lib\site-packages (from google-auth<3,>=1.6.3->tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (4.2.2)
+Requirement already satisfied: pyasn1-modules>=0.2.1 in c:\programdata\anaconda3\lib\site-packages (from google-auth<3,>=1.6.3->tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (0.2.8)
+Requirement already satisfied: rsa<5,>=3.1.4 in c:\programdata\anaconda3\lib\site-packages (from google-auth<3,>=1.6.3->tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (4.7.2)
+Requirement already satisfied: requests-oauthlib>=0.7.0 in c:\programdata\anaconda3\lib\site-packages (from google-auth-oauthlib<0.5,>=0.4.1->tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (1.3.0)
+Requirement already satisfied: importlib-metadata in c:\programdata\anaconda3\lib\site-packages (from markdown>=2.6.8->tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (3.10.0)
+Requirement already satisfied: chardet<5,>=3.0.2 in c:\programdata\anaconda3\lib\site-packages (from requests<3,>=2.21.0->tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (4.0.0)
+Requirement already satisfied: idna<3,>=2.5 in c:\programdata\anaconda3\lib\site-packages (from requests<3,>=2.21.0->tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (2.10)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in c:\programdata\anaconda3\lib\site-packages (from requests<3,>=2.21.0->tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (1.26.4)
+Requirement already satisfied: certifi>=2017.4.17 in c:\programdata\anaconda3\lib\site-packages (from requests<3,>=2.21.0->tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (2020.12.5)
+Requirement already satisfied: pyasn1<0.5.0,>=0.4.6 in c:\programdata\anaconda3\lib\site-packages (from pyasn1-modules>=0.2.1->google-auth<3,>=1.6.3->tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (0.4.8)
+Requirement already satisfied: oauthlib>=3.0.0 in c:\programdata\anaconda3\lib\site-packages (from requests-oauthlib>=0.7.0->google-auth-oauthlib<0.5,>=0.4.1->tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (3.1.1)
+Requirement already satisfied: zipp>=0.5 in c:\programdata\anaconda3\lib\site-packages (from importlib-metadata->markdown>=2.6.8->tensorboard~=2.6->tensorflow<3,>=2.5.0rc0->tensorflow-serving-api==2.5.0) (3.4.1)
+WARNING: The candidate selected for download or install is a yanked version: 'tensorflow-serving-api' candidate (version 2.5.0 at https://files.pythonhosted.org/packages/ea/45/7d962ab4d2dbb17e3dfb46ea9b9e5433aaecf5cab7a564b869575c0237e9/tensorflow_serving_api-2.5.0-py2.py3-none-any.whl (from https://pypi.org/simple/tensorflow-serving-api/))
+Reason for being yanked: incorrectly built.
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+DEPRECATION: pyodbc 4.0.0-unsupported has a non-standard version number. pip 24.0 will enforce this behaviour change. A possible replacement is to upgrade to a newer version of pyodbc or contact the author to suggest that they release a version with a conforming version number. Discussion can be found at https://github.com/pypa/pip/issues/12063
+Installing collected packages: typing-extensions, tensorflow-serving-api
+  Attempting uninstall: typing-extensions
+    WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+    Found existing installation: typing_extensions 4.7.1
+    Uninstalling typing_extensions-4.7.1:
+      Successfully uninstalled typing_extensions-4.7.1
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+spyder 4.2.5 requires pyqtwebengine<5.13, which is not installed.
+apache-beam 2.32.0 requires avro-python3!=1.9.2,<1.10.0,>=1.8.1, but you have avro-python3 1.10.2 which is incompatible.
+fastapi 0.103.2 requires typing-extensions>=4.5.0, but you have typing-extensions 3.7.4.3 which is incompatible.
+spyder 4.2.5 requires pyqt5<5.13, but you have pyqt5 5.15.6 which is incompatible.
+starlette 0.27.0 requires typing-extensions>=3.10.0; python_version < "3.10", but you have typing-extensions 3.7.4.3 which is incompatible.
+Successfully installed tensorflow-serving-api-2.5.0 typing-extensions-3.7.4.3
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease>saved_model_cli show --dir ./saved_models/1 --all
+2024-02-18 05:57:19.443967: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2024-02-18 05:57:19.444248: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+
+MetaGraphDef with tag-set: 'serve' contains the following SignatureDefs:
+
+signature_def['__saved_model_init_op']:
+  The given SavedModel SignatureDef contains the following input(s):
+  The given SavedModel SignatureDef contains the following output(s):
+    outputs['__saved_model_init_op'] tensor_info:
+        dtype: DT_INVALID
+        shape: unknown_rank
+        name: NoOp
+  Method name is:
+
+signature_def['serving_default']:
+  The given SavedModel SignatureDef contains the following input(s):
+    inputs['sequential_input'] tensor_info:
+        dtype: DT_FLOAT
+        shape: (-1, 256, 256, 3)
+        name: serving_default_sequential_input:0
+  The given SavedModel SignatureDef contains the following output(s):
+    outputs['dense_1'] tensor_info:
+        dtype: DT_FLOAT
+        shape: (-1, 3)
+        name: StatefulPartitionedCall:0
+  Method name is: tensorflow/serving/predict
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "c:\programdata\anaconda3\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\ProgramData\Anaconda3\Scripts\saved_model_cli.exe\__main__.py", line 7, in <module>
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 1192, in main
+    args.func(args)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 719, in show
+    _show_all(args.dir)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 307, in _show_all
+    _show_defined_functions(saved_model_dir)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 187, in _show_defined_functions
+    trackable_object = load.load(saved_model_dir)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\saved_model\load.py", line 864, in load
+    result = load_internal(export_dir, tags, options)["root"]
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\saved_model\load.py", line 903, in load_internal
+    ckpt_options, options, filters)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\saved_model\load.py", line 162, in __init__
+    self._load_all()
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\saved_model\load.py", line 259, in _load_all
+    self._load_nodes()
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\saved_model\load.py", line 448, in _load_nodes
+    slot_variable = optimizer_object.add_slot(
+AttributeError: '_UserObject' object has no attribute 'add_slot'
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease>conda show tensorflow
+
+CommandNotFoundError: No command 'conda show'.
+
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease>pip show tensorflow
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Name: tensorflow
+Version: 2.6.0
+Summary: TensorFlow is an open source machine learning framework for everyone.
+Home-page: https://www.tensorflow.org/
+Author: Google Inc.
+Author-email: packages@tensorflow.org
+License: Apache 2.0
+Location: c:\programdata\anaconda3\lib\site-packages
+Requires: absl-py, astunparse, clang, flatbuffers, gast, google-pasta, grpcio, h5py, keras, keras-preprocessing, numpy, opt-einsum, protobuf, six, tensorboard, tensorflow-estimator, termcolor, typing-extensions, wheel, wrapt
+Required-by: tensorflow-serving-api
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease>saved_model_cli show --dir ./saved_models/1 --all
+2024-02-18 06:02:43.157049: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2024-02-18 06:02:43.157450: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+
+MetaGraphDef with tag-set: 'serve' contains the following SignatureDefs:
+
+signature_def['__saved_model_init_op']:
+  The given SavedModel SignatureDef contains the following input(s):
+  The given SavedModel SignatureDef contains the following output(s):
+    outputs['__saved_model_init_op'] tensor_info:
+        dtype: DT_INVALID
+        shape: unknown_rank
+        name: NoOp
+  Method name is:
+
+signature_def['serving_default']:
+  The given SavedModel SignatureDef contains the following input(s):
+    inputs['sequential_input'] tensor_info:
+        dtype: DT_FLOAT
+        shape: (-1, 256, 256, 3)
+        name: serving_default_sequential_input:0
+  The given SavedModel SignatureDef contains the following output(s):
+    outputs['dense_1'] tensor_info:
+        dtype: DT_FLOAT
+        shape: (-1, 3)
+        name: StatefulPartitionedCall:0
+  Method name is: tensorflow/serving/predict
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "c:\programdata\anaconda3\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\ProgramData\Anaconda3\Scripts\saved_model_cli.exe\__main__.py", line 7, in <module>
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 1192, in main
+    args.func(args)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 719, in show
+    _show_all(args.dir)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 307, in _show_all
+    _show_defined_functions(saved_model_dir)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\tools\saved_model_cli.py", line 187, in _show_defined_functions
+    trackable_object = load.load(saved_model_dir)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\saved_model\load.py", line 864, in load
+    result = load_internal(export_dir, tags, options)["root"]
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\saved_model\load.py", line 903, in load_internal
+    ckpt_options, options, filters)
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\saved_model\load.py", line 162, in __init__
+    self._load_all()
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\saved_model\load.py", line 259, in _load_all
+    self._load_nodes()
+  File "c:\programdata\anaconda3\lib\site-packages\tensorflow\python\saved_model\load.py", line 448, in _load_nodes
+    slot_variable = optimizer_object.add_slot(
+AttributeError: '_UserObject' object has no attribute 'add_slot'
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease>saved_model_cli show --dir ./saved_models/1 --all

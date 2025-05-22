@@ -1,0 +1,6 @@
+//To start docker container
+
+docker run -it -v C:\Code\deep-learning-keras-tf-tutorial\48_tf_serving:/48_tf_serving -p 8605:8605 --entrypoint /bin/bash tensorflow/serving   // /48_tf_serving used to match (or mapping to) our path with docker, 
+//it's representing docker's folder for our path and -p for pulling, 8605:8605 it's the port to be used n --entrypoint /bin/bash will take us to the cmd prompt n tensorflow/serving it's name of docker image
+
+Loading servable: {name: MODEL version: 3} failed: NOT_FOUND: Specified file path does not appear to contain a SavedModel bundle (should have a file called `saved_model.pb`)

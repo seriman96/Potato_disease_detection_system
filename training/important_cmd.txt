@@ -1,0 +1,1 @@
+pip list: to list available depencies under a virtual env

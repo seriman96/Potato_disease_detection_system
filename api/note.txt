@@ -1,0 +1,16 @@
+pip install -r requirement.txt // used to install all requirement contain in the requirement.txt file
+
+// to run server uvicon from cmd
+uvicorn main:app --reload  ### main is the name of the file.
+
+
+// show us uvicon documentation or fastapi documentation
+http://localhost:8000/docs
+
+//to show version of installed library
+pip3 show tensorflow or pip show tensorflow
+
+
+// most powerful way to get rid of versioning compatibility
+pip install --disable-pip-version-check --no-cache-dir tensorflow
+

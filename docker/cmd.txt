@@ -1,0 +1,212 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\WINDOWS\system32> docker
+
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Common Commands:
+  run         Create and run a new container from an image
+  exec        Execute a command in a running container
+  ps          List containers
+  build       Build an image from a Dockerfile
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  images      List images
+  login       Log in to a registry
+  logout      Log out from a registry
+  search      Search Docker Hub for images
+  version     Show the Docker version information
+  info        Display system-wide information
+
+Management Commands:
+  builder     Manage builds
+  buildx*     Docker Buildx (Docker Inc., v0.12.1-desktop.4)
+  compose*    Docker Compose (Docker Inc., v2.24.3-desktop.1)
+  container   Manage containers
+  context     Manage contexts
+  debug*      Get a shell into any image or container. (Docker Inc., 0.0.22)
+  dev*        Docker Dev Environments (Docker Inc., v0.1.0)
+  extension*  Manages Docker extensions (Docker Inc., v0.2.21)
+  feedback*   Provide feedback, right in your terminal! (Docker Inc., v1.0.4)
+  image       Manage images
+  init*       Creates Docker-related starter files for your project (Docker Inc., v1.0.0)
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  plugin      Manage plugins
+  sbom*       View the packaged-based Software Bill Of Materials (SBOM) for an image (Anchore Inc., 0.6.0)
+  scout*      Docker Scout (Docker Inc., v1.3.0)
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Swarm Commands:
+  swarm       Manage Swarm
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
+
+Global Options:
+      --config string      Location of client config files (default
+                           "C:\\Users\\Admin\\.docker")
+  -c, --context string     Name of the context to use to connect to the
+                           daemon (overrides DOCKER_HOST env var and
+                           default context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket to connect to
+  -l, --log-level string   Set the logging level ("debug", "info",
+                           "warn", "error", "fatal") (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default
+                           "C:\\Users\\Admin\\.docker\\ca.pem")
+      --tlscert string     Path to TLS certificate file (default
+                           "C:\\Users\\Admin\\.docker\\cert.pem")
+      --tlskey string      Path to TLS key file (default
+                           "C:\\Users\\Admin\\.docker\\key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Run 'docker COMMAND --help' for more information on a command.
+
+For more help on how to use Docker, head to https://docs.docker.com/go/guides/
+PS C:\WINDOWS\system32> docker pull tensorflow/serving
+Using default tag: latest
+latest: Pulling from tensorflow/serving
+96d54c3075c9: Pull complete
+ce077e3fadc4: Pull complete
+806c774cb78b: Pull complete
+c588a3276cac: Pull complete
+050d4101433f: Pull complete
+Digest: sha256:fdc296e313fa4454173c5728fceda38f5d18cdb44c71a9f279ce61bc5818335e
+Status: Downloaded newer image for tensorflow/serving:latest
+docker.io/tensorflow/serving:latest
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview tensorflow/serving
+PS C:\WINDOWS\system32> docker run -it -v D:\Analytics\Deep_learning_Tuto\potato_disease:/48_tf_serving -p 8605:8605 --entrypoint /bin/bash tensorflow/serving
+ docker run -it -v D:\Analytics\Deep_learning_Tuto\potato_disease:/potato_disease -p 8501:8501 --model_config_file=/potato_disease/models.config
+root@cb682330c78e:/# ll
+total 64
+drwxr-xr-x   1 root root 4096 Feb 10 00:10 ./
+drwxr-xr-x   1 root root 4096 Feb 10 00:10 ../
+-rwxr-xr-x   1 root root    0 Feb 10 00:10 .dockerenv*
+drwxrwxrwx   1 root root  512 Feb  9 23:20 48_tf_serving/
+lrwxrwxrwx   1 root root    7 Oct  3 02:03 bin -> usr/bin/
+drwxr-xr-x   2 root root 4096 Apr 15  2020 boot/
+drwxr-xr-x   5 root root  360 Feb 10 00:10 dev/
+drwxr-xr-x   1 root root 4096 Feb 10 00:10 etc/
+drwxr-xr-x   2 root root 4096 Apr 15  2020 home/
+lrwxrwxrwx   1 root root    7 Oct  3 02:03 lib -> usr/lib/
+lrwxrwxrwx   1 root root    9 Oct  3 02:03 lib32 -> usr/lib32/
+lrwxrwxrwx   1 root root    9 Oct  3 02:03 lib64 -> usr/lib64/
+lrwxrwxrwx   1 root root   10 Oct  3 02:03 libx32 -> usr/libx32/
+drwxr-xr-x   2 root root 4096 Oct  3 02:03 media/
+drwxr-xr-x   2 root root 4096 Oct  3 02:03 mnt/
+drwxr-sr-x   2 root root 4096 Nov 21 23:33 models/
+drwxr-xr-x   2 root root 4096 Oct  3 02:03 opt/
+dr-xr-xr-x 243 root root    0 Feb 10 00:10 proc/
+drwx------   2 root root 4096 Oct  3 02:06 root/
+drwxr-xr-x   5 root root 4096 Oct  3 02:06 run/
+lrwxrwxrwx   1 root root    8 Oct  3 02:03 sbin -> usr/sbin/
+drwxr-xr-x   2 root root 4096 Oct  3 02:03 srv/
+dr-xr-xr-x  11 root root    0 Feb 10 00:10 sys/
+drwxrwxrwt   1 root root 4096 Nov 21 23:33 tmp/
+drwxr-xr-x   1 root root 4096 Oct  3 02:03 usr/
+drwxr-xr-x   1 root root 4096 Oct  3 02:06 var/
+root@cb682330c78e:/# ls -ltr 48_tf_serving/
+total 308
+-rwxrwxrwx 1 root root 314924 Feb  5 00:23 'python - Saving model on Tensorflow 2.7.0 with data augmentation layer - Stack Overflow.pdf'
+drwxrwxrwx 1 root root    512 Feb  5 00:29  saved_models
+drwxrwxrwx 1 root root    512 Feb  5 23:33  training
+drwxrwxrwx 1 root root    512 Feb  9 01:17  api
+drwxrwxrwx 1 root root    512 Feb 10 00:00  docker
+root@cb682330c78e:/# tensorflow_model_server --rest_api_port=8605 --model_name=potato_model --model_base_path=/48_tf_serving/saved_models
+2024-02-10 00:17:15.538234: I tensorflow_serving/model_servers/server.cc:74] Building single TensorFlow model file config:  model_name: potato_model model_base_path: /48_tf_serving/saved_models
+2024-02-10 00:17:15.538600: I tensorflow_serving/model_servers/server_core.cc:467] Adding/updating models.
+2024-02-10 00:17:15.538661: I tensorflow_serving/model_servers/server_core.cc:596]  (Re-)adding model: potato_model
+2024-02-10 00:17:15.663620: E tensorflow_serving/util/retrier.cc:37] Reserving resources for servable: {name: potato_model version: 2} failed: FAILED_PRECONDITION: /48_tf_serving/saved_models/2; Not a directory
+^C
+root@cb682330c78e:/# tensorflow_model_server --rest_api_port=8605 --model_name=potato_model --model_base_path=/potato_disease/saved_models
+2024-02-10 00:19:12.186513: I tensorflow_serving/model_servers/server.cc:74] Building single TensorFlow model file config:  model_name: potato_model model_base_path: /potato_disease/saved_models
+2024-02-10 00:19:12.186776: I tensorflow_serving/model_servers/server_core.cc:467] Adding/updating models.
+2024-02-10 00:19:12.186817: I tensorflow_serving/model_servers/server_core.cc:596]  (Re-)adding model: potato_model
+2024-02-10 00:19:12.187525: E tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:353] FileSystemStoragePathSource encountered a filesystem access error: Could not find base path /potato_disease/saved_models for servable potato_model with error NOT_FOUND: /potato_disease/saved_models not found
+2024-02-10 00:19:13.187678: E tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:353] FileSystemStoragePathSource encountered a filesystem access error: Could not find base path /potato_disease/saved_models for servable potato_model with error NOT_FOUND: /potato_disease/saved_models not found
+2024-02-10 00:19:14.187786: E tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:353] FileSystemStoragePathSource encountered a filesystem access error: Could not find base path /potato_disease/saved_models for servable potato_model with error NOT_FOUND: /potato_disease/saved_models not found
+2024-02-10 00:19:15.187928: E tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:353] FileSystemStoragePathSource encountered a filesystem access error: Could not find base path /potato_disease/saved_models for servable potato_model with error NOT_FOUND: /potato_disease/saved_models not found
+2024-02-10 00:19:16.188067: E tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:353] FileSystemStoragePathSource encountered a filesystem access error: Could not find base path /potato_disease/saved_models for servable potato_model with error NOT_FOUND: /potato_disease/saved_models not found
+2024-02-10 00:19:17.188247: E tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:353] FileSystemStoragePathSource encountered a filesystem access error: Could not find base path /potato_disease/saved_models for servable potato_model with error NOT_FOUND: /potato_disease/saved_models not found
+2024-02-10 00:19:18.188346: E tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:353] FileSystemStoragePathSource encountered a filesystem access error: Could not find base path /potato_disease/saved_models for servable potato_model with error NOT_FOUND: /potato_disease/saved_models not found
+2024-02-10 00:19:19.188846: E tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:353] FileSystemStoragePathSource encountered a filesystem access error: Could not find base path /potato_disease/saved_models for servable potato_model with error NOT_FOUND: /potato_disease/saved_models not found
+2024-02-10 00:19:20.188988: E tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:353] FileSystemStoragePathSource encountered a filesystem access error: Could not find base path /potato_disease/saved_models for servable potato_model with error NOT_FOUND: /potato_disease/saved_models not found
+2024-02-10 00:19:21.189154: E tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:353] FileSystemStoragePathSource encountered a filesystem access error: Could not find base path /potato_disease/saved_models for servable potato_model with error NOT_FOUND: /potato_disease/saved_models not found
+2024-02-10 00:19:22.189334: E tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:353] FileSystemStoragePathSource encountered a filesystem access error: Could not find base path /potato_disease/saved_models for servable potato_model with error NOT_FOUND: /potato_disease/saved_models not found
+2024-02-10 00:19:23.189579: E tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:353] FileSystemStoragePathSource encountered a filesystem access error: Could not find base path /potato_disease/saved_models for servable potato_model with error NOT_FOUND: /potato_disease/saved_models not found
+2024-02-10 00:19:24.189701: E tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:353] FileSystemStoragePathSource encountered a filesystem access error: Could not find base path /potato_disease/saved_models for servable potato_model with error NOT_FOUND: /potato_disease/saved_models not found
+2024-02-10 00:19:25.189846: E tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:353] FileSystemStoragePathSource encountered a filesystem access error: Could not find base path /potato_disease/saved_models for servable potato_model with error NOT_FOUND: /potato_disease/saved_models not found
+2024-02-10 00:19:26.190136: E tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:353] FileSystemStoragePathSource encountered a filesystem access error: Could not find base path /potato_disease/saved_models for servable potato_model with error NOT_FOUND: /potato_disease/saved_models not found
+^C
+root@cb682330c78e:/# tensorflow_model_server --rest_api_port=8605 --model_name=potato_model --model_base_path=/48_tf_serving/saved_models
+2024-02-10 00:19:33.060253: I tensorflow_serving/model_servers/server.cc:74] Building single TensorFlow model file config:  model_name: potato_model model_base_path: /48_tf_serving/saved_models
+2024-02-10 00:19:33.060513: I tensorflow_serving/model_servers/server_core.cc:467] Adding/updating models.
+2024-02-10 00:19:33.060555: I tensorflow_serving/model_servers/server_core.cc:596]  (Re-)adding model: potato_model
+2024-02-10 00:19:33.163757: E tensorflow_serving/util/retrier.cc:37] Reserving resources for servable: {name: potato_model version: 2} failed: FAILED_PRECONDITION: /48_tf_serving/saved_models/2; Not a directory
+2024-02-10 00:20:33.164262: I tensorflow_serving/util/retrier.cc:33] Retrying of Reserving resources for servable: {name: potato_model version: 2} retry: 1
+2024-02-10 00:20:33.169005: E tensorflow_serving/util/retrier.cc:37] Reserving resources for servable: {name: potato_model version: 2} failed: FAILED_PRECONDITION: /48_tf_serving/saved_models/2; Not a directory
+2024-02-10 00:21:33.169480: I tensorflow_serving/util/retrier.cc:33] Retrying of Reserving resources for servable: {name: potato_model version: 2} retry: 2
+2024-02-10 00:21:33.173765: E tensorflow_serving/util/retrier.cc:37] Reserving resources for servable: {name: potato_model version: 2} failed: FAILED_PRECONDITION: /48_tf_serving/saved_models/2; Not a directory
+2024-02-10 00:22:33.174195: I tensorflow_serving/util/retrier.cc:33] Retrying of Reserving resources for servable: {name: potato_model version: 2} retry: 3
+2024-02-10 00:22:33.178944: E tensorflow_serving/util/retrier.cc:37] Reserving resources for servable: {name: potato_model version: 2} failed: FAILED_PRECONDITION: /48_tf_serving/saved_models/2; Not a directory
+2024-02-10 00:23:33.178613: I tensorflow_serving/util/retrier.cc:33] Retrying of Reserving resources for servable: {name: potato_model version: 2} retry: 4
+2024-02-10 00:23:33.182681: E tensorflow_serving/util/retrier.cc:37] Reserving resources for servable: {name: potato_model version: 2} failed: FAILED_PRECONDITION: /48_tf_serving/saved_models/2; Not a directory
+^C
+root@cb682330c78e:/#
+
+//tf-serving for project
+docker run -t --rm -p 8501:8501 -v D:\Analytics\Deep_learning_Tuto\potato_disease:/potato_disease/ tensorflow/serving --rest_api_port=8501 --model_config_file=/potato_disease/models.config
+
+_________docker run -t --rm -p 8501:8501 -v D:\Analytics\Deep_learning_Tuto\potato_disease/potato_disease:/models/saved_models tensorflow/serving --rest_api_port=8501 --model_config_file=/potato_disease/models.config
+
+
+docker run -t --rm -p 8501:8501 -v "D:\Analytics\Deep_learning_Tuto\potato_disease\training\serving\tensorflow_serving\servables\tensorflow\testdata/saved_model_half_plus_two_cpu:/models/half_plus_two" -e MODEL_NAME=half_plus_two tensorflow/serving
+
+
+________non workeable: curl -d '{"instances": [1.0,2.0,5.0]}' -X POST http://localhost:8501/v1/models/potatoes_model:predict
+
+curl -d '{""instances"": [1.0, 2.0, 5.0]}' -X POST http://localhost:8501/v1/models/half_plus_two:predict
+
+useful cmd to debug curl
+rm alias:curl
+
+

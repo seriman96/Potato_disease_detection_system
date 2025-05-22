@@ -1,0 +1,802 @@
+Microsoft Windows [Version 10.0.19042.1237]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\WINDOWS\system32>D:
+
+//D:\>cd D:\Minor_Project\Web-Crawler\Web-Crawler-part1
+
+D:\Minor_Project\Web-Crawler\Web-Crawler-part1>ls
+'Example Output.txt'   README.md   WebCrawler.py   setup.py   stopwords.txt   tf_matrix.csv
+
+D:\Minor_Project\Web-Crawler\Web-Crawler-part1>pip
+
+Usage:
+  pip <command> [options]
+
+Commands:
+  install                     Install packages.
+  download                    Download packages.
+  uninstall                   Uninstall packages.
+  freeze                      Output installed packages in requirements format.
+  list                        List installed packages.
+  show                        Show information about installed packages.
+  check                       Verify installed packages have compatible dependencies.
+  config                      Manage local and global configuration.
+  search                      Search PyPI for packages.
+  cache                       Inspect and manage pip's wheel cache.
+  index                       Inspect information available from package indexes.
+  wheel                       Build wheels from your requirements.
+  hash                        Compute hashes of package archives.
+  completion                  A helper command used for command completion.
+  debug                       Show information useful for debugging.
+  help                        Show help for commands.
+
+General Options:
+  -h, --help                  Show help.
+  --isolated                  Run pip in an isolated mode, ignoring environment variables and user configuration.
+  -v, --verbose               Give more output. Option is additive, and can be used up to 3 times.
+  -V, --version               Show version and exit.
+  -q, --quiet                 Give less output. Option is additive, and can be used up to 3 times (corresponding to
+                              WARNING, ERROR, and CRITICAL logging levels).
+  --log <path>                Path to a verbose appending log.
+  --no-input                  Disable prompting for input.
+  --proxy <proxy>             Specify a proxy in the form [user:passwd@]proxy.server:port.
+  --retries <retries>         Maximum number of retries each connection should attempt (default 5 times).
+  --timeout <sec>             Set the socket timeout (default 15 seconds).
+  --exists-action <action>    Default action when a path already exists: (s)witch, (i)gnore, (w)ipe, (b)ackup,
+                              (a)bort.
+  --trusted-host <hostname>   Mark this host or host:port pair as trusted, even though it does not have valid or any
+                              HTTPS.
+  --cert <path>               Path to PEM-encoded CA certificate bundle. If provided, overrides the default. See 'SSL
+                              Certificate Verification' in pip documentation for more information.
+  --client-cert <path>        Path to SSL client certificate, a single file containing the private key and the
+                              certificate in PEM format.
+  --cache-dir <dir>           Store the cache data in <dir>.
+  --no-cache-dir              Disable the cache.
+  --disable-pip-version-check
+                              Don't periodically check PyPI to determine whether a new version of pip is available for
+                              download. Implied with --no-index.
+  --no-color                  Suppress colored output.
+  --no-python-version-warning
+                              Silence deprecation warnings for upcoming unsupported Pythons.
+  --use-feature <feature>     Enable new functionality, that may be backward incompatible.
+  --use-deprecated <feature>  Enable deprecated functionality, that will be removed in the future.
+
+D:\Minor_Project\Web-Crawler\Web-Crawler-part1>python version
+(null): can't open file 'version': [Errno 2] No such file or directory
+
+D:\Minor_Project\Web-Crawler\Web-Crawler-part1>python __version
+(null): can't open file '__version': [Errno 2] No such file or directory
+
+D:\Minor_Project\Web-Crawler\Web-Crawler-part1>python --version
+Python 3.7.0
+
+D:\Minor_Project\Web-Crawler\Web-Crawler-part1>conda create -n websearch python=3.7.6
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: C:\ProgramData\Anaconda3\envs\websearch
+
+  added / updated specs:
+    - python=3.7.6
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    ca-certificates-2021.9.30  |       haa95532_1         153 KB
+    pip-21.2.4                 |   py37haa95532_0         2.1 MB
+    wincertstore-0.2           |   py37haa95532_2          15 KB
+    ------------------------------------------------------------
+                                           Total:         2.2 MB
+
+The following NEW packages will be INSTALLED:
+
+  ca-certificates    pkgs/main/win-64::ca-certificates-2021.9.30-haa95532_1
+  certifi            pkgs/main/win-64::certifi-2021.5.30-py37haa95532_0
+  openssl            pkgs/main/win-64::openssl-1.1.1l-h2bbff1b_0
+  pip                pkgs/main/win-64::pip-21.2.4-py37haa95532_0
+  python             pkgs/main/win-64::python-3.7.6-h60c2a47_2
+  setuptools         pkgs/main/win-64::setuptools-58.0.4-py37haa95532_0
+  sqlite             pkgs/main/win-64::sqlite-3.36.0-h2bbff1b_0
+  vc                 pkgs/main/win-64::vc-14.2-h21ff451_1
+  vs2015_runtime     pkgs/main/win-64::vs2015_runtime-14.27.29016-h5e58377_2
+  wheel              pkgs/main/noarch::wheel-0.37.0-pyhd3eb1b0_1
+  wincertstore       pkgs/main/win-64::wincertstore-0.2-py37haa95532_2
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+ca-certificates-2021 | 153 KB    | ############################################################################ | 100%
+wincertstore-0.2     | 15 KB     | ############################################################################ | 100%
+pip-21.2.4           | 2.1 MB    | ############################################################################ | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate websearch
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+
+D:\Minor_Project\Web-Crawler\Web-Crawler-part1>conda info --envs
+# conda environments:
+#
+base                  *  C:\ProgramData\Anaconda3
+Tensorflow               C:\ProgramData\Anaconda3\envs\Tensorflow
+websearch                C:\ProgramData\Anaconda3\envs\websearch
+
+
+D:\Minor_Project\Web-Crawler\Web-Crawler-part1>activate websearch   //or we can use conda.bat activate websearch
+
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>python --version
+Python 3.7.6
+
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>pip install setuptools
+Requirement already satisfied: setuptools in c:\programdata\anaconda3\envs\websearch\lib\site-packages (58.0.4)
+
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>sudo python3 setup.py install
+'sudo' is not recognized as an internal or external command,
+operable program or batch file.
+
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>python3 setup.py install
+'python3' is not recognized as an internal or external command,
+operable program or batch file.
+
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>python setup.py install
+running install
+running bdist_egg
+running egg_info
+creating Web_Crawler.egg-info
+writing Web_Crawler.egg-info\PKG-INFO
+writing dependency_links to Web_Crawler.egg-info\dependency_links.txt
+writing requirements to Web_Crawler.egg-info\requires.txt
+writing top-level names to Web_Crawler.egg-info\top_level.txt
+writing manifest file 'Web_Crawler.egg-info\SOURCES.txt'
+reading manifest file 'Web_Crawler.egg-info\SOURCES.txt'
+writing manifest file 'Web_Crawler.egg-info\SOURCES.txt'
+installing library code to build\bdist.win-amd64\egg
+running install_lib
+warning: install_lib: 'build\lib' does not exist -- no Python modules to install
+
+creating build
+creating build\bdist.win-amd64
+creating build\bdist.win-amd64\egg
+creating build\bdist.win-amd64\egg\EGG-INFO
+copying Web_Crawler.egg-info\PKG-INFO -> build\bdist.win-amd64\egg\EGG-INFO
+copying Web_Crawler.egg-info\SOURCES.txt -> build\bdist.win-amd64\egg\EGG-INFO
+copying Web_Crawler.egg-info\dependency_links.txt -> build\bdist.win-amd64\egg\EGG-INFO
+copying Web_Crawler.egg-info\requires.txt -> build\bdist.win-amd64\egg\EGG-INFO
+copying Web_Crawler.egg-info\top_level.txt -> build\bdist.win-amd64\egg\EGG-INFO
+zip_safe flag not set; analyzing archive contents...
+creating dist
+creating 'dist\Web_Crawler-1.0-py3.7.egg' and adding 'build\bdist.win-amd64\egg' to it
+removing 'build\bdist.win-amd64\egg' (and everything under it)
+Processing Web_Crawler-1.0-py3.7.egg
+Copying Web_Crawler-1.0-py3.7.egg to c:\programdata\anaconda3\envs\websearch\lib\site-packages
+Adding Web-Crawler 1.0 to easy-install.pth file
+
+Installed c:\programdata\anaconda3\envs\websearch\lib\site-packages\web_crawler-1.0-py3.7.egg
+Processing dependencies for Web-Crawler==1.0
+Searching for nltk
+Reading https://pypi.org/simple/nltk/
+Downloading https://files.pythonhosted.org/packages/e7/b0/6a693aa7ddef9d5e921827fdafc264aca130f40d38adcaf71332b222d29f/nltk-3.6.4-py3-none-any.whl#sha256=2b9a54bbd2142282cb41aa4b25b8a356bb96f032f509302b4cca9992eda6e793
+Best match: nltk 3.6.4
+Processing nltk-3.6.4-py3-none-any.whl
+Installing nltk-3.6.4-py3-none-any.whl to c:\programdata\anaconda3\envs\websearch\lib\site-packages
+Adding nltk 3.6.4 to easy-install.pth file
+Installing nltk-script.py script to C:\ProgramData\Anaconda3\envs\websearch\Scripts
+Installing nltk.exe script to C:\ProgramData\Anaconda3\envs\websearch\Scripts
+
+Installed c:\programdata\anaconda3\envs\websearch\lib\site-packages\nltk-3.6.4-py3.7.egg
+Searching for bs4
+Reading https://pypi.org/simple/bs4/
+Downloading https://files.pythonhosted.org/packages/10/ed/7e8b97591f6f456174139ec089c769f89a94a1a4025fe967691de971f314/bs4-0.0.1.tar.gz#sha256=36ecea1fd7cc5c0c6e4a1ff075df26d50da647b75376626cc186e2212886dd3a
+Best match: bs4 0.0.1
+Processing bs4-0.0.1.tar.gz
+Writing C:\Users\Admin\AppData\Local\Temp\easy_install-u5iecolr\bs4-0.0.1\setup.cfg
+Running bs4-0.0.1\setup.py -q bdist_egg --dist-dir C:\Users\Admin\AppData\Local\Temp\easy_install-u5iecolr\bs4-0.0.1\egg-dist-tmp-yrlcuwfq
+warning: install_lib: 'build\lib' does not exist -- no Python modules to install
+
+zip_safe flag not set; analyzing archive contents...
+Copying bs4-0.0.1-py3.7.egg to c:\programdata\anaconda3\envs\websearch\lib\site-packages
+Adding bs4 0.0.1 to easy-install.pth file
+
+Installed c:\programdata\anaconda3\envs\websearch\lib\site-packages\bs4-0.0.1-py3.7.egg
+Searching for tqdm
+Reading https://pypi.org/simple/tqdm/
+Downloading https://files.pythonhosted.org/packages/63/f3/b7a1b8e40fd1bd049a34566eb353527bb9b8e9b98f8b6cf803bb64d8ce95/tqdm-4.62.3-py2.py3-none-any.whl#sha256=8dd278a422499cd6b727e6ae4061c40b48fce8b76d1ccbf5d34fca9b7f925b0c
+Best match: tqdm 4.62.3
+Processing tqdm-4.62.3-py2.py3-none-any.whl
+Installing tqdm-4.62.3-py2.py3-none-any.whl to c:\programdata\anaconda3\envs\websearch\lib\site-packages
+Adding tqdm 4.62.3 to easy-install.pth file
+Installing tqdm-script.py script to C:\ProgramData\Anaconda3\envs\websearch\Scripts
+Installing tqdm.exe script to C:\ProgramData\Anaconda3\envs\websearch\Scripts
+
+Installed c:\programdata\anaconda3\envs\websearch\lib\site-packages\tqdm-4.62.3-py3.7.egg
+Searching for regex
+Reading https://pypi.org/simple/regex/
+Downloading https://files.pythonhosted.org/packages/87/b7/d591d817130158ea317c06f4eec8de6fbfdfeafe2cf5e865930826bbccf6/regex-2021.10.8-cp37-cp37m-win_amd64.whl#sha256=924079d5590979c0e961681507eb1773a142553564ccae18d36f1de7324e71ca
+Best match: regex 2021.10.8
+Processing regex-2021.10.8-cp37-cp37m-win_amd64.whl
+Installing regex-2021.10.8-cp37-cp37m-win_amd64.whl to c:\programdata\anaconda3\envs\websearch\lib\site-packages
+Adding regex 2021.10.8 to easy-install.pth file
+
+Installed c:\programdata\anaconda3\envs\websearch\lib\site-packages\regex-2021.10.8-py3.7-win-amd64.egg
+Searching for joblib
+Reading https://pypi.org/simple/joblib/
+Downloading https://files.pythonhosted.org/packages/3e/d5/0163eb0cfa0b673aa4fe1cd3ea9d8a81ea0f32e50807b0c295871e4aab2e/joblib-1.1.0-py2.py3-none-any.whl#sha256=f21f109b3c7ff9d95f8387f752d0d9c34a02aa2f7060c2135f465da0e5160ff6
+Best match: joblib 1.1.0
+Processing joblib-1.1.0-py2.py3-none-any.whl
+Installing joblib-1.1.0-py2.py3-none-any.whl to c:\programdata\anaconda3\envs\websearch\lib\site-packages
+Adding joblib 1.1.0 to easy-install.pth file
+
+Installed c:\programdata\anaconda3\envs\websearch\lib\site-packages\joblib-1.1.0-py3.7.egg
+Searching for click
+Reading https://pypi.org/simple/click/
+Downloading https://files.pythonhosted.org/packages/a7/3b/7efef23f3d4ea464ee9a518168d155cf007dc650a25898818c1712844999/click-8.0.2-py3-none-any.whl#sha256=3fab8aeb8f15f5452ae7511ad448977b3417325bceddd53df87e0bb81f3a8cf8
+Best match: click 8.0.2
+Processing click-8.0.2-py3-none-any.whl
+Installing click-8.0.2-py3-none-any.whl to c:\programdata\anaconda3\envs\websearch\lib\site-packages
+Adding click 8.0.2 to easy-install.pth file
+
+Installed c:\programdata\anaconda3\envs\websearch\lib\site-packages\click-8.0.2-py3.7.egg
+Searching for beautifulsoup4
+Reading https://pypi.org/simple/beautifulsoup4/
+Downloading https://files.pythonhosted.org/packages/69/bf/f0f194d3379d3f3347478bd267f754fc68c11cbf2fe302a6ab69447b1417/beautifulsoup4-4.10.0-py3-none-any.whl#sha256=9a315ce70049920ea4572a4055bc4bd700c940521d36fc858205ad4fcde149bf
+Best match: beautifulsoup4 4.10.0
+Processing beautifulsoup4-4.10.0-py3-none-any.whl
+Installing beautifulsoup4-4.10.0-py3-none-any.whl to c:\programdata\anaconda3\envs\websearch\lib\site-packages
+Adding beautifulsoup4 4.10.0 to easy-install.pth file
+
+Installed c:\programdata\anaconda3\envs\websearch\lib\site-packages\beautifulsoup4-4.10.0-py3.7.egg
+Searching for colorama
+Reading https://pypi.org/simple/colorama/
+Downloading https://files.pythonhosted.org/packages/44/98/5b86278fbbf250d239ae0ecb724f8572af1c91f4a11edf4d36a206189440/colorama-0.4.4-py2.py3-none-any.whl#sha256=9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2
+Best match: colorama 0.4.4
+Processing colorama-0.4.4-py2.py3-none-any.whl
+Installing colorama-0.4.4-py2.py3-none-any.whl to c:\programdata\anaconda3\envs\websearch\lib\site-packages
+Adding colorama 0.4.4 to easy-install.pth file
+
+Installed c:\programdata\anaconda3\envs\websearch\lib\site-packages\colorama-0.4.4-py3.7.egg
+Searching for importlib-metadata
+Reading https://pypi.org/simple/importlib-metadata/
+Downloading https://files.pythonhosted.org/packages/71/c2/cb1855f0b2a0ae9ccc9b69f150a7aebd4a8d815bd951e74621c4154c52a8/importlib_metadata-4.8.1-py3-none-any.whl#sha256=b618b6d2d5ffa2f16add5697cf57a46c76a56229b0ed1c438322e4e95645bd15
+Best match: importlib-metadata 4.8.1
+Processing importlib_metadata-4.8.1-py3-none-any.whl
+Installing importlib_metadata-4.8.1-py3-none-any.whl to c:\programdata\anaconda3\envs\websearch\lib\site-packages
+Adding importlib-metadata 4.8.1 to easy-install.pth file
+
+Installed c:\programdata\anaconda3\envs\websearch\lib\site-packages\importlib_metadata-4.8.1-py3.7.egg
+Searching for soupsieve>1.2
+Reading https://pypi.org/simple/soupsieve/
+Downloading https://files.pythonhosted.org/packages/36/69/d82d04022f02733bf9a72bc3b96332d360c0c5307096d76f6bb7489f7e57/soupsieve-2.2.1-py3-none-any.whl#sha256=c2c1c2d44f158cdbddab7824a9af8c4f83c76b1e23e049479aa432feb6c4c23b
+Best match: soupsieve 2.2.1
+Processing soupsieve-2.2.1-py3-none-any.whl
+Installing soupsieve-2.2.1-py3-none-any.whl to c:\programdata\anaconda3\envs\websearch\lib\site-packages
+Adding soupsieve 2.2.1 to easy-install.pth file
+
+Installed c:\programdata\anaconda3\envs\websearch\lib\site-packages\soupsieve-2.2.1-py3.7.egg
+Searching for zipp>=0.5
+Reading https://pypi.org/simple/zipp/
+Downloading https://files.pythonhosted.org/packages/bd/df/d4a4974a3e3957fd1c1fa3082366d7fff6e428ddb55f074bf64876f8e8ad/zipp-3.6.0-py3-none-any.whl#sha256=9fe5ea21568a0a70e50f273397638d39b03353731e6cbbb3fd8502a33fec40bc
+Best match: zipp 3.6.0
+Processing zipp-3.6.0-py3-none-any.whl
+Installing zipp-3.6.0-py3-none-any.whl to c:\programdata\anaconda3\envs\websearch\lib\site-packages
+Adding zipp 3.6.0 to easy-install.pth file
+
+Installed c:\programdata\anaconda3\envs\websearch\lib\site-packages\zipp-3.6.0-py3.7.egg
+Searching for typing-extensions>=3.6.4
+Reading https://pypi.org/simple/typing-extensions/
+Downloading https://files.pythonhosted.org/packages/74/60/18783336cc7fcdd95dae91d73477830aa53f5d3181ae4fe20491d7fc3199/typing_extensions-3.10.0.2-py3-none-any.whl#sha256=f1d25edafde516b146ecd0613dabcc61409817af4766fbbcfb8d1ad4ec441a34
+Best match: typing-extensions 3.10.0.2
+Processing typing_extensions-3.10.0.2-py3-none-any.whl
+Installing typing_extensions-3.10.0.2-py3-none-any.whl to c:\programdata\anaconda3\envs\websearch\lib\site-packages
+Adding typing-extensions 3.10.0.2 to easy-install.pth file
+
+Installed c:\programdata\anaconda3\envs\websearch\lib\site-packages\typing_extensions-3.10.0.2-py3.7.egg
+Finished processing dependencies for Web-Crawler==1.0
+
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>python WebCrawler.py 20 stopwords.txt
+----------------------------------------------------------------------
+Seed URL: http://lyle.smu.edu/~fmoore
+Page limit: 20
+Stop words: stopwords.txt
+----------------------------------------------------------------------
+Beginning crawling...
+
+robots.txt: Disallowed['/~fmoore/dontgohere/'] Allowed[]
+
+Traceback (most recent call last):
+  File "WebCrawler.py", line 307, in <module>
+    crawler.crawl()
+  File "WebCrawler.py", line 163, in crawl
+    soup = BeautifulSoup(current_content, "lxml")
+  File "C:\ProgramData\Anaconda3\envs\websearch\lib\site-packages\beautifulsoup4-4.10.0-py3.7.egg\bs4\__init__.py", line 248, in __init__
+    % ",".join(features))
+bs4.FeatureNotFound: Couldn't find a tree builder with the features you requested: lxml. Do you need to install a parser library?
+
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>pip install beautifulsoup4
+Requirement already satisfied: beautifulsoup4 in c:\programdata\anaconda3\envs\websearch\lib\site-packages\beautifulsoup4-4.10.0-py3.7.egg (4.10.0)
+Requirement already satisfied: soupsieve>1.2 in c:\programdata\anaconda3\envs\websearch\lib\site-packages\soupsieve-2.2.1-py3.7.egg (from beautifulsoup4) (2.2.1)
+
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>python WebCrawler.py 20 stopwords.txt
+----------------------------------------------------------------------
+Seed URL: http://lyle.smu.edu/~fmoore
+Page limit: 20
+Stop words: stopwords.txt
+----------------------------------------------------------------------
+Beginning crawling...
+
+robots.txt: Disallowed['/~fmoore/dontgohere/'] Allowed[]
+
+Traceback (most recent call last):
+  File "WebCrawler.py", line 307, in <module>
+    crawler.crawl()
+  File "WebCrawler.py", line 163, in crawl
+    soup = BeautifulSoup(current_content, "lxml")
+  File "C:\ProgramData\Anaconda3\envs\websearch\lib\site-packages\beautifulsoup4-4.10.0-py3.7.egg\bs4\__init__.py", line 248, in __init__
+    % ",".join(features))
+bs4.FeatureNotFound: Couldn't find a tree builder with the features you requested: lxml. Do you need to install a parser library?
+
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>pip install parse
+Collecting parse
+  Downloading parse-1.19.0.tar.gz (30 kB)
+Building wheels for collected packages: parse
+  Building wheel for parse (setup.py) ... done
+  Created wheel for parse: filename=parse-1.19.0-py3-none-any.whl size=24591 sha256=fe62088d4c54b0e11950d72e3b6f61750419b6453418bcc04df132754190ff72
+  Stored in directory: c:\users\admin\appdata\local\pip\cache\wheels\9c\aa\cc\f2228050ccb40f22144b073f15a2c84f11204f29fc0dce028e
+Successfully built parse
+Installing collected packages: parse
+Successfully installed parse-1.19.0
+
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>python WebCrawler.py 20 stopwords.txt
+----------------------------------------------------------------------
+Seed URL: http://lyle.smu.edu/~fmoore
+Page limit: 20
+Stop words: stopwords.txt
+----------------------------------------------------------------------
+Beginning crawling...
+
+robots.txt: Disallowed['/~fmoore/dontgohere/'] Allowed[]
+
+Traceback (most recent call last):
+  File "WebCrawler.py", line 307, in <module>
+    crawler.crawl()
+  File "WebCrawler.py", line 163, in crawl
+    soup = BeautifulSoup(current_content, "lxml")
+  File "C:\ProgramData\Anaconda3\envs\websearch\lib\site-packages\beautifulsoup4-4.10.0-py3.7.egg\bs4\__init__.py", line 248, in __init__
+    % ",".join(features))
+bs4.FeatureNotFound: Couldn't find a tree builder with the features you requested: lxml. Do you need to install a parser library?
+
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>python WebCrawler.py 20 stopwords.txt
+----------------------------------------------------------------------
+Seed URL: http://lyle.smu.edu/~fmoore
+Page limit: 20
+Stop words: stopwords.txt
+----------------------------------------------------------------------
+Beginning crawling...
+
+robots.txt: Disallowed['/~fmoore/dontgohere/'] Allowed[]
+
+WebCrawler.py:163: GuessedAtParserWarning: No parser was explicitly specified, so I'm using the best available HTML parser for this system ("html.parser"). This usually isn't a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
+
+The code that caused this warning is on line 163 of the file WebCrawler.py. To get rid of this warning, pass the additional argument 'features="html.parser"' to the BeautifulSoup constructor.
+
+  soup = BeautifulSoup(current_content, "html")
+1. Visiting: /~fmoore/ (Freeman Moore - SMU Summer 2020)
+
+Done crawling.
+----------------------------------------------------------------------
+Visited URLs: 1
+
+Outgoing URLs:
+  +  http://lyle.smu.edu
+
+Broken URLs:
+  +  mailto:fmoore@lyle.smu.edu
+
+Graphic URLs:
+  +
+
+Duplicate URLs:
+
+----------------------------------------------------------------------
+
+Building Term Frequency matrix...
+
+Most Common Stemmed Terms:
+
+Term                       Term Frequency        Document Frequency
+----                       --------------        ------------------
+1. moor                                 4                         1
+2. freeman                              4                         1
+3. summer                               2                         1
+4. site                                 2                         1
+5. not                                  2                         1
+6. fmoorelylesmuedu                         2                         1
+7. fall                                 2                         1
+8. email                                2                         1
+9. dr                                   2                         1
+10. cs                                  2                         1
+11. and                                 2                         1
+12. web                                 1                         1
+13. univers                             1                         1
+14. teach                               1                         1
+15. spring                              1                         1
+16. southern                            1                         1
+17. sole                                1                         1
+18. smu                                 1                         1
+19. respons                             1                         1
+20. repres                              1                         1
+----------------------------------------------------------------------
+
+Complete frequency matrix has been exported to tf_matrix.csv
+
+
+Goodbye!
+
+
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>jupyter notebook
+[I 2021-10-13 22:18:13.692 LabApp] JupyterLab extension loaded from C:\ProgramData\Anaconda3\lib\site-packages\jupyterlab
+[I 2021-10-13 22:18:13.693 LabApp] JupyterLab application directory is C:\ProgramData\Anaconda3\share\jupyter\lab
+[I 22:18:13.848 NotebookApp] Serving notebooks from local directory: D:\Minor_Project\Web-Crawler\Web-Crawler-part1
+[I 22:18:13.848 NotebookApp] Jupyter Notebook 6.4.3 is running at:
+[I 22:18:13.850 NotebookApp] http://localhost:8888/?token=a3ab3dbc2d800fb035e3faf7bdd29a93ee87217935055732
+[I 22:18:13.852 NotebookApp]  or http://127.0.0.1:8888/?token=a3ab3dbc2d800fb035e3faf7bdd29a93ee87217935055732
+[I 22:18:13.853 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 22:18:27.002 NotebookApp]
+
+    To access the notebook, open this file in a browser:
+        file:///C:/Users/Admin/AppData/Roaming/jupyter/runtime/nbserver-22408-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=a3ab3dbc2d800fb035e3faf7bdd29a93ee87217935055732
+     or http://127.0.0.1:8888/?token=a3ab3dbc2d800fb035e3faf7bdd29a93ee87217935055732
+C:\ProgramData\Anaconda3\lib\json\encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[I 22:19:40.277 NotebookApp] Creating new notebook in
+Exception in callback <TaskWakeupMethWrapper object at 0x000001D4BF9284C8>(<Future finished result=None>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x000001D4BF9284C8>(<Future finished result=None>)>
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending coro=<HTTP1ServerConnection._server_request_loop() running at C:\ProgramData\Anaconda3\lib\site-packages\tornado\http1connection.py:823> wait_for=<Future finished result=None> cb=[IOLoop.add_future.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\ioloop.py:688]> while another task <Task pending coro=<MappingKernelManager.start_kernel() running at C:\ProgramData\Anaconda3\lib\site-packages\notebook\services\kernels\kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\ioloop.py:688]> is being executed.
+Exception in callback <TaskWakeupMethWrapper object at 0x000001D4BF840F18>(<Future finis...m is closed')>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x000001D4BF840F18>(<Future finis...m is closed')>)>
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending coro=<HTTP1ServerConnection._server_request_loop() running at C:\ProgramData\Anaconda3\lib\site-packages\tornado\http1connection.py:823> wait_for=<Future finished exception=StreamClosedError('Stream is closed')> cb=[IOLoop.add_future.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\ioloop.py:688]> while another task <Task pending coro=<MappingKernelManager.start_kernel() running at C:\ProgramData\Anaconda3\lib\site-packages\notebook\services\kernels\kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\ioloop.py:688]> is being executed.
+Exception in callback <TaskWakeupMethWrapper object at 0x000001D4BF47BE28>(<Future finis...m is closed')>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x000001D4BF47BE28>(<Future finis...m is closed')>)>
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending coro=<HTTP1ServerConnection._server_request_loop() running at C:\ProgramData\Anaconda3\lib\site-packages\tornado\http1connection.py:823> wait_for=<Future finished exception=StreamClosedError('Stream is closed')> cb=[IOLoop.add_future.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\ioloop.py:688]> while another task <Task pending coro=<MappingKernelManager.start_kernel() running at C:\ProgramData\Anaconda3\lib\site-packages\notebook\services\kernels\kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\ioloop.py:688]> is being executed.
+Exception in callback <TaskWakeupMethWrapper object at 0x000001D4BF928318>(<Future finis...m is closed')>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x000001D4BF928318>(<Future finis...m is closed')>)>
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending coro=<HTTP1ServerConnection._server_request_loop() running at C:\ProgramData\Anaconda3\lib\site-packages\tornado\http1connection.py:823> wait_for=<Future finished exception=StreamClosedError('Stream is closed')> cb=[IOLoop.add_future.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\ioloop.py:688]> while another task <Task pending coro=<MappingKernelManager.start_kernel() running at C:\ProgramData\Anaconda3\lib\site-packages\notebook\services\kernels\kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\ioloop.py:688]> is being executed.
+Exception in callback <TaskWakeupMethWrapper object at 0x000001D4BF928468>(<Future finis...m is closed')>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x000001D4BF928468>(<Future finis...m is closed')>)>
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending coro=<HTTP1ServerConnection._server_request_loop() running at C:\ProgramData\Anaconda3\lib\site-packages\tornado\http1connection.py:823> wait_for=<Future finished exception=StreamClosedError('Stream is closed')> cb=[IOLoop.add_future.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\ioloop.py:688]> while another task <Task pending coro=<MappingKernelManager.start_kernel() running at C:\ProgramData\Anaconda3\lib\site-packages\notebook\services\kernels\kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\ioloop.py:688]> is being executed.
+[I 22:20:16.584 NotebookApp] Kernel started: b2606c07-72ca-429e-8cba-84813fcd1619, name: python3
+[I 22:22:27.504 NotebookApp] Saving file at /MyBrowser.ipynb
+[I 22:27:27.326 NotebookApp] Interrupted...
+[I 22:27:27.916 NotebookApp] Shutting down 1 kernel
+[I 22:27:27.916 NotebookApp] Kernel shutdown: b2606c07-72ca-429e-8cba-84813fcd1619
+[I 22:27:29.209 NotebookApp] Starting buffering for b2606c07-72ca-429e-8cba-84813fcd1619:47b82dc8507041dc9a0c8caee98c3849
+[I 22:27:29.214 NotebookApp] Kernel shutdown: b2606c07-72ca-429e-8cba-84813fcd1619
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\Scripts\jupyter-notebook-script.py", line 10, in <module>
+    sys.exit(main())
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_core\application.py", line 254, in launch_instance
+    return super(JupyterApp, cls).launch_instance(argv=argv, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\traitlets\config\application.py", line 845, in launch_instance
+    app.start()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\notebook\notebookapp.py", line 2361, in start
+    self.cleanup_kernels()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\notebook\notebookapp.py", line 2140, in cleanup_kernels
+    run_sync(self.kernel_manager.shutdown_all())
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\utils.py", line 25, in wrapped
+    return loop.run_until_complete(coro(*args, **kwargs))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nest_asyncio.py", line 70, in run_until_complete
+    return f.result()
+  File "C:\ProgramData\Anaconda3\lib\asyncio\futures.py", line 178, in result
+    raise self._exception
+  File "C:\ProgramData\Anaconda3\lib\asyncio\tasks.py", line 219, in __step
+    result = coro.send(None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\multikernelmanager.py", line 257, in _async_shutdown_all
+    futs = [ensure_async(self.shutdown_kernel(kid, now=now)) for kid in kids]
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\multikernelmanager.py", line 257, in <listcomp>
+    futs = [ensure_async(self.shutdown_kernel(kid, now=now)) for kid in kids]
+  File "C:\ProgramData\Anaconda3\lib\site-packages\notebook\services\kernels\kernelmanager.py", line 304, in shutdown_kernel
+    self.pinned_superclass.shutdown_kernel(self, kernel_id, now=now, restart=restart)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\utils.py", line 25, in wrapped
+    return loop.run_until_complete(coro(*args, **kwargs))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nest_asyncio.py", line 70, in run_until_complete
+    return f.result()
+  File "C:\ProgramData\Anaconda3\lib\asyncio\futures.py", line 178, in result
+    raise self._exception
+  File "C:\ProgramData\Anaconda3\lib\asyncio\tasks.py", line 219, in __step
+    result = coro.send(None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\multikernelmanager.py", line 217, in _async_shutdown_kernel
+    self.remove_kernel(kernel_id)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\multikernelmanager.py", line 247, in remove_kernel
+    return self._kernels.pop(kernel_id)
+KeyError: 'b2606c07-72ca-429e-8cba-84813fcd1619'
+
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>pip install PyQt5
+Collecting PyQt5
+  Downloading PyQt5-5.15.4-cp36.cp37.cp38.cp39-none-win_amd64.whl (6.8 MB)
+     |████████████████████████████████| 6.8 MB 61 kB/s
+Collecting PyQt5-Qt5>=5.15
+  Downloading PyQt5_Qt5-5.15.2-py3-none-win_amd64.whl (50.1 MB)
+     |████████████████████████████████| 50.1 MB 3.8 kB/s
+Collecting PyQt5-sip<13,>=12.8
+  Downloading PyQt5_sip-12.9.0-cp37-cp37m-win_amd64.whl (62 kB)
+     |████████████████████████████████| 62 kB 23 kB/s
+Installing collected packages: PyQt5-sip, PyQt5-Qt5, PyQt5
+Successfully installed PyQt5-5.15.4 PyQt5-Qt5-5.15.2 PyQt5-sip-12.9.0
+
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>jupyter notebook
+[I 2021-10-13 22:41:31.214 LabApp] JupyterLab extension loaded from C:\ProgramData\Anaconda3\lib\site-packages\jupyterlab
+[I 2021-10-13 22:41:31.214 LabApp] JupyterLab application directory is C:\ProgramData\Anaconda3\share\jupyter\lab
+[I 22:41:31.236 NotebookApp] Serving notebooks from local directory: D:\Minor_Project\Web-Crawler\Web-Crawler-part1
+[I 22:41:31.236 NotebookApp] Jupyter Notebook 6.4.3 is running at:
+[I 22:41:31.237 NotebookApp] http://localhost:8888/?token=91ef44e0cedff72a1e554e20995c60e2cf7dfab1f9a707a9
+[I 22:41:31.239 NotebookApp]  or http://127.0.0.1:8888/?token=91ef44e0cedff72a1e554e20995c60e2cf7dfab1f9a707a9
+[I 22:41:31.239 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 22:41:31.779 NotebookApp]
+
+    To access the notebook, open this file in a browser:
+        file:///C:/Users/Admin/AppData/Roaming/jupyter/runtime/nbserver-19308-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=91ef44e0cedff72a1e554e20995c60e2cf7dfab1f9a707a9
+     or http://127.0.0.1:8888/?token=91ef44e0cedff72a1e554e20995c60e2cf7dfab1f9a707a9
+C:\ProgramData\Anaconda3\lib\json\encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[W 22:43:16.308 NotebookApp] Notebook MyBrowser.ipynb is not trusted
+Exception in callback <TaskStepMethWrapper object at 0x0000015CC4192EB8>()
+handle: <Handle <TaskStepMethWrapper object at 0x0000015CC4192EB8>()>
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending coro=<RequestHandler._execute() running at C:\ProgramData\Anaconda3\lib\site-packages\tornado\web.py:1660> cb=[_HandlerDelegate.execute.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\web.py:2326]> while another task <Task pending coro=<MappingKernelManager.start_kernel() running at C:\ProgramData\Anaconda3\lib\site-packages\notebook\services\kernels\kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\ioloop.py:688]> is being executed.
+Exception in callback <TaskStepMethWrapper object at 0x0000015CC418D8D0>()
+handle: <Handle <TaskStepMethWrapper object at 0x0000015CC418D8D0>()>
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending coro=<RequestHandler._execute() running at C:\ProgramData\Anaconda3\lib\site-packages\tornado\web.py:1660> cb=[_HandlerDelegate.execute.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\web.py:2326]> while another task <Task pending coro=<MappingKernelManager.start_kernel() running at C:\ProgramData\Anaconda3\lib\site-packages\notebook\services\kernels\kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\ioloop.py:688]> is being executed.
+Exception in callback <TaskStepMethWrapper object at 0x0000015CC418D4A8>()
+handle: <Handle <TaskStepMethWrapper object at 0x0000015CC418D4A8>()>
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending coro=<RequestHandler._execute() running at C:\ProgramData\Anaconda3\lib\site-packages\tornado\web.py:1660> cb=[_HandlerDelegate.execute.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\web.py:2326]> while another task <Task pending coro=<MappingKernelManager.start_kernel() running at C:\ProgramData\Anaconda3\lib\site-packages\notebook\services\kernels\kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\ioloop.py:688]> is being executed.
+C:\ProgramData\Anaconda3\lib\site-packages\traitlets\traitlets.py:234: RuntimeWarning: coroutine 'RequestHandler._execute' was never awaited
+  results.append((key, value))
+Task was destroyed but it is pending!
+task: <Task pending coro=<RequestHandler._execute() running at C:\ProgramData\Anaconda3\lib\site-packages\tornado\web.py:1660> cb=[_HandlerDelegate.execute.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\web.py:2326]>
+Task was destroyed but it is pending!
+task: <Task pending coro=<RequestHandler._execute() running at C:\ProgramData\Anaconda3\lib\site-packages\tornado\web.py:1660> cb=[_HandlerDelegate.execute.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\web.py:2326]>
+Task was destroyed but it is pending!
+task: <Task pending coro=<RequestHandler._execute() running at C:\ProgramData\Anaconda3\lib\site-packages\tornado\web.py:1660> cb=[_HandlerDelegate.execute.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\web.py:2326]>
+Exception in callback <TaskWakeupMethWrapper object at 0x0000015CC42126A8>(<Future finis... GMT\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x0000015CC42126A8>(<Future finis... GMT\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending coro=<HTTP1ServerConnection._server_request_loop() running at C:\ProgramData\Anaconda3\lib\site-packages\tornado\http1connection.py:823> wait_for=<Future finished result=b'GET /static...5 GMT\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\ioloop.py:688]> while another task <Task pending coro=<KernelManager._async_start_kernel() running at C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\manager.py:335>> is being executed.
+[I 22:43:19.594 NotebookApp] Kernel started: cd06ed2b-6981-43e4-882c-ae3a15288259, name: python3
+[W 23:39:44.932 NotebookApp] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20211013224050 (::1) 80.020000ms referer=http://localhost:8888/notebooks/MyBrowser.ipynb
+[I 23:57:12.529 NotebookApp] Saving file at /MyBrowser.ipynb
+[I 00:00:28.223 NotebookApp] Interrupted...
+[I 00:00:28.346 NotebookApp] Shutting down 1 kernel
+[I 00:00:28.351 NotebookApp] Kernel shutdown: cd06ed2b-6981-43e4-882c-ae3a15288259
+[I 00:00:28.576 NotebookApp] Starting buffering for cd06ed2b-6981-43e4-882c-ae3a15288259:c57b968b47df4a0db9458746fbfff993
+[I 00:00:28.596 NotebookApp] Kernel shutdown: cd06ed2b-6981-43e4-882c-ae3a15288259
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\Scripts\jupyter-notebook-script.py", line 10, in <module>
+    sys.exit(main())
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_core\application.py", line 254, in launch_instance
+    return super(JupyterApp, cls).launch_instance(argv=argv, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\traitlets\config\application.py", line 845, in launch_instance
+    app.start()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\notebook\notebookapp.py", line 2361, in start
+    self.cleanup_kernels()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\notebook\notebookapp.py", line 2140, in cleanup_kernels
+    run_sync(self.kernel_manager.shutdown_all())
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\utils.py", line 25, in wrapped
+    return loop.run_until_complete(coro(*args, **kwargs))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nest_asyncio.py", line 70, in run_until_complete
+    return f.result()
+  File "C:\ProgramData\Anaconda3\lib\asyncio\futures.py", line 178, in result
+    raise self._exception
+  File "C:\ProgramData\Anaconda3\lib\asyncio\tasks.py", line 219, in __step
+    result = coro.send(None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\multikernelmanager.py", line 257, in _async_shutdown_all
+    futs = [ensure_async(self.shutdown_kernel(kid, now=now)) for kid in kids]
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\multikernelmanager.py", line 257, in <listcomp>
+    futs = [ensure_async(self.shutdown_kernel(kid, now=now)) for kid in kids]
+  File "C:\ProgramData\Anaconda3\lib\site-packages\notebook\services\kernels\kernelmanager.py", line 304, in shutdown_kernel
+    self.pinned_superclass.shutdown_kernel(self, kernel_id, now=now, restart=restart)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\utils.py", line 25, in wrapped
+    return loop.run_until_complete(coro(*args, **kwargs))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nest_asyncio.py", line 70, in run_until_complete
+    return f.result()
+  File "C:\ProgramData\Anaconda3\lib\asyncio\futures.py", line 178, in result
+    raise self._exception
+  File "C:\ProgramData\Anaconda3\lib\asyncio\tasks.py", line 219, in __step
+    result = coro.send(None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\multikernelmanager.py", line 217, in _async_shutdown_kernel
+    self.remove_kernel(kernel_id)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\multikernelmanager.py", line 247, in remove_kernel
+    return self._kernels.pop(kernel_id)
+KeyError: 'cd06ed2b-6981-43e4-882c-ae3a15288259'
+
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>pip install PyQtWebEngine
+Collecting PyQtWebEngine
+  Downloading PyQtWebEngine-5.15.4-cp36.cp37.cp38.cp39-none-win_amd64.whl (182 kB)
+     |████████████████████████████████| 182 kB 930 kB/s
+Requirement already satisfied: PyQt5>=5.15.4 in c:\programdata\anaconda3\envs\websearch\lib\site-packages (from PyQtWebEngine) (5.15.4)
+Collecting PyQtWebEngine-Qt5>=5.15
+  Downloading PyQtWebEngine_Qt5-5.15.2-py3-none-win_amd64.whl (60.0 MB)
+     |████████████████████████████████| 60.0 MB 80 kB/s
+Requirement already satisfied: PyQt5-sip<13,>=12.8 in c:\programdata\anaconda3\envs\websearch\lib\site-packages (from PyQtWebEngine) (12.9.0)
+Requirement already satisfied: PyQt5-Qt5>=5.15 in c:\programdata\anaconda3\envs\websearch\lib\site-packages (from PyQt5>=5.15.4->PyQtWebEngine) (5.15.2)
+Installing collected packages: PyQtWebEngine-Qt5, PyQtWebEngine
+Successfully installed PyQtWebEngine-5.15.4 PyQtWebEngine-Qt5-5.15.2
+
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>jupyter notebook
+[I 2021-10-14 00:11:26.935 LabApp] JupyterLab extension loaded from C:\ProgramData\Anaconda3\lib\site-packages\jupyterlab
+[I 2021-10-14 00:11:26.935 LabApp] JupyterLab application directory is C:\ProgramData\Anaconda3\share\jupyter\lab
+[I 00:11:26.977 NotebookApp] Serving notebooks from local directory: D:\Minor_Project\Web-Crawler\Web-Crawler-part1
+[I 00:11:26.977 NotebookApp] Jupyter Notebook 6.4.3 is running at:
+[I 00:11:27.034 NotebookApp] http://localhost:8888/?token=56d23f6084caca937eb541f29390b475e1373ad8c020e796
+[I 00:11:27.034 NotebookApp]  or http://127.0.0.1:8888/?token=56d23f6084caca937eb541f29390b475e1373ad8c020e796
+[I 00:11:27.034 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 00:11:27.804 NotebookApp]
+
+    To access the notebook, open this file in a browser:
+        file:///C:/Users/Admin/AppData/Roaming/jupyter/runtime/nbserver-16948-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=56d23f6084caca937eb541f29390b475e1373ad8c020e796
+     or http://127.0.0.1:8888/?token=56d23f6084caca937eb541f29390b475e1373ad8c020e796
+C:\ProgramData\Anaconda3\lib\json\encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+Exception in callback <TaskWakeupMethWrapper object at 0x000001290D1CBB28>(<Future finis...f75"\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x000001290D1CBB28>(<Future finis...f75"\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending coro=<HTTP1ServerConnection._server_request_loop() running at C:\ProgramData\Anaconda3\lib\site-packages\tornado\http1connection.py:823> wait_for=<Future finished result=b'GET /api/co...6f75"\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at C:\ProgramData\Anaconda3\lib\site-packages\tornado\ioloop.py:688]> while another task <Task pending coro=<KernelManager._async_start_kernel() running at C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\manager.py:335>> is being executed.
+[I 00:13:14.985 NotebookApp] Kernel started: f143db5b-812d-4541-9313-d4720ab3f567, name: python3
+[I 00:15:14.737 NotebookApp] Saving file at /MyBrowser.ipynb
+[I 00:17:14.732 NotebookApp] Saving file at /MyBrowser.ipynb
+[I 00:19:14.726 NotebookApp] Saving file at /MyBrowser.ipynb
+[I 00:21:14.726 NotebookApp] Saving file at /MyBrowser.ipynb
+[I 00:27:14.734 NotebookApp] Saving file at /MyBrowser.ipynb
+[I 00:29:14.725 NotebookApp] Saving file at /MyBrowser.ipynb
+[I 00:33:14.245 NotebookApp] Saving file at /MyBrowser.ipynb
+[I 00:35:14.249 NotebookApp] Saving file at /MyBrowser.ipynb
+[I 00:37:14.251 NotebookApp] Saving file at /MyBrowser.ipynb
+[I 00:39:14.249 NotebookApp] Saving file at /MyBrowser.ipynb
+[I 00:41:14.730 NotebookApp] Saving file at /MyBrowser.ipynb
+[I 00:43:14.239 NotebookApp] Saving file at /MyBrowser.ipynb
+[I 00:45:14.726 NotebookApp] Saving file at /MyBrowser.ipynb
+[I 00:47:14.242 NotebookApp] Saving file at /MyBrowser.ipynb
+[I 00:49:14.242 NotebookApp] Saving file at /MyBrowser.ipynb
+[I 00:51:14.250 NotebookApp] Saving file at /MyBrowser.ipynb
+Warning: QT_DEVICE_PIXEL_RATIO is deprecated. Instead use:
+   QT_AUTO_SCREEN_SCALE_FACTOR to enable platform plugin controlled per-screen factors.
+   QT_SCREEN_SCALE_FACTORS to set per-screen factors.
+   QT_SCALE_FACTOR to set the application global scale factor.
+js: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+[I 00:53:14.254 NotebookApp] Saving file at /MyBrowser.ipynb
+js: Uncaught TypeError: $(...).ui_uhd_images is not a function
+js: Uncaught TypeError: $(...).ui_uhd_images is not a function
+[I 00:55:14.261 NotebookApp] Saving file at /MyBrowser.ipynb
+[I 01:02:15.729 NotebookApp] Starting buffering for f143db5b-812d-4541-9313-d4720ab3f567:83ea67b181964b0387d304643e22c108
+[I 01:02:26.975 NotebookApp] Interrupted...
+[I 01:02:27.031 NotebookApp] Shutting down 1 kernel
+[I 01:02:27.051 NotebookApp] Kernel shutdown: f143db5b-812d-4541-9313-d4720ab3f567
+[I 01:02:29.587 NotebookApp] Shutting down 0 terminals
+
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>pip install flask
+Collecting flask
+  Downloading Flask-2.0.2-py3-none-any.whl (95 kB)
+     |████████████████████████████████| 95 kB 466 kB/s
+Collecting itsdangerous>=2.0
+  Downloading itsdangerous-2.0.1-py3-none-any.whl (18 kB)
+Requirement already satisfied: click>=7.1.2 in c:\programdata\anaconda3\envs\websearch\lib\site-packages\click-8.0.2-py3.7.egg (from flask) (8.0.2)
+Collecting Werkzeug>=2.0
+  Downloading Werkzeug-2.0.2-py3-none-any.whl (288 kB)
+     |████████████████████████████████| 288 kB 2.2 MB/s
+Collecting Jinja2>=3.0
+  Downloading Jinja2-3.0.2-py3-none-any.whl (133 kB)
+     |████████████████████████████████| 133 kB 3.3 MB/s
+Requirement already satisfied: colorama in c:\programdata\anaconda3\envs\websearch\lib\site-packages\colorama-0.4.4-py3.7.egg (from click>=7.1.2->flask) (0.4.4)
+Requirement already satisfied: importlib-metadata in c:\programdata\anaconda3\envs\websearch\lib\site-packages\importlib_metadata-4.8.1-py3.7.egg (from click>=7.1.2->flask) (4.8.1)
+Collecting MarkupSafe>=2.0
+  Using cached MarkupSafe-2.0.1-cp37-cp37m-win_amd64.whl (14 kB)
+Requirement already satisfied: typing-extensions>=3.6.4 in c:\programdata\anaconda3\envs\websearch\lib\site-packages\typing_extensions-3.10.0.2-py3.7.egg (from importlib-metadata->click>=7.1.2->flask) (3.10.0.2)
+Requirement already satisfied: zipp>=0.5 in c:\programdata\anaconda3\envs\websearch\lib\site-packages\zipp-3.6.0-py3.7.egg (from importlib-metadata->click>=7.1.2->flask) (3.6.0)
+Installing collected packages: MarkupSafe, Werkzeug, Jinja2, itsdangerous, flask
+Successfully installed Jinja2-3.0.2 MarkupSafe-2.0.1 Werkzeug-2.0.2 flask-2.0.2 itsdangerous-2.0.1
+
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>python
+Python 3.7.6 (default, Jan  8 2020, 20:23:39) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import flask
+>>> ^Z
+
+
+(websearch) D:\Minor_Project\Web-Crawler\Web-Crawler-part1>cd..
+
+(websearch) D:\Minor_Project\Web-Crawler>cd..
+
+(websearch) D:\Minor_Project>cd Search-Engine-Flask-main
+
+(websearch) D:\Minor_Project\Search-Engine-Flask-main>ls
+README.md  app.py  search.py  templates
+
+(websearch) D:\Minor_Project\Search-Engine-Flask-main>python app.py
+Traceback (most recent call last):
+  File "app.py", line 2, in <module>
+    from search import search
+  File "D:\Minor_Project\Search-Engine-Flask-main\search.py", line 3, in <module>
+    from requests import get
+ModuleNotFoundError: No module named 'requests'
+
+(websearch) D:\Minor_Project\Search-Engine-Flask-main> pip install requests
+Collecting requests
+  Using cached requests-2.26.0-py2.py3-none-any.whl (62 kB)
+Requirement already satisfied: certifi>=2017.4.17 in c:\programdata\anaconda3\envs\websearch\lib\site-packages (from requests) (2021.5.30)
+Collecting charset-normalizer~=2.0.0
+  Downloading charset_normalizer-2.0.7-py3-none-any.whl (38 kB)
+Collecting urllib3<1.27,>=1.21.1
+  Downloading urllib3-1.26.7-py2.py3-none-any.whl (138 kB)
+     |████████████████████████████████| 138 kB 344 kB/s
+Collecting idna<4,>=2.5
+  Downloading idna-3.3-py3-none-any.whl (61 kB)
+     |████████████████████████████████| 61 kB 192 kB/s
+Installing collected packages: urllib3, idna, charset-normalizer, requests
+Successfully installed charset-normalizer-2.0.7 idna-3.3 requests-2.26.0 urllib3-1.26.7
+
+(websearch) D:\Minor_Project\Search-Engine-Flask-main>python app.py
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 113-317-223
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+127.0.0.1 - - [15/Oct/2021 05:22:39] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Oct/2021 05:22:48] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [15/Oct/2021 05:28:13] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [15/Oct/2021 05:28:13] "GET /search HTTP/1.1" 200 -
+
+(websearch) D:\Minor_Project\Search-Engine-Flask-main>
+
+conda deactivate //used to desactivate the virtual environment

@@ -1,0 +1,2035 @@
+
+(base) C:\WINDOWS\system32>conda info --envs
+# conda environments:
+#
+base                  *  C:\ProgramData\Anaconda3
+Tensorflow               C:\ProgramData\Anaconda3\envs\Tensorflow
+websearch                C:\ProgramData\Anaconda3\envs\websearch
+
+
+(base) C:\WINDOWS\system32>desativate
+'desativate' is not recognized as an internal or external command,
+operable program or batch file.
+
+(base) C:\WINDOWS\system32>deactivate base
+DeprecationWarning: 'deactivate' is deprecated. Use 'conda deactivate'.
+
+(base) C:\WINDOWS\system32>conda.bat deactivate base
+deactivate does not accept arguments
+remainder_args: ['base']
+
+
+(base) C:\WINDOWS\system32>conda.bat deactivate base
+deactivate does not accept arguments
+remainder_args: ['base']
+
+
+(base) C:\WINDOWS\system32>conda deactivate
+
+C:\WINDOWS\system32>D:
+
+D:\>cd D:\Analytics\Deep_learning_Tuto\potato_disease\training
+
+D:\Analytics\Deep_learning_Tuto\potato_disease\training>ls
+
+D:\Analytics\Deep_learning_Tuto\potato_disease\training>conda info --envs
+# conda environments:
+#
+base                  *  C:\ProgramData\Anaconda3
+Tensorflow               C:\ProgramData\Anaconda3\envs\Tensorflow
+websearch                C:\ProgramData\Anaconda3\envs\websearch
+
+
+D:\Analytics\Deep_learning_Tuto\potato_disease\training>activate Tensorflow
+
+D:\Analytics\Deep_learning_Tuto\potato_disease\training>conda.bat activate Tensorflow
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>jupyter notebook
+[I 2024-02-03 05:12:52.658 LabApp] JupyterLab extension loaded from C:\ProgramData\Anaconda3\lib\site-packages\jupyterlab
+[I 2024-02-03 05:12:52.659 LabApp] JupyterLab application directory is C:\ProgramData\Anaconda3\share\jupyter\lab
+[I 05:12:52.683 NotebookApp] Serving notebooks from local directory: D:\Analytics\Deep_learning_Tuto\potato_disease\training
+[I 05:12:52.683 NotebookApp] Jupyter Notebook 6.3.0 is running at:
+[I 05:12:52.686 NotebookApp] http://localhost:8888/?token=1a43769a30584f48be0e685c684d2c8fb014532d48082bec
+[I 05:12:52.690 NotebookApp]  or http://127.0.0.1:8888/?token=1a43769a30584f48be0e685c684d2c8fb014532d48082bec
+[I 05:12:52.691 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 05:12:53.102 NotebookApp]
+
+    To access the notebook, open this file in a browser:
+        file:///C:/Users/Admin/AppData/Roaming/jupyter/runtime/nbserver-14264-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=1a43769a30584f48be0e685c684d2c8fb014532d48082bec
+     or http://127.0.0.1:8888/?token=1a43769a30584f48be0e685c684d2c8fb014532d48082bec
+[I 05:13:34.626 NotebookApp] Creating new notebook in
+[I 05:13:42.369 NotebookApp] Kernel started: eafac1b1-3719-4c95-a1be-98621713ac68, name: python3
+[I 05:15:42.871 NotebookApp] Saving file at /training.ipynb
+[I 05:17:42.851 NotebookApp] Saving file at /training.ipynb
+2024-02-03 05:18:06.639038: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2024-02-03 05:18:06.639575: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+[I 05:19:42.880 NotebookApp] Saving file at /training.ipynb
+[I 05:23:42.257 NotebookApp] Saving file at /training.ipynb
+[I 05:25:42.236 NotebookApp] Saving file at /training.ipynb
+[I 05:26:52.958 NotebookApp] Kernel interrupted: eafac1b1-3719-4c95-a1be-98621713ac68
+[I 05:27:42.232 NotebookApp] Saving file at /training.ipynb
+[I 05:31:42.229 NotebookApp] Saving file at /training.ipynb
+[I 05:32:30.374 NotebookApp] Interrupted...
+[I 05:32:30.376 NotebookApp] Shutting down 1 kernel
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\Scripts\jupyter-notebook-script.py", line 10, in <module>
+    sys.exit(main())
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_core\application.py", line 254, in launch_instance
+    return super(JupyterApp, cls).launch_instance(argv=argv, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\traitlets\config\application.py", line 845, in launch_instance
+    app.start()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\notebook\notebookapp.py", line 2361, in start
+    self.cleanup_kernels()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\notebook\notebookapp.py", line 2146, in cleanup_kernels
+    run_sync(self.kernel_manager.shutdown_all())
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\multikernelmanager.py", line 252, in shutdown_all
+    self.finish_shutdown(kid)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\multikernelmanager.py", line 34, in wrapped
+    r = method(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\manager.py", line 383, in finish_shutdown
+    if poll_or_sleep_to_kernel_gone():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\manager.py", line 373, in poll_or_sleep_to_kernel_gone
+    time.sleep(pollinterval)
+KeyboardInterrupt
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>pip install protobuf==3.20.*
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Collecting protobuf==3.20.*
+  Using cached protobuf-3.20.3-cp37-cp37m-win_amd64.whl (905 kB)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+DEPRECATION: pyodbc 4.0.0-unsupported has a non-standard version number. pip 24.0 will enforce this behaviour change. A possible replacement is to upgrade to a newer version of pyodbc or contact the author to suggest that they release a version with a conforming version number. Discussion can be found at https://github.com/pypa/pip/issues/12063
+Installing collected packages: protobuf
+  Attempting uninstall: protobuf
+    Found existing installation: protobuf 3.19.0
+    Uninstalling protobuf-3.19.0:
+      Successfully uninstalled protobuf-3.19.0
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+apache-beam 2.32.0 requires avro-python3!=1.9.2,<1.10.0,>=1.8.1, but you have avro-python3 1.10.2 which is incompatible.
+apache-beam 2.32.0 requires typing-extensions<3.8.0,>=3.7.0, but you have typing-extensions 3.10.0.2 which is incompatible.
+Successfully installed protobuf-3.17.3
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>pip install protobuf==3.19.0 --user
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Collecting protobuf==3.19.0
+  Using cached protobuf-3.19.0-cp37-cp37m-win_amd64.whl (896 kB)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+DEPRECATION: pyodbc 4.0.0-unsupported has a non-standard version number. pip 24.0 will enforce this behaviour change. A possible replacement is to upgrade to a newer version of pyodbc or contact the author to suggest that they release a version with a conforming version number. Discussion can be found at https://github.com/pypa/pip/issues/12063
+Installing collected packages: protobuf
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+google-api-core 2.10.2 requires protobuf!=3.20.0,!=3.20.1,!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<5.0.0dev,>=3.19.5, but you have protobuf 3.19.0 which is incompatible.
+apache-beam 2.32.0 requires avro-python3!=1.9.2,<1.10.0,>=1.8.1, but you have avro-python3 1.10.2 which is incompatible.
+apache-beam 2.32.0 requires typing-extensions<3.8.0,>=3.7.0, but you have typing-extensions 3.10.0.2 which is incompatible.
+Successfully installed protobuf-3.19.0
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>jupyter notebook training.ipynb
+[W 2024-02-03 05:34:57.655 LabApp] 'file_to_run' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2024-02-03 05:34:57.655 LabApp] 'file_to_run' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[I 2024-02-03 05:34:57.683 LabApp] JupyterLab extension loaded from C:\ProgramData\Anaconda3\lib\site-packages\jupyterlab
+[I 2024-02-03 05:34:57.683 LabApp] JupyterLab application directory is C:\ProgramData\Anaconda3\share\jupyter\lab
+[I 05:34:57.702 NotebookApp] Serving notebooks from local directory: D:\Analytics\Deep_learning_Tuto\potato_disease\training
+[I 05:34:57.703 NotebookApp] Jupyter Notebook 6.3.0 is running at:
+[I 05:34:57.704 NotebookApp] http://localhost:8888/?token=82f8ea9ee1900ca798b414fad746b1a3758408ee33c3262a
+[I 05:34:57.705 NotebookApp]  or http://127.0.0.1:8888/?token=82f8ea9ee1900ca798b414fad746b1a3758408ee33c3262a
+[I 05:34:57.708 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 05:34:58.120 NotebookApp]
+
+    To access the notebook, open this file in a browser:
+        file:///C:/Users/Admin/AppData/Roaming/jupyter/runtime/nbserver-13472-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=82f8ea9ee1900ca798b414fad746b1a3758408ee33c3262a
+     or http://127.0.0.1:8888/?token=82f8ea9ee1900ca798b414fad746b1a3758408ee33c3262a
+[W 05:34:58.131 NotebookApp] 404 GET /api/kernels/eafac1b1-3719-4c95-a1be-98621713ac68/channels?session_id=13d4f612d5804e7f889fdf649f9c0c22 (::1): Kernel does not exist: eafac1b1-3719-4c95-a1be-98621713ac68
+[W 05:34:58.265 NotebookApp] 404 GET /api/kernels/eafac1b1-3719-4c95-a1be-98621713ac68/channels?session_id=13d4f612d5804e7f889fdf649f9c0c22 (::1) 139.560000ms referer=None
+[W 05:35:05.525 NotebookApp] Notebook training.ipynb is not trusted
+[I 05:35:05.932 NotebookApp] Kernel started: 76fff72c-502e-4cd0-91b3-4e9ad0d2c572, name: python3
+2024-02-03 05:35:42.341830: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2024-02-03 05:35:42.342128: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+[I 05:37:05.874 NotebookApp] Saving file at /training.ipynb
+[I 05:47:05.861 NotebookApp] Saving file at /training.ipynb
+[I 05:49:05.846 NotebookApp] Saving file at /training.ipynb
+[I 05:51:05.858 NotebookApp] Saving file at /training.ipynb
+[I 05:53:05.854 NotebookApp] Saving file at /training.ipynb
+[I 05:53:44.268 NotebookApp] Saving file at /training.ipynb
+2024-02-03 05:54:33.850464: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'nvcuda.dll'; dlerror: nvcuda.dll not found
+2024-02-03 05:54:33.850766: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2024-02-03 05:54:33.862275: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:169] retrieving CUDA diagnostic information for host: LAPTOP-CJ9OV0AK
+2024-02-03 05:54:33.862776: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:176] hostname: LAPTOP-CJ9OV0AK
+2024-02-03 05:54:33.868314: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[I 05:54:41.005 NotebookApp] Saving file at /training.ipynb
+[I 05:55:28.122 NotebookApp] Interrupted...
+[I 05:55:28.124 NotebookApp] Shutting down 1 kernel
+[I 05:55:29.123 NotebookApp] Kernel shutdown: 76fff72c-502e-4cd0-91b3-4e9ad0d2c572
+[I 05:55:29.125 NotebookApp] Shutting down 0 terminals
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>jupyter notebook training.ipynb
+[W 2024-02-04 04:30:37.433 LabApp] 'file_to_run' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2024-02-04 04:30:37.434 LabApp] 'file_to_run' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[I 2024-02-04 04:30:37.444 LabApp] JupyterLab extension loaded from C:\ProgramData\Anaconda3\lib\site-packages\jupyterlab
+[I 2024-02-04 04:30:37.445 LabApp] JupyterLab application directory is C:\ProgramData\Anaconda3\share\jupyter\lab
+[I 04:30:37.451 NotebookApp] Serving notebooks from local directory: D:\Analytics\Deep_learning_Tuto\potato_disease\training
+[I 04:30:37.451 NotebookApp] Jupyter Notebook 6.3.0 is running at:
+[I 04:30:37.451 NotebookApp] http://localhost:8888/?token=7c7990eac29a2e9c73238f19c530de257881399f199ef0f4
+[I 04:30:37.452 NotebookApp]  or http://127.0.0.1:8888/?token=7c7990eac29a2e9c73238f19c530de257881399f199ef0f4
+[I 04:30:37.452 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 04:30:37.619 NotebookApp]
+
+    To access the notebook, open this file in a browser:
+        file:///C:/Users/Admin/AppData/Roaming/jupyter/runtime/nbserver-20988-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=7c7990eac29a2e9c73238f19c530de257881399f199ef0f4
+     or http://127.0.0.1:8888/?token=7c7990eac29a2e9c73238f19c530de257881399f199ef0f4
+[W 04:30:41.436 NotebookApp] Notebook training.ipynb is not trusted
+[I 04:30:41.624 NotebookApp] Kernel started: 7d5b34c5-4bac-4e85-a64c-6ab19878c7fb, name: python3
+[I 04:34:41.849 NotebookApp] Saving file at /training.ipynb
+2024-02-04 04:36:05.738267: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2024-02-04 04:36:05.738565: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2024-02-04 04:36:25.623720: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'nvcuda.dll'; dlerror: nvcuda.dll not found
+2024-02-04 04:36:25.624011: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2024-02-04 04:36:25.631650: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:169] retrieving CUDA diagnostic information for host: LAPTOP-CJ9OV0AK
+2024-02-04 04:36:25.632060: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:176] hostname: LAPTOP-CJ9OV0AK
+2024-02-04 04:36:25.633784: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[I 04:36:41.578 NotebookApp] Saving file at /training.ipynb
+[I 04:38:41.612 NotebookApp] Saving file at /training.ipynb
+[I 04:40:41.841 NotebookApp] Saving file at /training.ipynb
+[I 04:42:41.870 NotebookApp] Saving file at /training.ipynb
+[I 04:44:41.582 NotebookApp] Saving file at /training.ipynb
+[I 04:46:41.830 NotebookApp] Saving file at /training.ipynb
+[I 04:48:41.838 NotebookApp] Saving file at /training.ipynb
+[I 04:50:41.570 NotebookApp] Saving file at /training.ipynb
+[I 04:52:41.612 NotebookApp] Saving file at /training.ipynb
+[I 04:54:42.901 NotebookApp] Saving file at /training.ipynb
+[I 04:56:41.569 NotebookApp] Saving file at /training.ipynb
+[I 04:58:41.578 NotebookApp] Saving file at /training.ipynb
+[I 05:00:41.574 NotebookApp] Saving file at /training.ipynb
+[I 05:02:41.579 NotebookApp] Saving file at /training.ipynb
+[I 05:04:41.583 NotebookApp] Saving file at /training.ipynb
+[I 05:06:41.582 NotebookApp] Saving file at /training.ipynb
+[I 05:08:41.834 NotebookApp] Saving file at /training.ipynb
+[I 05:10:41.835 NotebookApp] Saving file at /training.ipynb
+[I 05:12:41.878 NotebookApp] Saving file at /training.ipynb
+[I 05:14:41.591 NotebookApp] Saving file at /training.ipynb
+[I 05:16:41.594 NotebookApp] Saving file at /training.ipynb
+[I 05:18:41.593 NotebookApp] Saving file at /training.ipynb
+[I 05:20:41.606 NotebookApp] Saving file at /training.ipynb
+[I 05:22:41.596 NotebookApp] Saving file at /training.ipynb
+[I 05:24:41.599 NotebookApp] Saving file at /training.ipynb
+[I 05:26:41.600 NotebookApp] Saving file at /training.ipynb
+[I 05:28:41.598 NotebookApp] Saving file at /training.ipynb
+[I 05:30:41.592 NotebookApp] Saving file at /training.ipynb
+[I 05:32:41.595 NotebookApp] Saving file at /training.ipynb
+[I 05:36:41.595 NotebookApp] Saving file at /training.ipynb
+[I 05:38:41.594 NotebookApp] Saving file at /training.ipynb
+[I 05:38:52.073 NotebookApp] Saving file at /training.ipynb
+[I 05:40:41.598 NotebookApp] Saving file at /training.ipynb
+[I 05:42:41.860 NotebookApp] Saving file at /training.ipynb
+[I 05:44:41.596 NotebookApp] Saving file at /training.ipynb
+[I 05:46:41.600 NotebookApp] Saving file at /training.ipynb
+[I 05:48:41.876 NotebookApp] Saving file at /training.ipynb
+[I 05:50:41.627 NotebookApp] Saving file at /training.ipynb
+[I 05:52:41.590 NotebookApp] Saving file at /training.ipynb
+[I 05:54:41.636 NotebookApp] Saving file at /training.ipynb
+[I 05:56:41.593 NotebookApp] Saving file at /training.ipynb
+[I 05:58:41.867 NotebookApp] Saving file at /training.ipynb
+[I 05:59:23.988 NotebookApp] Saving file at /training.ipynb
+[I 06:00:41.872 NotebookApp] Saving file at /training.ipynb
+[I 06:02:41.865 NotebookApp] Saving file at /training.ipynb
+[I 06:04:34.079 NotebookApp] Saving file at /training.ipynb
+[I 06:06:02.515 NotebookApp] Saving file at /training.ipynb
+[I 06:06:41.587 NotebookApp] Saving file at /training.ipynb
+[I 06:08:41.595 NotebookApp] Saving file at /training.ipynb
+[I 06:10:41.597 NotebookApp] Saving file at /training.ipynb
+[I 06:38:41.600 NotebookApp] Saving file at /training.ipynb
+[I 06:40:41.602 NotebookApp] Saving file at /training.ipynb
+[I 06:41:45.857 NotebookApp] Saving file at /training.ipynb
+[I 06:41:51.000 NotebookApp] Saving file at /training.ipynb
+forrtl: error (200): program aborting due to control-C event
+Image              PC                Routine            Line        Source
+libifcoremd.dll    00007FFEF47D3B58  Unknown               Unknown  Unknown
+KERNELBASE.dll     00007FFF69EE2D23  Unknown               Unknown  Unknown
+KERNEL32.DLL       00007FFF6BEB7344  Unknown               Unknown  Unknown
+ntdll.dll          00007FFF6C7026B1  Unknown               Unknown  Unknown
+[I 06:42:11.515 NotebookApp] Interrupted...
+[I 06:42:11.519 NotebookApp] Shutting down 1 kernel
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\Scripts\jupyter-notebook-script.py", line 10, in <module>
+    sys.exit(main())
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_core\application.py", line 254, in launch_instance
+    return super(JupyterApp, cls).launch_instance(argv=argv, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\traitlets\config\application.py", line 845, in launch_instance
+    app.start()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\notebook\notebookapp.py", line 2361, in start
+    self.cleanup_kernels()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\notebook\notebookapp.py", line 2146, in cleanup_kernels
+    run_sync(self.kernel_manager.shutdown_all())
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\multikernelmanager.py", line 252, in shutdown_all
+    self.finish_shutdown(kid)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\multikernelmanager.py", line 34, in wrapped
+    r = method(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\manager.py", line 383, in finish_shutdown
+    if poll_or_sleep_to_kernel_gone():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\manager.py", line 373, in poll_or_sleep_to_kernel_gone
+    time.sleep(pollinterval)
+KeyboardInterrupt
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>jupyter notebook training.ipynb
+[W 2024-02-04 20:26:44.653 LabApp] 'file_to_run' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2024-02-04 20:26:44.653 LabApp] 'file_to_run' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[I 2024-02-04 20:26:44.663 LabApp] JupyterLab extension loaded from C:\ProgramData\Anaconda3\lib\site-packages\jupyterlab
+[I 2024-02-04 20:26:44.663 LabApp] JupyterLab application directory is C:\ProgramData\Anaconda3\share\jupyter\lab
+[I 20:26:44.671 NotebookApp] Serving notebooks from local directory: D:\Analytics\Deep_learning_Tuto\potato_disease\training
+[I 20:26:44.671 NotebookApp] Jupyter Notebook 6.3.0 is running at:
+[I 20:26:44.672 NotebookApp] http://localhost:8888/?token=58cde4d6ab92268b96dd1ce9e34b7d9fc99c5589bb6662ef
+[I 20:26:44.675 NotebookApp]  or http://127.0.0.1:8888/?token=58cde4d6ab92268b96dd1ce9e34b7d9fc99c5589bb6662ef
+[I 20:26:44.675 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 20:26:44.851 NotebookApp]
+
+    To access the notebook, open this file in a browser:
+        file:///C:/Users/Admin/AppData/Roaming/jupyter/runtime/nbserver-1568-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=58cde4d6ab92268b96dd1ce9e34b7d9fc99c5589bb6662ef
+     or http://127.0.0.1:8888/?token=58cde4d6ab92268b96dd1ce9e34b7d9fc99c5589bb6662ef
+[W 20:26:49.032 NotebookApp] Notebook training.ipynb is not trusted
+[I 20:26:49.397 NotebookApp] Kernel started: bc76225f-cc5a-492e-aadb-8bd861b69deb, name: python3
+[I 20:26:57.470 NotebookApp] Starting buffering for bc76225f-cc5a-492e-aadb-8bd861b69deb:8a7e2c58fd124f21a9b61e542dcc0d24
+[I 20:27:14.867 NotebookApp] Interrupted...
+[I 20:27:14.868 NotebookApp] Shutting down 1 kernel
+[I 20:27:15.197 NotebookApp] Kernel shutdown: bc76225f-cc5a-492e-aadb-8bd861b69deb
+[I 20:27:15.198 NotebookApp] Shutting down 0 terminals
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>jupyter notebook training.ipynb
+[W 2024-02-04 20:27:22.464 LabApp] 'file_to_run' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2024-02-04 20:27:22.464 LabApp] 'file_to_run' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[I 2024-02-04 20:27:22.476 LabApp] JupyterLab extension loaded from C:\ProgramData\Anaconda3\lib\site-packages\jupyterlab
+[I 2024-02-04 20:27:22.476 LabApp] JupyterLab application directory is C:\ProgramData\Anaconda3\share\jupyter\lab
+[I 20:27:22.483 NotebookApp] Serving notebooks from local directory: D:\Analytics\Deep_learning_Tuto\potato_disease\training
+[I 20:27:22.484 NotebookApp] Jupyter Notebook 6.3.0 is running at:
+[I 20:27:22.484 NotebookApp] http://localhost:8888/?token=cacba658020acee9b2a12f30f5122447e4ae3a35b9c02a60
+[I 20:27:22.487 NotebookApp]  or http://127.0.0.1:8888/?token=cacba658020acee9b2a12f30f5122447e4ae3a35b9c02a60
+[I 20:27:22.487 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 20:27:22.630 NotebookApp]
+
+    To access the notebook, open this file in a browser:
+        file:///C:/Users/Admin/AppData/Roaming/jupyter/runtime/nbserver-20860-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=cacba658020acee9b2a12f30f5122447e4ae3a35b9c02a60
+     or http://127.0.0.1:8888/?token=cacba658020acee9b2a12f30f5122447e4ae3a35b9c02a60
+[W 20:27:26.285 NotebookApp] Notebook training.ipynb is not trusted
+[I 20:27:26.649 NotebookApp] Kernel started: 9c61c41f-767f-48a6-a1d5-4a51d60c7616, name: python3
+[I 20:31:26.918 NotebookApp] Saving file at /training.ipynb
+[W 20:31:26.920 NotebookApp] Notebook training.ipynb is not trusted
+[I 20:37:26.634 NotebookApp] Saving file at /training.ipynb
+[W 20:37:26.636 NotebookApp] Notebook training.ipynb is not trusted
+[I 20:39:26.645 NotebookApp] Saving file at /training.ipynb
+[W 20:39:26.647 NotebookApp] Notebook training.ipynb is not trusted
+[I 20:41:26.852 NotebookApp] Saving file at /training.ipynb
+[W 20:41:26.854 NotebookApp] Notebook training.ipynb is not trusted
+[I 21:17:24.493 NotebookApp] Saving file at /training.ipynb
+[W 21:17:24.494 NotebookApp] Notebook training.ipynb is not trusted
+[I 21:21:24.274 NotebookApp] Saving file at /training.ipynb
+[W 21:21:24.276 NotebookApp] Notebook training.ipynb is not trusted
+[I 21:23:24.290 NotebookApp] Saving file at /training.ipynb
+[W 21:23:24.292 NotebookApp] Notebook training.ipynb is not trusted
+[I 21:25:24.295 NotebookApp] Saving file at /training.ipynb
+[W 21:25:24.297 NotebookApp] Notebook training.ipynb is not trusted
+[I 21:27:24.280 NotebookApp] Saving file at /training.ipynb
+[W 21:27:24.282 NotebookApp] Notebook training.ipynb is not trusted
+[I 21:29:24.277 NotebookApp] Saving file at /training.ipynb
+[W 21:29:24.279 NotebookApp] Notebook training.ipynb is not trusted
+[I 21:31:24.273 NotebookApp] Saving file at /training.ipynb
+[W 21:31:24.275 NotebookApp] Notebook training.ipynb is not trusted
+[I 21:33:24.291 NotebookApp] Saving file at /training.ipynb
+[W 21:33:24.293 NotebookApp] Notebook training.ipynb is not trusted
+[I 21:35:24.286 NotebookApp] Saving file at /training.ipynb
+[W 21:35:24.288 NotebookApp] Notebook training.ipynb is not trusted
+[I 21:37:24.279 NotebookApp] Saving file at /training.ipynb
+[W 21:37:24.282 NotebookApp] Notebook training.ipynb is not trusted
+2024-02-04 21:38:03.898701: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2024-02-04 21:38:03.914016: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2024-02-04 21:38:15.413519: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'nvcuda.dll'; dlerror: nvcuda.dll not found
+2024-02-04 21:38:15.413835: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2024-02-04 21:38:15.423029: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:169] retrieving CUDA diagnostic information for host: LAPTOP-CJ9OV0AK
+2024-02-04 21:38:15.423541: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:176] hostname: LAPTOP-CJ9OV0AK
+2024-02-04 21:38:15.425366: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[I 21:39:24.307 NotebookApp] Saving file at /training.ipynb
+[I 21:41:24.296 NotebookApp] Saving file at /training.ipynb
+[I 21:43:24.316 NotebookApp] Saving file at /training.ipynb
+[I 21:45:24.478 NotebookApp] Saving file at /training.ipynb
+[I 21:47:24.279 NotebookApp] Saving file at /training.ipynb
+[I 21:49:24.462 NotebookApp] Saving file at /training.ipynb
+[I 21:51:24.273 NotebookApp] Saving file at /training.ipynb
+[I 21:51:36.669 NotebookApp] Saving file at /training.ipynb
+[I 21:53:24.257 NotebookApp] Saving file at /training.ipynb
+[I 21:55:24.282 NotebookApp] Saving file at /training.ipynb
+[I 21:57:24.283 NotebookApp] Saving file at /training.ipynb
+[I 21:59:24.272 NotebookApp] Saving file at /training.ipynb
+[I 22:01:24.324 NotebookApp] Saving file at /training.ipynb
+[I 22:03:24.328 NotebookApp] Saving file at /training.ipynb
+[I 22:05:24.262 NotebookApp] Saving file at /training.ipynb
+[I 22:07:32.629 NotebookApp] Saving file at /training.ipynb
+[I 22:09:32.754 NotebookApp] Saving file at /training.ipynb
+[I 22:11:24.280 NotebookApp] Saving file at /training.ipynb
+[I 22:13:24.282 NotebookApp] Saving file at /training.ipynb
+[I 22:15:24.561 NotebookApp] Saving file at /training.ipynb
+[I 22:17:32.615 NotebookApp] Saving file at /training.ipynb
+[I 22:19:32.706 NotebookApp] Saving file at /training.ipynb
+[I 22:21:24.266 NotebookApp] Saving file at /training.ipynb
+[I 22:23:24.278 NotebookApp] Saving file at /training.ipynb
+[I 22:25:24.274 NotebookApp] Saving file at /training.ipynb
+[I 22:27:24.521 NotebookApp] Saving file at /training.ipynb
+[I 22:29:32.707 NotebookApp] Saving file at /training.ipynb
+[I 22:31:33.175 NotebookApp] Saving file at /training.ipynb
+[I 22:33:33.283 NotebookApp] Saving file at /training.ipynb
+[I 22:35:32.656 NotebookApp] Saving file at /training.ipynb
+[I 22:37:32.693 NotebookApp] Saving file at /training.ipynb
+[I 22:39:32.964 NotebookApp] Saving file at /training.ipynb
+[I 22:41:32.776 NotebookApp] Saving file at /training.ipynb
+[I 22:43:32.677 NotebookApp] Saving file at /training.ipynb
+[I 22:45:32.545 NotebookApp] Saving file at /training.ipynb
+[I 22:47:33.328 NotebookApp] Saving file at /training.ipynb
+[I 22:49:32.710 NotebookApp] Saving file at /training.ipynb
+[I 22:51:33.078 NotebookApp] Saving file at /training.ipynb
+[I 22:53:32.663 NotebookApp] Saving file at /training.ipynb
+[I 22:55:32.548 NotebookApp] Saving file at /training.ipynb
+[I 22:57:32.708 NotebookApp] Saving file at /training.ipynb
+[I 22:59:32.707 NotebookApp] Saving file at /training.ipynb
+[I 23:01:32.597 NotebookApp] Saving file at /training.ipynb
+[I 23:03:32.893 NotebookApp] Saving file at /training.ipynb
+[I 23:05:32.657 NotebookApp] Saving file at /training.ipynb
+[I 23:07:32.652 NotebookApp] Saving file at /training.ipynb
+[I 23:09:32.531 NotebookApp] Saving file at /training.ipynb
+[I 23:11:32.764 NotebookApp] Saving file at /training.ipynb
+[I 23:13:32.835 NotebookApp] Saving file at /training.ipynb
+[I 23:15:32.725 NotebookApp] Saving file at /training.ipynb
+[I 23:17:32.895 NotebookApp] Saving file at /training.ipynb
+[I 23:19:32.655 NotebookApp] Saving file at /training.ipynb
+[I 23:21:33.004 NotebookApp] Saving file at /training.ipynb
+[I 23:23:32.822 NotebookApp] Saving file at /training.ipynb
+[I 23:25:32.996 NotebookApp] Saving file at /training.ipynb
+[I 23:27:32.540 NotebookApp] Saving file at /training.ipynb
+[I 23:29:32.808 NotebookApp] Saving file at /training.ipynb
+[I 23:31:32.922 NotebookApp] Saving file at /training.ipynb
+[I 23:33:32.768 NotebookApp] Saving file at /training.ipynb
+[I 23:35:32.753 NotebookApp] Saving file at /training.ipynb
+[I 23:37:32.993 NotebookApp] Saving file at /training.ipynb
+[I 23:39:33.063 NotebookApp] Saving file at /training.ipynb
+[I 23:41:32.512 NotebookApp] Saving file at /training.ipynb
+[I 02:19:18.457 NotebookApp] Starting buffering for 9c61c41f-767f-48a6-a1d5-4a51d60c7616:e779e84428e94369b966ab3ad9fe4540
+[I 03:56:40.391 NotebookApp] Restoring connection for 9c61c41f-767f-48a6-a1d5-4a51d60c7616:e779e84428e94369b966ab3ad9fe4540
+[I 04:07:06.462 NotebookApp] Saving file at /training.ipynb
+[I 04:09:06.456 NotebookApp] Saving file at /training.ipynb
+[I 04:11:14.678 NotebookApp] Saving file at /training.ipynb
+[I 04:13:06.666 NotebookApp] Saving file at /training.ipynb
+[I 04:33:06.463 NotebookApp] Saving file at /training.ipynb
+[I 04:35:06.460 NotebookApp] Saving file at /training.ipynb
+[I 04:37:06.472 NotebookApp] Saving file at /training.ipynb
+[I 04:39:06.464 NotebookApp] Saving file at /training.ipynb
+[I 04:41:06.581 NotebookApp] Saving file at /training.ipynb
+[I 04:43:06.464 NotebookApp] Saving file at /training.ipynb
+[I 04:45:06.685 NotebookApp] Saving file at /training.ipynb
+[I 04:49:06.502 NotebookApp] Saving file at /training.ipynb
+[I 04:51:06.658 NotebookApp] Saving file at /training.ipynb
+[I 04:53:06.684 NotebookApp] Saving file at /training.ipynb
+[I 04:55:06.494 NotebookApp] Saving file at /training.ipynb
+[I 04:57:06.672 NotebookApp] Saving file at /training.ipynb
+[I 04:59:06.482 NotebookApp] Saving file at /training.ipynb
+[I 05:01:06.480 NotebookApp] Saving file at /training.ipynb
+[I 05:03:06.467 NotebookApp] Saving file at /training.ipynb
+[I 05:05:06.466 NotebookApp] Saving file at /training.ipynb
+[I 05:07:06.708 NotebookApp] Saving file at /training.ipynb
+[I 05:09:06.483 NotebookApp] Saving file at /training.ipynb
+[I 05:11:06.680 NotebookApp] Saving file at /training.ipynb
+[I 05:13:06.476 NotebookApp] Saving file at /training.ipynb
+[I 05:15:06.502 NotebookApp] Saving file at /training.ipynb
+[I 05:17:06.499 NotebookApp] Saving file at /training.ipynb
+[I 05:19:06.488 NotebookApp] Saving file at /training.ipynb
+[I 05:21:06.473 NotebookApp] Saving file at /training.ipynb
+[I 05:23:06.482 NotebookApp] Saving file at /training.ipynb
+[I 05:27:06.758 NotebookApp] Saving file at /training.ipynb
+[I 05:29:06.525 NotebookApp] Saving file at /training.ipynb
+[I 05:31:06.526 NotebookApp] Saving file at /training.ipynb
+[I 05:33:06.529 NotebookApp] Saving file at /training.ipynb
+[I 05:37:06.557 NotebookApp] Saving file at /training.ipynb
+[I 05:41:06.713 NotebookApp] Saving file at /training.ipynb
+[I 05:43:12.370 NotebookApp] Saving file at /training.ipynb
+2024-02-05 05:43:46.410040: W tensorflow/python/util/util.cc:368] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+[I 05:45:06.526 NotebookApp] Saving file at /training.ipynb
+[I 05:47:06.541 NotebookApp] Saving file at /training.ipynb
+[I 05:51:06.732 NotebookApp] Saving file at /training.ipynb
+[I 05:55:06.712 NotebookApp] Saving file at /training.ipynb
+[I 05:57:06.718 NotebookApp] Saving file at /training.ipynb
+[I 05:59:06.540 NotebookApp] Saving file at /training.ipynb
+[I 06:01:06.529 NotebookApp] Saving file at /training.ipynb
+[I 06:03:06.522 NotebookApp] Saving file at /training.ipynb
+[I 06:05:06.517 NotebookApp] Saving file at /training.ipynb
+[I 06:28:23.431 NotebookApp] Saving file at /training.ipynb
+[I 06:32:14.645 NotebookApp] Interrupted...
+[I 06:32:14.652 NotebookApp] Shutting down 1 kernel
+forrtl: error (200): program aborting due to control-C event
+Image              PC                Routine            Line        Source
+libifcoremd.dll    00007FFEFA3D3B58  Unknown               Unknown  Unknown
+KERNELBASE.dll     00007FFF69EE2D23  Unknown               Unknown  Unknown
+KERNEL32.DLL       00007FFF6BEB7344  Unknown               Unknown  Unknown
+ntdll.dll          00007FFF6C7026B1  Unknown               Unknown  Unknown
+[I 06:32:16.219 NotebookApp] Kernel shutdown: 9c61c41f-767f-48a6-a1d5-4a51d60c7616
+[I 06:32:16.223 NotebookApp] Shutting down 0 terminals
+[I 06:32:16.228 NotebookApp] KernelRestarter: restarting kernel (1/5), keep random ports
+kernel 9c61c41f-767f-48a6-a1d5-4a51d60c7616 restarted
+[E 06:32:16.240 NotebookApp] Exception in callback <bound method KernelRestarter.poll of <jupyter_client.ioloop.restarter.IOLoopKernelRestarter object at 0x000001564A6C6E48>>
+    Traceback (most recent call last):
+      File "C:\ProgramData\Anaconda3\lib\site-packages\tornado\ioloop.py", line 905, in _run
+        return self.callback()
+      File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\restarter.py", line 116, in poll
+        self.kernel_manager.restart_kernel(now=True, newports=newports)
+      File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\manager.py", line 503, in restart_kernel
+        self.shutdown_kernel(now=now, restart=True)
+      File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\manager.py", line 441, in shutdown_kernel
+        self.interrupt_kernel()
+      File "C:\ProgramData\Anaconda3\lib\site-packages\jupyter_client\manager.py", line 597, in interrupt_kernel
+        raise RuntimeError("Cannot interrupt kernel. No kernel is running!")
+    RuntimeError: Cannot interrupt kernel. No kernel is running!
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>jupyter notebook training.ipynb
+[W 2024-02-06 04:16:14.367 LabApp] 'file_to_run' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2024-02-06 04:16:14.368 LabApp] 'file_to_run' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[I 2024-02-06 04:16:14.395 LabApp] JupyterLab extension loaded from C:\ProgramData\Anaconda3\lib\site-packages\jupyterlab
+[I 2024-02-06 04:16:14.395 LabApp] JupyterLab application directory is C:\ProgramData\Anaconda3\share\jupyter\lab
+[I 04:16:14.409 NotebookApp] Serving notebooks from local directory: D:\Analytics\Deep_learning_Tuto\potato_disease\training
+[I 04:16:14.410 NotebookApp] Jupyter Notebook 6.3.0 is running at:
+[I 04:16:14.411 NotebookApp] http://localhost:8888/?token=88390404d6c12f075069543061ebae2b5d2847dc5e1f7a4b
+[I 04:16:14.412 NotebookApp]  or http://127.0.0.1:8888/?token=88390404d6c12f075069543061ebae2b5d2847dc5e1f7a4b
+[I 04:16:14.413 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 04:16:14.854 NotebookApp]
+
+    To access the notebook, open this file in a browser:
+        file:///C:/Users/Admin/AppData/Roaming/jupyter/runtime/nbserver-20824-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=88390404d6c12f075069543061ebae2b5d2847dc5e1f7a4b
+     or http://127.0.0.1:8888/?token=88390404d6c12f075069543061ebae2b5d2847dc5e1f7a4b
+[W 04:16:23.056 NotebookApp] Notebook training.ipynb is not trusted
+[I 04:16:24.642 NotebookApp] Kernel started: ccec3986-6233-4831-acc3-cce781523c4f, name: python3
+[I 04:18:24.589 NotebookApp] Saving file at /training.ipynb
+[W 04:18:24.592 NotebookApp] Notebook training.ipynb is not trusted
+[I 04:20:24.695 NotebookApp] Saving file at /training.ipynb
+[W 04:20:24.697 NotebookApp] Notebook training.ipynb is not trusted
+[I 04:57:14.880 NotebookApp] Interrupted...
+[I 04:57:14.883 NotebookApp] Shutting down 1 kernel
+[I 04:57:15.214 NotebookApp] Kernel shutdown: ccec3986-6233-4831-acc3-cce781523c4f
+[I 04:57:15.215 NotebookApp] Shutting down 0 terminals
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training># Download the TensorFlow Serving Docker image and repo
+'#' is not recognized as an internal or external command,
+operable program or batch file.
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>docker pull tensorflow/serving
+Using default tag: latest
+request returned Internal Server Error for API route and version http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.24/images/create?fromImage=tensorflow%2Fserving&tag=latest, check if the server supports the requested API version
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>git clone https://github.com/tensorflow/serving
+Cloning into 'serving'...
+remote: Enumerating objects: 35664, done.
+remote: Counting objects: 100% (9928/9928), done.
+remote: Compressing objects: 100% (478/478), done.
+remote: Total 35664 (delta 9713), reused 9535 (delta 9450), pack-reused 25736
+Receiving objects: 100% (35664/35664), 18.31 MiB | 1.11 MiB/s, done.
+Resolving deltas: 100% (29120/29120), done.
+Updating files: 100% (648/648), done.
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training># Location of demo models
+'#' is not recognized as an internal or external command,
+operable program or batch file.
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>TESTDATA="$(pwd)/serving/tensorflow_serving/servables/tensorflow/testdata"
+'TESTDATA' is not recognized as an internal or external command,
+operable program or batch file.
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training># Start TensorFlow Serving container and open the REST API port
+'#' is not recognized as an internal or external command,
+operable program or batch file.
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>docker run -t --rm -p 8501:8501 \
+docker: invalid reference format.
+See 'docker run --help'.
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>    -v "$TESTDATA/saved_model_half_plus_two_cpu:/models/half_plus_two" \
+'-v' is not recognized as an internal or external command,
+operable program or batch file.
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>    -e MODEL_NAME=half_plus_two \
+'-e' is not recognized as an internal or external command,
+operable program or batch file.
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>    tensorflow/serving &
+'tensorflow' is not recognized as an internal or external command,
+operable program or batch file.
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training># Query the model using the predict API
+'#' is not recognized as an internal or external command,
+operable program or batch file.
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>curl -d '{"instances": [1.0, 2.0, 5.0]}' \
+curl: (3) bad range in URL position 2:
+[1.0,
+ ^
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>    -X POST http://localhost:8501/v1/models/half_plus_two:predict
+'-X' is not recognized as an internal or external command,
+operable program or batch file.
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training># Returns => { "predictions": [2.5, 3.0, 4.5] }
+'#' is not recognized as an internal or external command,
+operable program or batch file.
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>docker pull tensorflow/serving
+Using default tag: latest
+request returned Internal Server Error for API route and version http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.24/images/create?fromImage=tensorflow%2Fserving&tag=latest, check if the server supports the requested API version
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>ls
+ PlantVillage   serving   training.ipynb  '{'
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\training>cd ..
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease>ls
+ api                                                                                            saved_models
+'python - Saving model on Tensorflow 2.7.0 with data augmentation layer - Stack Overflow.pdf'   training
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease>cd api
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>ls
+requirement.txt
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip install -requirement.txt
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'equirement.txt'
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip install -r requirement.txt
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Collecting tensorflow==2.5.0 (from -r requirement.txt (line 1))
+  Downloading tensorflow-2.5.0-cp37-cp37m-win_amd64.whl (422.6 MB)
+     ---------------------------------------- 422.6/422.6 MB 2.0 MB/s eta 0:00:00
+Collecting fastapi (from -r requirement.txt (line 2))
+  Downloading fastapi-0.103.2-py3-none-any.whl.metadata (24 kB)
+Collecting uvicorn (from -r requirement.txt (line 3))
+  Downloading uvicorn-0.22.0-py3-none-any.whl (58 kB)
+     ---------------------------------------- 58.3/58.3 kB 1.0 MB/s eta 0:00:00
+Collecting python-multipart (from -r requirement.txt (line 4))
+  Downloading python_multipart-0.0.7-py3-none-any.whl.metadata (2.5 kB)
+Requirement already satisfied: pillow in c:\programdata\anaconda3\lib\site-packages (from -r requirement.txt (line 5)) (8.2.0)
+Collecting tensorflow-serving-api==2.5.0 (from -r requirement.txt (line 6))
+  Downloading tensorflow_serving_api-2.5.0-py2.py3-none-any.whl (38 kB)
+Requirement already satisfied: matplotlib in c:\programdata\anaconda3\lib\site-packages (from -r requirement.txt (line 7)) (3.3.4)
+Requirement already satisfied: numpy in c:\programdata\anaconda3\lib\site-packages (from -r requirement.txt (line 8)) (1.19.5)
+Requirement already satisfied: absl-py~=0.10 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.5.0->-r requirement.txt (line 1)) (0.12.0)
+Requirement already satisfied: astunparse~=1.6.3 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.5.0->-r requirement.txt (line 1)) (1.6.3)
+Collecting flatbuffers~=1.12.0 (from tensorflow==2.5.0->-r requirement.txt (line 1))
+  Downloading flatbuffers-1.12-py2.py3-none-any.whl (15 kB)
+Requirement already satisfied: google-pasta~=0.2 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.5.0->-r requirement.txt (line 1)) (0.2.0)
+Collecting h5py~=3.1.0 (from tensorflow==2.5.0->-r requirement.txt (line 1))
+  Downloading h5py-3.1.0-cp37-cp37m-win_amd64.whl (2.7 MB)
+     ---------------------------------------- 2.7/2.7 MB 2.8 MB/s eta 0:00:00
+Requirement already satisfied: keras-preprocessing~=1.1.2 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.5.0->-r requirement.txt (line 1)) (1.1.2)
+Requirement already satisfied: opt-einsum~=3.3.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.5.0->-r requirement.txt (line 1)) (3.3.0)
+Requirement already satisfied: protobuf>=3.9.2 in c:\users\admin\appdata\roaming\python\python37\site-packages (from tensorflow==2.5.0->-r requirement.txt (line 1)) (3.19.0)
+Requirement already satisfied: six~=1.15.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.5.0->-r requirement.txt (line 1)) (1.15.0)
+Requirement already satisfied: termcolor~=1.1.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.5.0->-r requirement.txt (line 1)) (1.1.0)
+Collecting typing-extensions~=3.7.4 (from tensorflow==2.5.0->-r requirement.txt (line 1))
+  Downloading typing_extensions-3.7.4.3-py3-none-any.whl (22 kB)
+Requirement already satisfied: wheel~=0.35 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.5.0->-r requirement.txt (line 1)) (0.36.2)
+Requirement already satisfied: wrapt~=1.12.1 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.5.0->-r requirement.txt (line 1)) (1.12.1)
+Requirement already satisfied: gast==0.4.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.5.0->-r requirement.txt (line 1)) (0.4.0)
+Requirement already satisfied: tensorboard~=2.5 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.5.0->-r requirement.txt (line 1)) (2.7.0)
+Collecting tensorflow-estimator<2.6.0,>=2.5.0rc0 (from tensorflow==2.5.0->-r requirement.txt (line 1))
+  Downloading tensorflow_estimator-2.5.0-py2.py3-none-any.whl (462 kB)
+     ---------------------------------------- 462.4/462.4 kB 1.8 MB/s eta 0:00:00
+Collecting keras-nightly~=2.5.0.dev (from tensorflow==2.5.0->-r requirement.txt (line 1))
+  Downloading keras_nightly-2.5.0.dev2021032900-py2.py3-none-any.whl (1.2 MB)
+     ---------------------------------------- 1.2/1.2 MB 2.7 MB/s eta 0:00:00
+Collecting grpcio~=1.34.0 (from tensorflow==2.5.0->-r requirement.txt (line 1))
+  Downloading grpcio-1.34.1-cp37-cp37m-win_amd64.whl (2.9 MB)
+     ---------------------------------------- 2.9/2.9 MB 2.7 MB/s eta 0:00:00
+Collecting anyio<4.0.0,>=3.7.1 (from fastapi->-r requirement.txt (line 2))
+  Downloading anyio-3.7.1-py3-none-any.whl.metadata (4.7 kB)
+Collecting pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4 (from fastapi->-r requirement.txt (line 2))
+  Downloading pydantic-2.5.3-py3-none-any.whl.metadata (65 kB)
+     ---------------------------------------- 65.6/65.6 kB 878.7 kB/s eta 0:00:00
+Collecting starlette<0.28.0,>=0.27.0 (from fastapi->-r requirement.txt (line 2))
+  Downloading starlette-0.27.0-py3-none-any.whl.metadata (5.8 kB)
+INFO: pip is looking at multiple versions of fastapi to determine which version is compatible with other requirements. This could take a while.
+Collecting fastapi (from -r requirement.txt (line 2))
+  Downloading fastapi-0.103.1-py3-none-any.whl.metadata (24 kB)
+  Downloading fastapi-0.103.0-py3-none-any.whl.metadata (24 kB)
+  Downloading fastapi-0.102.0-py3-none-any.whl.metadata (24 kB)
+  Downloading fastapi-0.101.1-py3-none-any.whl.metadata (23 kB)
+  Downloading fastapi-0.101.0-py3-none-any.whl.metadata (23 kB)
+  Downloading fastapi-0.100.1-py3-none-any.whl.metadata (23 kB)
+  Downloading fastapi-0.100.0-py3-none-any.whl.metadata (23 kB)
+INFO: pip is still looking at multiple versions of fastapi to determine which version is compatible with other requirements. This could take a while.
+  Downloading fastapi-0.99.1-py3-none-any.whl.metadata (23 kB)
+Collecting pydantic!=1.8,!=1.8.1,<2.0.0,>=1.7.4 (from fastapi->-r requirement.txt (line 2))
+  Downloading pydantic-1.10.14-cp37-cp37m-win_amd64.whl.metadata (151 kB)
+     ---------------------------------------- 151.6/151.6 kB 1.8 MB/s eta 0:00:00
+Collecting fastapi (from -r requirement.txt (line 2))
+  Downloading fastapi-0.99.0-py3-none-any.whl.metadata (23 kB)
+  Downloading fastapi-0.98.0-py3-none-any.whl.metadata (22 kB)
+Requirement already satisfied: click>=7.0 in c:\programdata\anaconda3\lib\site-packages (from uvicorn->-r requirement.txt (line 3)) (7.1.2)
+Collecting h11>=0.8 (from uvicorn->-r requirement.txt (line 3))
+  Downloading h11-0.14.0-py3-none-any.whl (58 kB)
+     ---------------------------------------- 58.3/58.3 kB 1.5 MB/s eta 0:00:00
+Requirement already satisfied: cycler>=0.10 in c:\programdata\anaconda3\lib\site-packages (from matplotlib->-r requirement.txt (line 7)) (0.10.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in c:\programdata\anaconda3\lib\site-packages (from matplotlib->-r requirement.txt (line 7)) (1.3.1)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.3 in c:\programdata\anaconda3\lib\site-packages (from matplotlib->-r requirement.txt (line 7)) (2.4.7)
+Requirement already satisfied: python-dateutil>=2.1 in c:\programdata\anaconda3\lib\site-packages (from matplotlib->-r requirement.txt (line 7)) (2.8.1)
+Requirement already satisfied: cached-property in c:\programdata\anaconda3\lib\site-packages (from h5py~=3.1.0->tensorflow==2.5.0->-r requirement.txt (line 1)) (1.5.2)
+INFO: pip is looking at multiple versions of pydantic to determine which version is compatible with other requirements. This could take a while.
+Collecting pydantic!=1.8,!=1.8.1,<2.0.0,>=1.7.4 (from fastapi->-r requirement.txt (line 2))
+  Downloading pydantic-1.10.13-cp37-cp37m-win_amd64.whl.metadata (150 kB)
+     ---------------------------------------- 150.9/150.9 kB 822.8 kB/s eta 0:00:00
+  Downloading pydantic-1.10.12-cp37-cp37m-win_amd64.whl.metadata (150 kB)
+     ---------------------------------------- 150.6/150.6 kB 1.8 MB/s eta 0:00:00
+  Downloading pydantic-1.10.11-cp37-cp37m-win_amd64.whl.metadata (150 kB)
+     ---------------------------------------- 150.3/150.3 kB 1.8 MB/s eta 0:00:00
+  Downloading pydantic-1.10.10-cp37-cp37m-win_amd64.whl.metadata (150 kB)
+     ---------------------------------------- 150.0/150.0 kB 2.2 MB/s eta 0:00:00
+  Downloading pydantic-1.10.9-cp37-cp37m-win_amd64.whl.metadata (149 kB)
+     ---------------------------------------- 149.2/149.2 kB 3.0 MB/s eta 0:00:00
+  Downloading pydantic-1.10.8-cp37-cp37m-win_amd64.whl.metadata (147 kB)
+     ---------------------------------------- 147.7/147.7 kB 2.2 MB/s eta 0:00:00
+  Downloading pydantic-1.10.7-cp37-cp37m-win_amd64.whl (2.1 MB)
+     ---------------------------------------- 2.1/2.1 MB 2.9 MB/s eta 0:00:00
+INFO: pip is still looking at multiple versions of pydantic to determine which version is compatible with other requirements. This could take a while.
+  Downloading pydantic-1.10.6-cp37-cp37m-win_amd64.whl (2.1 MB)
+     ---------------------------------------- 2.1/2.1 MB 2.2 MB/s eta 0:00:00
+  Downloading pydantic-1.10.5-cp37-cp37m-win_amd64.whl (2.1 MB)
+     ---------------------------------------- 2.1/2.1 MB 2.8 MB/s eta 0:00:00
+  Downloading pydantic-1.10.4-cp37-cp37m-win_amd64.whl (2.1 MB)
+     ---------------------------------------- 2.1/2.1 MB 2.5 MB/s eta 0:00:00
+  Downloading pydantic-1.10.2-cp37-cp37m-win_amd64.whl (2.1 MB)
+     ---------------------------------------- 2.1/2.1 MB 1.9 MB/s eta 0:00:00
+  Downloading pydantic-1.10.1-cp37-cp37m-win_amd64.whl (2.1 MB)
+     ---------------------------------------- 2.1/2.1 MB 2.9 MB/s eta 0:00:00
+INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.
+  Downloading pydantic-1.10.0-cp37-cp37m-win_amd64.whl (2.1 MB)
+     ---------------------------------------- 2.1/2.1 MB 3.0 MB/s eta 0:00:00
+  Downloading pydantic-1.9.2-cp37-cp37m-win_amd64.whl (1.9 MB)
+     ---------------------------------------- 1.9/1.9 MB 2.0 MB/s eta 0:00:00
+INFO: pip is looking at multiple versions of starlette to determine which version is compatible with other requirements. This could take a while.
+  Downloading pydantic-1.9.1-cp37-cp37m-win_amd64.whl (1.9 MB)
+     ---------------------------------------- 1.9/1.9 MB 3.0 MB/s eta 0:00:00
+  Downloading pydantic-1.9.0-cp37-cp37m-win_amd64.whl (2.0 MB)
+     ---------------------------------------- 2.0/2.0 MB 3.0 MB/s eta 0:00:00
+  Downloading pydantic-1.8.2-cp37-cp37m-win_amd64.whl (1.9 MB)
+     ---------------------------------------- 1.9/1.9 MB 2.3 MB/s eta 0:00:00
+  Downloading pydantic-1.7.4-cp37-cp37m-win_amd64.whl (1.7 MB)
+     ---------------------------------------- 1.7/1.7 MB 2.5 MB/s eta 0:00:00
+Collecting h11>=0.8 (from uvicorn->-r requirement.txt (line 3))
+  Downloading h11-0.13.0-py3-none-any.whl (58 kB)
+     ---------------------------------------- 58.2/58.2 kB 3.0 MB/s eta 0:00:00
+  Downloading h11-0.12.0-py3-none-any.whl (54 kB)
+     ---------------------------------------- 54.9/54.9 kB 2.8 MB/s eta 0:00:00
+Collecting uvicorn (from -r requirement.txt (line 3))
+  Downloading uvicorn-0.21.1-py3-none-any.whl (57 kB)
+     ---------------------------------------- 57.8/57.8 kB 1.5 MB/s eta 0:00:00
+INFO: pip is still looking at multiple versions of starlette to determine which version is compatible with other requirements. This could take a while.
+  Downloading uvicorn-0.21.0-py3-none-any.whl (57 kB)
+     ---------------------------------------- 57.8/57.8 kB 1.5 MB/s eta 0:00:00
+  Downloading uvicorn-0.20.0-py3-none-any.whl (56 kB)
+     ---------------------------------------- 56.9/56.9 kB 3.1 MB/s eta 0:00:00
+  Downloading uvicorn-0.19.0-py3-none-any.whl (56 kB)
+     ---------------------------------------- 56.6/56.6 kB 1.4 MB/s eta 0:00:00
+  Downloading uvicorn-0.18.3-py3-none-any.whl (57 kB)
+     ---------------------------------------- 57.4/57.4 kB 604.1 kB/s eta 0:00:00
+  Downloading uvicorn-0.18.2-py3-none-any.whl (57 kB)
+     ---------------------------------------- 57.0/57.0 kB 2.9 MB/s eta 0:00:00
+INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.
+  Downloading uvicorn-0.18.1-py3-none-any.whl (57 kB)
+     ---------------------------------------- 57.0/57.0 kB 3.1 MB/s eta 0:00:00
+  Downloading uvicorn-0.18.0-py3-none-any.whl (57 kB)
+     ---------------------------------------- 57.0/57.0 kB 3.1 MB/s eta 0:00:00
+  Downloading uvicorn-0.17.6-py3-none-any.whl (53 kB)
+     ---------------------------------------- 53.6/53.6 kB 1.4 MB/s eta 0:00:00
+Requirement already satisfied: asgiref>=3.4.0 in c:\programdata\anaconda3\lib\site-packages (from uvicorn->-r requirement.txt (line 3)) (3.4.1)
+  Downloading uvicorn-0.17.5-py3-none-any.whl (53 kB)
+     ---------------------------------------- 53.6/53.6 kB 555.8 kB/s eta 0:00:00
+  Downloading uvicorn-0.17.4-py3-none-any.whl (52 kB)
+     ---------------------------------------- 52.6/52.6 kB 1.4 MB/s eta 0:00:00
+  Downloading uvicorn-0.17.3-py3-none-any.whl (52 kB)
+     ---------------------------------------- 52.6/52.6 kB 1.4 MB/s eta 0:00:00
+  Downloading uvicorn-0.17.2-py3-none-any.whl (52 kB)
+     ---------------------------------------- 52.7/52.7 kB 1.4 MB/s eta 0:00:00
+  Downloading uvicorn-0.17.1-py3-none-any.whl (54 kB)
+     ---------------------------------------- 54.7/54.7 kB 2.8 MB/s eta 0:00:00
+  Downloading uvicorn-0.17.0.post1-py3-none-any.whl (54 kB)
+     ---------------------------------------- 54.9/54.9 kB 480.4 kB/s eta 0:00:00
+  Downloading uvicorn-0.16.0-py3-none-any.whl (54 kB)
+     ---------------------------------------- 54.9/54.9 kB 357.2 kB/s eta 0:00:00
+  Downloading uvicorn-0.15.0-py3-none-any.whl (54 kB)
+     ---------------------------------------- 54.4/54.4 kB 405.4 kB/s eta 0:00:00
+  Downloading uvicorn-0.14.0-py3-none-any.whl (50 kB)
+     ---------------------------------------- 50.5/50.5 kB 369.0 kB/s eta 0:00:00
+  Downloading uvicorn-0.13.4-py3-none-any.whl (46 kB)
+     ---------------------------------------- 46.1/46.1 kB 127.5 kB/s eta 0:00:00
+  Downloading uvicorn-0.13.3-py3-none-any.whl (45 kB)
+     ---------------------------------------- 45.7/45.7 kB 377.4 kB/s eta 0:00:00
+  Downloading uvicorn-0.13.2-py3-none-any.whl (45 kB)
+     ---------------------------------------- 45.5/45.5 kB 83.6 kB/s eta 0:00:00
+  Downloading uvicorn-0.13.1-py3-none-any.whl (45 kB)
+     ---------------------------------------- 45.5/45.5 kB 375.1 kB/s eta 0:00:00
+  Downloading uvicorn-0.13.0-py3-none-any.whl (45 kB)
+     ---------------------------------------- 45.7/45.7 kB 377.6 kB/s eta 0:00:00
+  Downloading uvicorn-0.12.3-py3-none-any.whl (45 kB)
+     ---------------------------------------- 45.7/45.7 kB 81.1 kB/s eta 0:00:00
+  Downloading uvicorn-0.12.2-py3-none-any.whl (45 kB)
+     ---------------------------------------- 45.1/45.1 kB 319.5 kB/s eta 0:00:00
+  Downloading uvicorn-0.12.1-py3-none-any.whl (44 kB)
+     ---------------------------------------- 44.6/44.6 kB 314.8 kB/s eta 0:00:00
+  Downloading uvicorn-0.12.0-py3-none-any.whl (44 kB)
+     ---------------------------------------- 44.6/44.6 kB 104.6 kB/s eta 0:00:00
+Collecting h11<0.11,>=0.8 (from uvicorn->-r requirement.txt (line 3))
+  Downloading h11-0.10.0-py2.py3-none-any.whl (53 kB)
+     ---------------------------------------- 53.7/53.7 kB 1.4 MB/s eta 0:00:00
+Collecting uvicorn (from -r requirement.txt (line 3))
+  Downloading uvicorn-0.11.8-py3-none-any.whl (43 kB)
+     ---------------------------------------- 43.3/43.3 kB 2.2 MB/s eta 0:00:00
+Collecting h11<0.10,>=0.8 (from uvicorn->-r requirement.txt (line 3))
+  Downloading h11-0.9.0-py2.py3-none-any.whl (53 kB)
+     ---------------------------------------- 53.6/53.6 kB 922.7 kB/s eta 0:00:00
+Collecting websockets==8.* (from uvicorn->-r requirement.txt (line 3))
+  Downloading websockets-8.1-cp37-cp37m-win_amd64.whl (66 kB)
+     ---------------------------------------- 66.2/66.2 kB 1.2 MB/s eta 0:00:00
+INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.
+Collecting fastapi (from -r requirement.txt (line 2))
+  Downloading fastapi-0.97.0-py3-none-any.whl.metadata (23 kB)
+  Downloading fastapi-0.96.1-py3-none-any.whl.metadata (24 kB)
+  Downloading fastapi-0.96.0-py3-none-any.whl.metadata (24 kB)
+  Downloading fastapi-0.95.2-py3-none-any.whl.metadata (24 kB)
+  Downloading fastapi-0.95.1-py3-none-any.whl (56 kB)
+     ---------------------------------------- 57.0/57.0 kB 2.9 MB/s eta 0:00:00
+Collecting starlette<0.27.0,>=0.26.1 (from fastapi->-r requirement.txt (line 2))
+  Downloading starlette-0.26.1-py3-none-any.whl (66 kB)
+     ---------------------------------------- 66.9/66.9 kB 1.2 MB/s eta 0:00:00
+Collecting fastapi (from -r requirement.txt (line 2))
+  Downloading fastapi-0.95.0-py3-none-any.whl (57 kB)
+     ---------------------------------------- 57.1/57.1 kB 1.5 MB/s eta 0:00:00
+  Downloading fastapi-0.94.1-py3-none-any.whl (56 kB)
+     ---------------------------------------- 56.4/56.4 kB 3.1 MB/s eta 0:00:00
+  Downloading fastapi-0.94.0-py3-none-any.whl (56 kB)
+     ---------------------------------------- 56.3/56.3 kB 1.5 MB/s eta 0:00:00
+Collecting starlette<0.27.0,>=0.26.0 (from fastapi->-r requirement.txt (line 2))
+  Downloading starlette-0.26.0.post1-py3-none-any.whl (66 kB)
+     ---------------------------------------- 66.9/66.9 kB 1.2 MB/s eta 0:00:00
+  Downloading starlette-0.26.0-py3-none-any.whl (66 kB)
+     ---------------------------------------- 66.8/66.8 kB 1.8 MB/s eta 0:00:00
+Collecting fastapi (from -r requirement.txt (line 2))
+  Downloading fastapi-0.93.0-py3-none-any.whl (56 kB)
+     ---------------------------------------- 56.3/56.3 kB 1.4 MB/s eta 0:00:00
+Collecting starlette<0.26.0,>=0.25.0 (from fastapi->-r requirement.txt (line 2))
+  Downloading starlette-0.25.0-py3-none-any.whl (66 kB)
+     ---------------------------------------- 66.4/66.4 kB 1.8 MB/s eta 0:00:00
+Collecting fastapi (from -r requirement.txt (line 2))
+  Downloading fastapi-0.92.0-py3-none-any.whl (56 kB)
+     ---------------------------------------- 56.2/56.2 kB 1.5 MB/s eta 0:00:00
+  Downloading fastapi-0.91.0-py3-none-any.whl (56 kB)
+     ---------------------------------------- 56.2/56.2 kB 1.5 MB/s eta 0:00:00
+Collecting starlette<0.25.0,>=0.24.0 (from fastapi->-r requirement.txt (line 2))
+  Downloading starlette-0.24.0-py3-none-any.whl (65 kB)
+     ---------------------------------------- 65.8/65.8 kB 1.8 MB/s eta 0:00:00
+Collecting fastapi (from -r requirement.txt (line 2))
+  Downloading fastapi-0.90.1-py3-none-any.whl (56 kB)
+     ---------------------------------------- 56.2/56.2 kB 1.4 MB/s eta 0:00:00
+Collecting starlette<0.24.0,>=0.22.0 (from fastapi->-r requirement.txt (line 2))
+  Downloading starlette-0.23.1-py3-none-any.whl (64 kB)
+     ---------------------------------------- 64.5/64.5 kB 1.8 MB/s eta 0:00:00
+  Downloading starlette-0.23.0-py3-none-any.whl (64 kB)
+     ---------------------------------------- 64.5/64.5 kB 1.8 MB/s eta 0:00:00
+  Downloading starlette-0.22.0-py3-none-any.whl (64 kB)
+     ---------------------------------------- 64.3/64.3 kB 872.4 kB/s eta 0:00:00
+Collecting fastapi (from -r requirement.txt (line 2))
+  Downloading fastapi-0.90.0-py3-none-any.whl (56 kB)
+     ---------------------------------------- 56.0/56.0 kB 973.8 kB/s eta 0:00:00
+  Downloading fastapi-0.89.1-py3-none-any.whl (55 kB)
+     ---------------------------------------- 55.8/55.8 kB 1.5 MB/s eta 0:00:00
+  Downloading fastapi-0.89.0-py3-none-any.whl (55 kB)
+     ---------------------------------------- 55.6/55.6 kB 1.4 MB/s eta 0:00:00
+  Downloading fastapi-0.88.0-py3-none-any.whl (55 kB)
+     ---------------------------------------- 55.5/55.5 kB 963.4 kB/s eta 0:00:00
+  Downloading fastapi-0.87.0-py3-none-any.whl (55 kB)
+     ---------------------------------------- 55.5/55.5 kB 1.5 MB/s eta 0:00:00
+Collecting starlette==0.21.0 (from fastapi->-r requirement.txt (line 2))
+  Downloading starlette-0.21.0-py3-none-any.whl (64 kB)
+     ---------------------------------------- 64.0/64.0 kB 1.1 MB/s eta 0:00:00
+Collecting fastapi (from -r requirement.txt (line 2))
+  Downloading fastapi-0.86.0-py3-none-any.whl (55 kB)
+     ---------------------------------------- 55.5/55.5 kB 1.4 MB/s eta 0:00:00
+Collecting starlette==0.20.4 (from fastapi->-r requirement.txt (line 2))
+  Downloading starlette-0.20.4-py3-none-any.whl (63 kB)
+     ---------------------------------------- 63.6/63.6 kB 1.1 MB/s eta 0:00:00
+Collecting fastapi (from -r requirement.txt (line 2))
+  Downloading fastapi-0.85.2-py3-none-any.whl (55 kB)
+     ---------------------------------------- 55.4/55.4 kB 1.5 MB/s eta 0:00:00
+  Downloading fastapi-0.85.1-py3-none-any.whl (55 kB)
+     ---------------------------------------- 55.4/55.4 kB 1.5 MB/s eta 0:00:00
+  Downloading fastapi-0.85.0-py3-none-any.whl (55 kB)
+     ---------------------------------------- 55.3/55.3 kB 1.5 MB/s eta 0:00:00
+  Downloading fastapi-0.84.0-py3-none-any.whl (55 kB)
+     ---------------------------------------- 55.3/55.3 kB 1.5 MB/s eta 0:00:00
+Collecting starlette==0.19.1 (from fastapi->-r requirement.txt (line 2))
+  Downloading starlette-0.19.1-py3-none-any.whl (63 kB)
+     ---------------------------------------- 63.3/63.3 kB 1.1 MB/s eta 0:00:00
+Collecting fastapi (from -r requirement.txt (line 2))
+  Downloading fastapi-0.83.0-py3-none-any.whl (55 kB)
+     ---------------------------------------- 55.3/55.3 kB 3.0 MB/s eta 0:00:00
+  Downloading fastapi-0.82.0-py3-none-any.whl (55 kB)
+     ---------------------------------------- 55.3/55.3 kB 1.5 MB/s eta 0:00:00
+  Downloading fastapi-0.81.0-py3-none-any.whl (54 kB)
+     ---------------------------------------- 54.9/54.9 kB 1.4 MB/s eta 0:00:00
+  Downloading fastapi-0.80.0-py3-none-any.whl (54 kB)
+     ---------------------------------------- 54.8/54.8 kB 2.8 MB/s eta 0:00:00
+  Downloading fastapi-0.79.1-py3-none-any.whl (54 kB)
+     ---------------------------------------- 54.7/54.7 kB 1.4 MB/s eta 0:00:00
+  Downloading fastapi-0.79.0-py3-none-any.whl (54 kB)
+     ---------------------------------------- 54.6/54.6 kB 1.4 MB/s eta 0:00:00
+  Downloading fastapi-0.78.0-py3-none-any.whl (54 kB)
+     ---------------------------------------- 54.6/54.6 kB ? eta 0:00:00
+  Downloading fastapi-0.77.1-py3-none-any.whl (54 kB)
+     ---------------------------------------- 54.5/54.5 kB 1.4 MB/s eta 0:00:00
+  Downloading fastapi-0.77.0-py3-none-any.whl (54 kB)
+     ---------------------------------------- 54.5/54.5 kB 2.8 MB/s eta 0:00:00
+Collecting starlette==0.19.0 (from fastapi->-r requirement.txt (line 2))
+  Downloading starlette-0.19.0-py3-none-any.whl (60 kB)
+     ---------------------------------------- 60.8/60.8 kB 1.6 MB/s eta 0:00:00
+Collecting fastapi (from -r requirement.txt (line 2))
+  Downloading fastapi-0.76.0-py3-none-any.whl (54 kB)
+     ---------------------------------------- 54.5/54.5 kB 3.0 MB/s eta 0:00:00
+Collecting starlette==0.18.0 (from fastapi->-r requirement.txt (line 2))
+  Downloading starlette-0.18.0-py3-none-any.whl (59 kB)
+     ---------------------------------------- 59.9/59.9 kB 1.6 MB/s eta 0:00:00
+Requirement already satisfied: google-auth<3,>=1.6.3 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.5->tensorflow==2.5.0->-r requirement.txt (line 1)) (1.35.0)
+Requirement already satisfied: google-auth-oauthlib<0.5,>=0.4.1 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.5->tensorflow==2.5.0->-r requirement.txt (line 1)) (0.4.6)
+Requirement already satisfied: markdown>=2.6.8 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.5->tensorflow==2.5.0->-r requirement.txt (line 1)) (3.3.4)
+Requirement already satisfied: requests<3,>=2.21.0 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.5->tensorflow==2.5.0->-r requirement.txt (line 1)) (2.25.1)
+Requirement already satisfied: setuptools>=41.0.0 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.5->tensorflow==2.5.0->-r requirement.txt (line 1)) (52.0.0.post20210125)
+Requirement already satisfied: tensorboard-data-server<0.7.0,>=0.6.0 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.5->tensorflow==2.5.0->-r requirement.txt (line 1)) (0.6.1)
+Requirement already satisfied: tensorboard-plugin-wit>=1.6.0 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.5->tensorflow==2.5.0->-r requirement.txt (line 1)) (1.8.0)
+Requirement already satisfied: werkzeug>=0.11.15 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.5->tensorflow==2.5.0->-r requirement.txt (line 1)) (1.0.1)
+Requirement already satisfied: idna>=2.8 in c:\programdata\anaconda3\lib\site-packages (from anyio<4.0.0,>=3.7.1->fastapi->-r requirement.txt (line 2)) (2.10)
+Requirement already satisfied: sniffio>=1.1 in c:\programdata\anaconda3\lib\site-packages (from anyio<4.0.0,>=3.7.1->fastapi->-r requirement.txt (line 2)) (1.2.0)
+Collecting exceptiongroup (from anyio<4.0.0,>=3.7.1->fastapi->-r requirement.txt (line 2))
+  Downloading exceptiongroup-1.2.0-py3-none-any.whl.metadata (6.6 kB)
+Requirement already satisfied: cachetools<5.0,>=2.0.0 in c:\programdata\anaconda3\lib\site-packages (from google-auth<3,>=1.6.3->tensorboard~=2.5->tensorflow==2.5.0->-r requirement.txt (line 1)) (4.2.2)
+Requirement already satisfied: pyasn1-modules>=0.2.1 in c:\programdata\anaconda3\lib\site-packages (from google-auth<3,>=1.6.3->tensorboard~=2.5->tensorflow==2.5.0->-r requirement.txt (line 1)) (0.2.8)
+Requirement already satisfied: rsa<5,>=3.1.4 in c:\programdata\anaconda3\lib\site-packages (from google-auth<3,>=1.6.3->tensorboard~=2.5->tensorflow==2.5.0->-r requirement.txt (line 1)) (4.7.2)
+Requirement already satisfied: requests-oauthlib>=0.7.0 in c:\programdata\anaconda3\lib\site-packages (from google-auth-oauthlib<0.5,>=0.4.1->tensorboard~=2.5->tensorflow==2.5.0->-r requirement.txt (line 1)) (1.3.0)
+Requirement already satisfied: importlib-metadata in c:\programdata\anaconda3\lib\site-packages (from markdown>=2.6.8->tensorboard~=2.5->tensorflow==2.5.0->-r requirement.txt (line 1)) (3.10.0)
+Requirement already satisfied: chardet<5,>=3.0.2 in c:\programdata\anaconda3\lib\site-packages (from requests<3,>=2.21.0->tensorboard~=2.5->tensorflow==2.5.0->-r requirement.txt (line 1)) (4.0.0)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in c:\programdata\anaconda3\lib\site-packages (from requests<3,>=2.21.0->tensorboard~=2.5->tensorflow==2.5.0->-r requirement.txt (line 1)) (1.26.4)
+Requirement already satisfied: certifi>=2017.4.17 in c:\programdata\anaconda3\lib\site-packages (from requests<3,>=2.21.0->tensorboard~=2.5->tensorflow==2.5.0->-r requirement.txt (line 1)) (2020.12.5)
+Requirement already satisfied: pyasn1<0.5.0,>=0.4.6 in c:\programdata\anaconda3\lib\site-packages (from pyasn1-modules>=0.2.1->google-auth<3,>=1.6.3->tensorboard~=2.5->tensorflow==2.5.0->-r requirement.txt (line 1)) (0.4.8)
+Requirement already satisfied: oauthlib>=3.0.0 in c:\programdata\anaconda3\lib\site-packages (from requests-oauthlib>=0.7.0->google-auth-oauthlib<0.5,>=0.4.1->tensorboard~=2.5->tensorflow==2.5.0->-r requirement.txt (line 1)) (3.1.1)
+Requirement already satisfied: zipp>=0.5 in c:\programdata\anaconda3\lib\site-packages (from importlib-metadata->markdown>=2.6.8->tensorboard~=2.5->tensorflow==2.5.0->-r requirement.txt (line 1)) (3.4.1)
+WARNING: The candidate selected for download or install is a yanked version: 'tensorflow-serving-api' candidate (version 2.5.0 at https://files.pythonhosted.org/packages/ea/45/7d962ab4d2dbb17e3dfb46ea9b9e5433aaecf5cab7a564b869575c0237e9/tensorflow_serving_api-2.5.0-py2.py3-none-any.whl (from https://pypi.org/simple/tensorflow-serving-api/))
+Reason for being yanked: incorrectly built.
+Downloading python_multipart-0.0.7-py3-none-any.whl (22 kB)
+Downloading anyio-3.7.1-py3-none-any.whl (80 kB)
+   ---------------------------------------- 80.9/80.9 kB 1.5 MB/s eta 0:00:00
+Downloading exceptiongroup-1.2.0-py3-none-any.whl (16 kB)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+DEPRECATION: pyodbc 4.0.0-unsupported has a non-standard version number. pip 24.0 will enforce this behaviour change. A possible replacement is to upgrade to a newer version of pyodbc or contact the author to suggest that they release a version with a conforming version number. Discussion can be found at https://github.com/pypa/pip/issues/12063
+Installing collected packages: typing-extensions, tensorflow-estimator, keras-nightly, flatbuffers, python-multipart, pydantic, h5py, h11, grpcio, exceptiongroup, uvicorn, anyio, starlette, fastapi, tensorflow, tensorflow-serving-api
+  Attempting uninstall: typing-extensions
+    WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+    Found existing installation: typing-extensions 3.10.0.2
+    Uninstalling typing-extensions-3.10.0.2:
+      Successfully uninstalled typing-extensions-3.10.0.2
+  Attempting uninstall: tensorflow-estimator
+    WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+    Found existing installation: tensorflow-estimator 2.7.0
+    Uninstalling tensorflow-estimator-2.7.0:
+      Successfully uninstalled tensorflow-estimator-2.7.0
+  Attempting uninstall: flatbuffers
+    WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+    Found existing installation: flatbuffers 2.0
+    Uninstalling flatbuffers-2.0:
+      Successfully uninstalled flatbuffers-2.0
+  Attempting uninstall: h5py
+    WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+    Found existing installation: h5py 2.10.0
+    Uninstalling h5py-2.10.0:
+      Successfully uninstalled h5py-2.10.0
+  Attempting uninstall: grpcio
+    WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+    Found existing installation: grpcio 1.40.0
+    Uninstalling grpcio-1.40.0:
+      Successfully uninstalled grpcio-1.40.0
+  Attempting uninstall: anyio
+    WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+    Found existing installation: anyio 2.2.0
+    Uninstalling anyio-2.2.0:
+      Successfully uninstalled anyio-2.2.0
+  Attempting uninstall: tensorflow
+    WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+    Found existing installation: tensorflow 2.7.0
+    Uninstalling tensorflow-2.7.0:
+      Successfully uninstalled tensorflow-2.7.0
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+spyder 4.2.5 requires pyqtwebengine<5.13, which is not installed.
+apache-beam 2.32.0 requires avro-python3!=1.9.2,<1.10.0,>=1.8.1, but you have avro-python3 1.10.2 which is incompatible.
+spyder 4.2.5 requires pyqt5<5.13, but you have pyqt5 5.15.6 which is incompatible.
+Successfully installed anyio-3.7.1 exceptiongroup-1.2.0 fastapi-0.76.0 flatbuffers-1.12 grpcio-1.34.1 h11-0.14.0 h5py-3.1.0 keras-nightly-2.5.0.dev2021032900 pydantic-1.9.2 python-multipart-0.0.7 starlette-0.18.0 tensorflow-2.5.0 tensorflow-estimator-2.5.0 tensorflow-serving-api-2.5.0 typing-extensions-3.7.4.3 uvicorn-0.22.0
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>uvicorn main:app --reload
+←[32mINFO←[0m:     Will watch for changes in these directories: ['D:\\Analytics\\Deep_learning_Tuto\\potato_disease\\api']
+←[32mINFO←[0m:     Uvicorn running on ←[1mhttp://127.0.0.1:8000←[0m (Press CTRL+C to quit)
+←[32mINFO←[0m:     Started reloader process [←[36m←[1m9796←[0m] using ←[36m←[1mStatReload←[0m
+Process SpawnProcess-1:
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\multiprocessing\process.py", line 297, in _bootstrap
+    self.run()
+  File "c:\programdata\anaconda3\lib\multiprocessing\process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "c:\programdata\anaconda3\lib\site-packages\uvicorn\_subprocess.py", line 76, in subprocess_started
+    target(sockets=sockets)
+  File "c:\programdata\anaconda3\lib\site-packages\uvicorn\server.py", line 61, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "c:\programdata\anaconda3\lib\asyncio\runners.py", line 43, in run
+    return loop.run_until_complete(main)
+  File "c:\programdata\anaconda3\lib\asyncio\base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "c:\programdata\anaconda3\lib\site-packages\uvicorn\server.py", line 68, in serve
+    config.load()
+  File "c:\programdata\anaconda3\lib\site-packages\uvicorn\config.py", line 473, in load
+    self.loaded_app = import_from_string(self.app)
+  File "c:\programdata\anaconda3\lib\site-packages\uvicorn\importer.py", line 24, in import_from_string
+    raise exc from None
+  File "c:\programdata\anaconda3\lib\site-packages\uvicorn\importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+  File "c:\programdata\anaconda3\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "D:\Analytics\Deep_learning_Tuto\potato_disease\api\main.py", line 1, in <module>
+    from fastapi import FASTAPI
+  File "c:\programdata\anaconda3\lib\site-packages\fastapi\__init__.py", line 7, in <module>
+    from .applications import FastAPI as FastAPI
+  File "c:\programdata\anaconda3\lib\site-packages\fastapi\applications.py", line 4, in <module>
+    from fastapi import routing
+  File "c:\programdata\anaconda3\lib\site-packages\fastapi\routing.py", line 22, in <module>
+    from fastapi.datastructures import Default, DefaultPlaceholder
+  File "c:\programdata\anaconda3\lib\site-packages\fastapi\datastructures.py", line 3, in <module>
+    from starlette.datastructures import URL as URL  # noqa: F401
+  File "c:\programdata\anaconda3\lib\site-packages\starlette\datastructures.py", line 8, in <module>
+    from starlette.concurrency import run_in_threadpool
+  File "c:\programdata\anaconda3\lib\site-packages\starlette\concurrency.py", line 10, in <module>
+    from typing_extensions import ParamSpec
+ImportError: cannot import name 'ParamSpec' from 'typing_extensions' (c:\programdata\anaconda3\lib\site-packages\typing_extensions.py)
+←[32mINFO←[0m:     Stopping reloader process [←[36m←[1m9796←[0m]
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip uninstall typing_extensions
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+Found existing installation: typing-extensions 3.7.4.3
+Uninstalling typing-extensions-3.7.4.3:
+  Would remove:
+    c:\programdata\anaconda3\lib\site-packages\typing_extensions-3.7.4.3.dist-info\*
+    c:\programdata\anaconda3\lib\site-packages\typing_extensions.py
+  Would not remove (might be manually added):
+    c:\programdata\anaconda3\lib\site-packages\typing_extensions-3.7.4.3.dist-info\REQUESTED
+    c:\programdata\anaconda3\lib\site-packages\typing_extensions-3.7.4.3.dist-info\direct_url.json
+Proceed (Y/n)? y
+  Successfully uninstalled typing-extensions-3.7.4.3
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip uninstall fastapi
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+Found existing installation: fastapi 0.76.0
+Uninstalling fastapi-0.76.0:
+  Would remove:
+    c:\programdata\anaconda3\lib\site-packages\fastapi-0.76.0.dist-info\*
+    c:\programdata\anaconda3\lib\site-packages\fastapi\*
+Proceed (Y/n)? y
+  Successfully uninstalled fastapi-0.76.0
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip install --no-cache fastapi
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Collecting fastapi
+  Downloading fastapi-0.103.2-py3-none-any.whl.metadata (24 kB)
+Requirement already satisfied: anyio<4.0.0,>=3.7.1 in c:\programdata\anaconda3\lib\site-packages (from fastapi) (3.7.1)
+Requirement already satisfied: pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4 in c:\programdata\anaconda3\lib\site-packages (from fastapi) (1.9.2)
+Collecting starlette<0.28.0,>=0.27.0 (from fastapi)
+  Downloading starlette-0.27.0-py3-none-any.whl.metadata (5.8 kB)
+Collecting typing-extensions>=4.5.0 (from fastapi)
+  Downloading typing_extensions-4.7.1-py3-none-any.whl.metadata (3.1 kB)
+Requirement already satisfied: idna>=2.8 in c:\programdata\anaconda3\lib\site-packages (from anyio<4.0.0,>=3.7.1->fastapi) (2.10)
+Requirement already satisfied: sniffio>=1.1 in c:\programdata\anaconda3\lib\site-packages (from anyio<4.0.0,>=3.7.1->fastapi) (1.2.0)
+Requirement already satisfied: exceptiongroup in c:\programdata\anaconda3\lib\site-packages (from anyio<4.0.0,>=3.7.1->fastapi) (1.2.0)
+Downloading fastapi-0.103.2-py3-none-any.whl (66 kB)
+   ---------------------------------------- 66.3/66.3 kB 514.7 kB/s eta 0:00:00
+Downloading starlette-0.27.0-py3-none-any.whl (66 kB)
+   ---------------------------------------- 67.0/67.0 kB 727.4 kB/s eta 0:00:00
+Downloading typing_extensions-4.7.1-py3-none-any.whl (33 kB)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Error parsing requirements for typing-extensions: [Errno 2] No such file or directory: 'c:\\programdata\\anaconda3\\lib\\site-packages\\typing_extensions-3.7.4.3.dist-info\\METADATA'
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+DEPRECATION: pyodbc 4.0.0-unsupported has a non-standard version number. pip 24.0 will enforce this behaviour change. A possible replacement is to upgrade to a newer version of pyodbc or contact the author to suggest that they release a version with a conforming version number. Discussion can be found at https://github.com/pypa/pip/issues/12063
+Installing collected packages: typing-extensions, starlette, fastapi
+  Attempting uninstall: typing-extensions
+    WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+    WARNING: No metadata found in c:\programdata\anaconda3\lib\site-packages
+    Found existing installation: typing-extensions 3.7.4.3
+ERROR: Cannot uninstall typing-extensions 3.7.4.3, RECORD file not found. You might be able to recover from this via: 'pip install --force-reinstall --no-deps typing-extensions==3.7.4.3'.
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip install --no-cache fastapi
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Collecting fastapi
+  Downloading fastapi-0.103.2-py3-none-any.whl.metadata (24 kB)
+Requirement already satisfied: anyio<4.0.0,>=3.7.1 in c:\programdata\anaconda3\lib\site-packages (from fastapi) (3.7.1)
+Requirement already satisfied: pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4 in c:\programdata\anaconda3\lib\site-packages (from fastapi) (1.9.2)
+Collecting starlette<0.28.0,>=0.27.0 (from fastapi)
+  Downloading starlette-0.27.0-py3-none-any.whl.metadata (5.8 kB)
+Collecting typing-extensions>=4.5.0 (from fastapi)
+  Downloading typing_extensions-4.7.1-py3-none-any.whl.metadata (3.1 kB)
+Requirement already satisfied: idna>=2.8 in c:\programdata\anaconda3\lib\site-packages (from anyio<4.0.0,>=3.7.1->fastapi) (2.10)
+Requirement already satisfied: sniffio>=1.1 in c:\programdata\anaconda3\lib\site-packages (from anyio<4.0.0,>=3.7.1->fastapi) (1.2.0)
+Requirement already satisfied: exceptiongroup in c:\programdata\anaconda3\lib\site-packages (from anyio<4.0.0,>=3.7.1->fastapi) (1.2.0)
+Downloading fastapi-0.103.2-py3-none-any.whl (66 kB)
+   ---------------------------------------- 66.3/66.3 kB 603.2 kB/s eta 0:00:00
+Downloading starlette-0.27.0-py3-none-any.whl (66 kB)
+   ---------------------------------------- 67.0/67.0 kB 727.4 kB/s eta 0:00:00
+Downloading typing_extensions-4.7.1-py3-none-any.whl (33 kB)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Error parsing requirements for typing-extensions: [Errno 2] No such file or directory: 'c:\\programdata\\anaconda3\\lib\\site-packages\\typing_extensions-3.7.4.3.dist-info\\METADATA'
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+DEPRECATION: pyodbc 4.0.0-unsupported has a non-standard version number. pip 24.0 will enforce this behaviour change. A possible replacement is to upgrade to a newer version of pyodbc or contact the author to suggest that they release a version with a conforming version number. Discussion can be found at https://github.com/pypa/pip/issues/12063
+Installing collected packages: typing-extensions, starlette, fastapi
+  Attempting uninstall: typing-extensions
+    WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+    WARNING: No metadata found in c:\programdata\anaconda3\lib\site-packages
+    Found existing installation: typing-extensions 3.7.4.3
+ERROR: Cannot uninstall typing-extensions 3.7.4.3, RECORD file not found. You might be able to recover from this via: 'pip install --force-reinstall --no-deps typing-extensions==3.7.4.3'.
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip install --force-reinstall --no-deps typing-extensions==3.7.4.3
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Collecting typing-extensions==3.7.4.3
+  Using cached typing_extensions-3.7.4.3-py3-none-any.whl (22 kB)
+Installing collected packages: typing-extensions
+  Attempting uninstall: typing-extensions
+    WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+    WARNING: No metadata found in c:\programdata\anaconda3\lib\site-packages
+    Found existing installation: typing-extensions 3.7.4.3
+ERROR: Cannot uninstall typing-extensions 3.7.4.3, RECORD file not found. You might be able to recover from this via: 'pip install --force-reinstall --no-deps typing-extensions==3.7.4.3'.
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip uninstall typing_extensions
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: No metadata found in c:\programdata\anaconda3\lib\site-packages
+Found existing installation: typing-extensions 3.7.4.3
+ERROR: Cannot uninstall typing-extensions 3.7.4.3, RECORD file not found. You might be able to recover from this via: 'pip install --force-reinstall --no-deps typing-extensions==3.7.4.3'.
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip install --force-reinstall --no-deps typing-extensions==3.7.4.3
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Collecting typing-extensions==3.7.4.3
+  Using cached typing_extensions-3.7.4.3-py3-none-any.whl (22 kB)
+Installing collected packages: typing-extensions
+  Attempting uninstall: typing-extensions
+    WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+    WARNING: No metadata found in c:\programdata\anaconda3\lib\site-packages
+    Found existing installation: typing-extensions 3.7.4.3
+ERROR: Cannot uninstall typing-extensions 3.7.4.3, RECORD file not found. You might be able to recover from this via: 'pip install --force-reinstall --no-deps typing-extensions==3.7.4.3'.
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip install --force-reinstall --no-deps typing-extensions
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Collecting typing-extensions
+  Downloading typing_extensions-4.7.1-py3-none-any.whl.metadata (3.1 kB)
+Downloading typing_extensions-4.7.1-py3-none-any.whl (33 kB)
+Installing collected packages: typing-extensions
+  Attempting uninstall: typing-extensions
+    WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+    WARNING: No metadata found in c:\programdata\anaconda3\lib\site-packages
+    Found existing installation: typing-extensions 3.7.4.3
+ERROR: Cannot uninstall typing-extensions 3.7.4.3, RECORD file not found. You might be able to recover from this via: 'pip install --force-reinstall --no-deps typing-extensions==3.7.4.3'.
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip install --no-cache fastapi
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Collecting fastapi
+  Downloading fastapi-0.103.2-py3-none-any.whl.metadata (24 kB)
+Requirement already satisfied: anyio<4.0.0,>=3.7.1 in c:\programdata\anaconda3\lib\site-packages (from fastapi) (3.7.1)
+Requirement already satisfied: pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4 in c:\programdata\anaconda3\lib\site-packages (from fastapi) (1.9.2)
+Collecting starlette<0.28.0,>=0.27.0 (from fastapi)
+  Downloading starlette-0.27.0-py3-none-any.whl.metadata (5.8 kB)
+Collecting typing-extensions>=4.5.0 (from fastapi)
+  Downloading typing_extensions-4.7.1-py3-none-any.whl.metadata (3.1 kB)
+Requirement already satisfied: idna>=2.8 in c:\programdata\anaconda3\lib\site-packages (from anyio<4.0.0,>=3.7.1->fastapi) (2.10)
+Requirement already satisfied: sniffio>=1.1 in c:\programdata\anaconda3\lib\site-packages (from anyio<4.0.0,>=3.7.1->fastapi) (1.2.0)
+Requirement already satisfied: exceptiongroup in c:\programdata\anaconda3\lib\site-packages (from anyio<4.0.0,>=3.7.1->fastapi) (1.2.0)
+Downloading fastapi-0.103.2-py3-none-any.whl (66 kB)
+   ---------------------------------------- 66.3/66.3 kB 510.0 kB/s eta 0:00:00
+Downloading starlette-0.27.0-py3-none-any.whl (66 kB)
+   ---------------------------------------- 67.0/67.0 kB 520.5 kB/s eta 0:00:00
+Downloading typing_extensions-4.7.1-py3-none-any.whl (33 kB)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+DEPRECATION: pyodbc 4.0.0-unsupported has a non-standard version number. pip 24.0 will enforce this behaviour change. A possible replacement is to upgrade to a newer version of pyodbc or contact the author to suggest that they release a version with a conforming version number. Discussion can be found at https://github.com/pypa/pip/issues/12063
+Installing collected packages: typing-extensions, starlette, fastapi
+  Attempting uninstall: starlette
+    WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+    Found existing installation: starlette 0.18.0
+    Uninstalling starlette-0.18.0:
+      Successfully uninstalled starlette-0.18.0
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+spyder 4.2.5 requires pyqtwebengine<5.13, which is not installed.
+apache-beam 2.32.0 requires avro-python3!=1.9.2,<1.10.0,>=1.8.1, but you have avro-python3 1.10.2 which is incompatible.
+apache-beam 2.32.0 requires typing-extensions<3.8.0,>=3.7.0, but you have typing-extensions 4.7.1 which is incompatible.
+spyder 4.2.5 requires pyqt5<5.13, but you have pyqt5 5.15.6 which is incompatible.
+tensorflow 2.5.0 requires typing-extensions~=3.7.4, but you have typing-extensions 4.7.1 which is incompatible.
+Successfully installed fastapi-0.103.2 starlette-0.27.0 typing-extensions-4.7.1
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip uninstall numpy
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+Found existing installation: numpy 1.19.5
+Uninstalling numpy-1.19.5:
+  Would remove:
+    c:\programdata\anaconda3\lib\site-packages\numpy-1.19.5.dist-info\*
+    c:\programdata\anaconda3\lib\site-packages\numpy\*
+    c:\programdata\anaconda3\scripts\f2py-script.py
+    c:\programdata\anaconda3\scripts\f2py.exe
+  Would not remove (might be manually added):
+    c:\programdata\anaconda3\lib\site-packages\numpy\__init__.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\char.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\__init__.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\_add_newdocs_scalars.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\_asarray.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\_internal.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\_simd.cp37-win_amd64.pyd
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\_type_aliases.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\_ufunc_config.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\fromnumeric.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\function_base.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\numeric.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\numerictypes.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\shape_base.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\tests\examples\checks.pyx
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\tests\examples\setup.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\tests\test_array_coercion.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\tests\test_casting_unittests.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\tests\test_cpu_dispatcher.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\tests\test_cython.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\tests\test_simd.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\core\tests\test_simd_module.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\ctypeslib.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\__init__.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\ccompiler_opt.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_asimd.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_asimddp.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_asimdfhm.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_asimdhp.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_avx.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_avx2.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_avx512_clx.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_avx512_cnl.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_avx512_icl.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_avx512_knl.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_avx512_knm.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_avx512_skx.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_avx512cd.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_avx512f.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_f16c.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_fma3.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_fma4.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_neon.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_neon_fp16.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_neon_vfpv4.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_popcnt.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_sse.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_sse2.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_sse3.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_sse41.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_sse42.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_ssse3.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_vsx.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_vsx2.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_vsx3.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\cpu_xop.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\extra_avx512bw_mask.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\extra_avx512dq_mask.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\extra_avx512f_reduce.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\checks\test_flags.c
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\fcompiler\fujitsu.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\site.cfg
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\tests\test_build_ext.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\tests\test_ccompiler_opt.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\distutils\tests\test_ccompiler_opt_conf.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\emath.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\f2py\__init__.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\f2py\tests\src\module_data\mod.mod
+    c:\programdata\anaconda3\lib\site-packages\numpy\f2py\tests\src\module_data\module_data_docstring.f90
+    c:\programdata\anaconda3\lib\site-packages\numpy\f2py\tests\test_module_doc.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\fft\__init__.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\lib\__init__.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\lib\tests\test_financial_expired.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\linalg\__init__.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\ma\__init__.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\matrixlib\__init__.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\polynomial\__init__.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\py.typed
+    c:\programdata\anaconda3\lib\site-packages\numpy\random\__init__.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\rec.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\testing\__init__.pyi
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\__init__.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\_add_docstring.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\_array_like.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\_callable.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\_dtype_like.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\_scalars.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\_shape.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\setup.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\__init__.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\fail\arithmetic.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\fail\array_constructors.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\fail\array_like.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\fail\bitwise_ops.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\fail\constants.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\fail\dtype.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\fail\flatiter.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\fail\fromnumeric.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\fail\modules.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\fail\ndarray.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\fail\ndarray_misc.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\fail\numerictypes.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\fail\scalars.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\fail\ufunc_config.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\fail\ufuncs.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\fail\warnings_and_errors.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\mypy.ini
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\arithmetic.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\array_constructors.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\array_like.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\bitwise_ops.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\dtype.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\flatiter.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\fromnumeric.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\literal.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\mod.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\modules.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\ndarray_conversion.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\ndarray_misc.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\ndarray_shape_manipulation.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\numeric.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\numerictypes.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\scalars.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\simple.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\simple_py3.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\ufunc_config.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\ufuncs.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\pass\warnings_and_errors.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\reveal\arithmetic.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\reveal\array_constructors.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\reveal\bitwise_ops.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\reveal\constants.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\reveal\dtype.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\reveal\flatiter.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\reveal\fromnumeric.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\reveal\mod.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\reveal\modules.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\reveal\nbit_base_example.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\reveal\ndarray_conversion.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\reveal\ndarray_misc.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\reveal\ndarray_shape_manipulation.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\reveal\numeric.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\reveal\numerictypes.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\reveal\scalars.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\reveal\ufunc_config.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\data\reveal\warnings_and_errors.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\test_isfile.py
+    c:\programdata\anaconda3\lib\site-packages\numpy\typing\tests\test_typing.py
+Proceed (Y/n)? y
+  Successfully uninstalled numpy-1.19.5
+WARNING: Failed to remove contents in a temporary directory 'C:\Users\Admin\AppData\Local\Temp\pip-uninstall-ty_9dcv0'.
+You can safely remove it manually.
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>conda install numpy 1.19.5
+Collecting package metadata (current_repodata.json): failed
+
+CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://repo.anaconda.com/pkgs/main/win-64/current_repodata.json>
+Elapsed: -
+
+An HTTP error occurred when trying to retrieve this URL.
+HTTP errors are often intermittent, and a simple retry will get you on your way.
+
+If your current network has https://www.anaconda.com blocked, please file
+a support request with your network engineering team.
+
+'https://repo.anaconda.com/pkgs/main/win-64'
+
+
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip install numpy 1.19.5
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Requirement already satisfied: numpy in c:\programdata\anaconda3\lib\site-packages (1.20.1)
+ERROR: Could not find a version that satisfies the requirement 1.19.5 (from versions: none)
+ERROR: No matching distribution found for 1.19.5
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>conda install numpy 1.19.3
+Collecting package metadata (current_repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+Collecting package metadata (repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+
+PackagesNotFoundError: The following packages are not available from current channels:
+
+  - 1.19.3
+
+Current channels:
+
+  - https://repo.anaconda.com/pkgs/main/win-64
+  - https://repo.anaconda.com/pkgs/main/noarch
+  - https://repo.anaconda.com/pkgs/r/win-64
+  - https://repo.anaconda.com/pkgs/r/noarch
+  - https://repo.anaconda.com/pkgs/msys2/win-64
+  - https://repo.anaconda.com/pkgs/msys2/noarch
+
+To search for alternate channels that may provide the conda package you're
+looking for, navigate to
+
+    https://anaconda.org
+
+and use the search bar at the top of the page.
+
+
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>conda install numpy 1.19.2
+Collecting package metadata (current_repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+Collecting package metadata (repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+
+PackagesNotFoundError: The following packages are not available from current channels:
+
+  - 1.19.2
+
+Current channels:
+
+  - https://repo.anaconda.com/pkgs/main/win-64
+  - https://repo.anaconda.com/pkgs/main/noarch
+  - https://repo.anaconda.com/pkgs/r/win-64
+  - https://repo.anaconda.com/pkgs/r/noarch
+  - https://repo.anaconda.com/pkgs/msys2/win-64
+  - https://repo.anaconda.com/pkgs/msys2/noarch
+
+To search for alternate channels that may provide the conda package you're
+looking for, navigate to
+
+    https://anaconda.org
+
+and use the search bar at the top of the page.
+
+
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip install numpy 1.19.2
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Requirement already satisfied: numpy in c:\programdata\anaconda3\lib\site-packages (1.20.1)
+ERROR: Could not find a version that satisfies the requirement 1.19.2 (from versions: none)
+ERROR: No matching distribution found for 1.19.2
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>conda install -c anaconda numpy
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.10.3
+  latest version: 24.1.0
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+## Package Plan ##
+
+  environment location: C:\ProgramData\Anaconda3\envs\Tensorflow
+
+  added / updated specs:
+    - numpy
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    blas-1.0                   |              mkl           6 KB  anaconda
+    ca-certificates-2023.08.22 |       haa95532_0         161 KB  anaconda
+    certifi-2023.11.17         |  py310haa95532_0         160 KB  anaconda
+    intel-openmp-2023.1.0      |   h59b6b97_46320         3.7 MB  anaconda
+    mkl-2023.1.0               |   h6b88ed4_46358       178.8 MB  anaconda
+    mkl-service-2.4.0          |  py310h2bbff1b_1          48 KB  anaconda
+    mkl_fft-1.3.8              |  py310h2bbff1b_0         181 KB  anaconda
+    mkl_random-1.2.4           |  py310h59b6b97_0         249 KB  anaconda
+    numpy-1.26.0               |  py310h055cbcc_0          10 KB  anaconda
+    numpy-base-1.26.0          |  py310h65a83cf_0         6.5 MB  anaconda
+    openssl-1.1.1w             |       h2bbff1b_0         5.8 MB  anaconda
+    tbb-2021.8.0               |       h59b6b97_0         149 KB  anaconda
+    ------------------------------------------------------------
+                                           Total:       195.7 MB
+
+The following NEW packages will be INSTALLED:
+
+  blas               anaconda/win-64::blas-1.0-mkl
+  intel-openmp       anaconda/win-64::intel-openmp-2023.1.0-h59b6b97_46320
+  mkl                anaconda/win-64::mkl-2023.1.0-h6b88ed4_46358
+  mkl-service        anaconda/win-64::mkl-service-2.4.0-py310h2bbff1b_1
+  mkl_fft            anaconda/win-64::mkl_fft-1.3.8-py310h2bbff1b_0
+  mkl_random         anaconda/win-64::mkl_random-1.2.4-py310h59b6b97_0
+  numpy              anaconda/win-64::numpy-1.26.0-py310h055cbcc_0
+  numpy-base         anaconda/win-64::numpy-base-1.26.0-py310h65a83cf_0
+  tbb                anaconda/win-64::tbb-2021.8.0-h59b6b97_0
+
+The following packages will be UPDATED:
+
+  ca-certificates    pkgs/main::ca-certificates-2022.07.19~ --> anaconda::ca-certificates-2023.08.22-haa95532_0
+  certifi            pkgs/main::certifi-2022.6.15-py310haa~ --> anaconda::certifi-2023.11.17-py310haa95532_0
+  openssl              pkgs/main::openssl-1.1.1q-h2bbff1b_0 --> anaconda::openssl-1.1.1w-h2bbff1b_0
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+openssl-1.1.1w       | 5.8 MB    | ############################################################################ | 100%
+tbb-2021.8.0         | 149 KB    | ############################################################################ | 100%
+mkl-2023.1.0         | 178.8 MB  | 6                                                                            |   1%
+ca-certificates-2023 | 161 KB    | ############################################################################ | 100%
+mkl_fft-1.3.8        | 181 KB    | ############################################################################ | 100%
+mkl_random-1.2.4     | 249 KB    | ############################################################################ | 100%
+certifi-2023.11.17   | 160 KB    | ############################################################################ | 100%
+numpy-base-1.26.0    | 6.5 MB    | ############################################################################ | 100%
+intel-openmp-2023.1. | 3.7 MB    | ############################################################################ | 100%
+blas-1.0             | 6 KB      | ############################################################################ | 100%
+mkl-service-2.4.0    | 48 KB     | ############################################################################ | 100%
+numpy-1.26.0         | 10 KB     | ############################################################################ | 100%
+
+CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://conda.anaconda.org/anaconda/win-64/mkl-2023.1.0-h6b88ed4_46358.tar.bz2>
+Elapsed: -
+
+An HTTP error occurred when trying to retrieve this URL.
+HTTP errors are often intermittent, and a simple retry will get you on your way.
+
+
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip install numpy --downgrade
+
+Usage:
+  pip install [options] <requirement specifier> [package-index-options] ...
+  pip install [options] -r <requirements file> [package-index-options] ...
+  pip install [options] [-e] <vcs project url> ...
+  pip install [options] [-e] <local project path> ...
+  pip install [options] <archive url/path> ...
+
+no such option: --downgrade
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip install numpy --downgrade
+
+Usage:
+  pip install [options] <requirement specifier> [package-index-options] ...
+  pip install [options] -r <requirements file> [package-index-options] ...
+  pip install [options] [-e] <vcs project url> ...
+  pip install [options] [-e] <local project path> ...
+  pip install [options] <archive url/path> ...
+
+no such option: --downgrade
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip install numpy --upgrade
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Requirement already satisfied: numpy in c:\programdata\anaconda3\lib\site-packages (1.20.1)
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(<pip._vendor.urllib3.connection.HTTPSConnection object at 0x000002D299603CC8>, 'Connection to pypi.org timed out. (connect timeout=15)')': /simple/numpy/
+Collecting numpy
+  Downloading numpy-1.21.6-cp37-cp37m-win_amd64.whl (14.0 MB)
+     ------------------------------------- -- 13.1/14.0 MB 167.3 kB/s eta 0:00:06
+ERROR: Exception:
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_vendor\urllib3\response.py", line 438, in _error_catcher
+    yield
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_vendor\urllib3\response.py", line 561, in read
+    data = self._fp_read(amt) if not fp_closed else b""
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_vendor\urllib3\response.py", line 527, in _fp_read
+    return self._fp.read(amt) if amt is not None else self._fp.read()
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_vendor\cachecontrol\filewrapper.py", line 98, in read
+    data: bytes = self.__fp.read(amt)
+  File "c:\programdata\anaconda3\lib\http\client.py", line 461, in read
+    n = self.readinto(b)
+  File "c:\programdata\anaconda3\lib\http\client.py", line 505, in readinto
+    n = self.fp.readinto(b)
+  File "c:\programdata\anaconda3\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "c:\programdata\anaconda3\lib\ssl.py", line 1071, in recv_into
+    return self.read(nbytes, buffer)
+  File "c:\programdata\anaconda3\lib\ssl.py", line 929, in read
+    return self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\cli\base_command.py", line 180, in exc_logging_wrapper
+    status = run_func(*args)
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\cli\req_command.py", line 245, in wrapper
+    return func(self, options, args)
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\commands\install.py", line 378, in run
+    reqs, check_supported_wheels=not options.target_dir
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\resolution\resolvelib\resolver.py", line 96, in resolve
+    collected.requirements, max_rounds=limit_how_complex_resolution_can_be
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_vendor\resolvelib\resolvers.py", line 546, in resolve
+    state = resolution.resolve(requirements, max_rounds=max_rounds)
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_vendor\resolvelib\resolvers.py", line 397, in resolve
+    self._add_to_criteria(self.state.criteria, r, parent=None)
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_vendor\resolvelib\resolvers.py", line 173, in _add_to_criteria
+    if not criterion.candidates:
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_vendor\resolvelib\structs.py", line 156, in __bool__
+    return bool(self._sequence)
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\resolution\resolvelib\found_candidates.py", line 155, in __bool__
+    return any(self)
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\resolution\resolvelib\found_candidates.py", line 143, in <genexpr>
+    return (c for c in iterator if id(c) not in self._incompatible_ids)
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\resolution\resolvelib\found_candidates.py", line 97, in _iter_built_with_inserted
+    candidate = func()
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\resolution\resolvelib\factory.py", line 183, in _make_candidate_from_link
+    link, template, name, version
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\resolution\resolvelib\factory.py", line 233, in _make_base_candidate_from_link
+    version=version,
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\resolution\resolvelib\candidates.py", line 299, in __init__
+    version=version,
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\resolution\resolvelib\candidates.py", line 156, in __init__
+    self.dist = self._prepare()
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\resolution\resolvelib\candidates.py", line 225, in _prepare
+    dist = self._prepare_distribution()
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\resolution\resolvelib\candidates.py", line 304, in _prepare_distribution
+    return preparer.prepare_linked_requirement(self._ireq, parallel_builds=True)
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\operations\prepare.py", line 525, in prepare_linked_requirement
+    return self._prepare_linked_requirement(req, parallel_builds)
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\operations\prepare.py", line 602, in _prepare_linked_requirement
+    hashes,
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\operations\prepare.py", line 172, in unpack_url
+    hashes=hashes,
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\operations\prepare.py", line 109, in get_http_url
+    from_path, content_type = download(link, temp_dir.path)
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\network\download.py", line 147, in __call__
+    for chunk in chunks:
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\cli\progress_bars.py", line 53, in _rich_progress_bar
+    for chunk in iterable:
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_internal\network\utils.py", line 87, in response_chunks
+    decode_content=False,
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_vendor\urllib3\response.py", line 622, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_vendor\urllib3\response.py", line 587, in read
+    raise IncompleteRead(self._fp_bytes_read, self.length_remaining)
+  File "c:\programdata\anaconda3\lib\contextlib.py", line 130, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "c:\programdata\anaconda3\lib\site-packages\pip\_vendor\urllib3\response.py", line 443, in _error_catcher
+    raise ReadTimeoutError(self._pool, None, "Read timed out.")
+pip._vendor.urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Read timed out.
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip install numpy --upgrade
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Requirement already satisfied: numpy in c:\programdata\anaconda3\lib\site-packages (1.20.1)
+Collecting numpy
+  Downloading numpy-1.21.6-cp37-cp37m-win_amd64.whl (14.0 MB)
+     ---------------------------------------- 14.0/14.0 MB 3.9 MB/s eta 0:00:00
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+DEPRECATION: pyodbc 4.0.0-unsupported has a non-standard version number. pip 24.0 will enforce this behaviour change. A possible replacement is to upgrade to a newer version of pyodbc or contact the author to suggest that they release a version with a conforming version number. Discussion can be found at https://github.com/pypa/pip/issues/12063
+Installing collected packages: numpy
+  Attempting uninstall: numpy
+    WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+    Found existing installation: numpy 1.20.1
+    Uninstalling numpy-1.20.1:
+      Successfully uninstalled numpy-1.20.1
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+apache-beam 2.32.0 requires avro-python3!=1.9.2,<1.10.0,>=1.8.1, but you have avro-python3 1.10.2 which is incompatible.
+apache-beam 2.32.0 requires numpy<1.21.0,>=1.14.3, but you have numpy 1.21.6 which is incompatible.
+apache-beam 2.32.0 requires typing-extensions<3.8.0,>=3.7.0, but you have typing-extensions 4.7.1 which is incompatible.
+tensorflow 2.5.0 requires numpy~=1.19.2, but you have numpy 1.21.6 which is incompatible.
+tensorflow 2.5.0 requires typing-extensions~=3.7.4, but you have typing-extensions 4.7.1 which is incompatible.
+Successfully installed numpy-1.21.6
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip install 'numpy==1.16' --force-reinstall
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+ERROR: Invalid requirement: "'numpy==1.16'"
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip install 'numpy==1.19.5' --force-reinstall
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+ERROR: Invalid requirement: "'numpy==1.19.5'"
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip install --upgrade --force-reinstall numpy
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Collecting numpy
+  Using cached numpy-1.21.6-cp37-cp37m-win_amd64.whl (14.0 MB)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+DEPRECATION: pyodbc 4.0.0-unsupported has a non-standard version number. pip 24.0 will enforce this behaviour change. A possible replacement is to upgrade to a newer version of pyodbc or contact the author to suggest that they release a version with a conforming version number. Discussion can be found at https://github.com/pypa/pip/issues/12063
+Installing collected packages: numpy
+  Attempting uninstall: numpy
+    WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+    Found existing installation: numpy 1.21.6
+    Uninstalling numpy-1.21.6:
+      Successfully uninstalled numpy-1.21.6
+  WARNING: Failed to remove contents in a temporary directory 'c:\programdata\anaconda3\lib\site-packages\~umpy'.
+  You can safely remove it manually.
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+apache-beam 2.32.0 requires avro-python3!=1.9.2,<1.10.0,>=1.8.1, but you have avro-python3 1.10.2 which is incompatible.
+apache-beam 2.32.0 requires numpy<1.21.0,>=1.14.3, but you have numpy 1.21.6 which is incompatible.
+apache-beam 2.32.0 requires typing-extensions<3.8.0,>=3.7.0, but you have typing-extensions 4.7.1 which is incompatible.
+tensorflow 2.5.0 requires numpy~=1.19.2, but you have numpy 1.21.6 which is incompatible.
+tensorflow 2.5.0 requires typing-extensions~=3.7.4, but you have typing-extensions 4.7.1 which is incompatible.
+Successfully installed numpy-1.21.6
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip3 show tensorflow
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Name: tensorflow
+Version: 2.5.0
+Summary: TensorFlow is an open source machine learning framework for everyone.
+Home-page: https://www.tensorflow.org/
+Author: Google Inc.
+Author-email: packages@tensorflow.org
+License: Apache 2.0
+Location: c:\programdata\anaconda3\lib\site-packages
+Requires: absl-py, astunparse, flatbuffers, gast, google-pasta, grpcio, h5py, keras-nightly, keras-preprocessing, numpy, opt-einsum, protobuf, six, tensorboard, tensorflow-estimator, termcolor, typing-extensions, wheel, wrapt
+Required-by: tensorflow-serving-api
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip3 show numpy
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Name: numpy
+Version: 1.21.6
+Summary: NumPy is the fundamental package for array computing with Python.
+Home-page: https://www.numpy.org
+Author: Travis E. Oliphant et al.
+Author-email:
+License: BSD
+Location: c:\programdata\anaconda3\lib\site-packages
+Requires:
+Required-by: apache-beam, astropy, bkcharts, bokeh, Bottleneck, gensim, gym, h5py, imagecodecs, imageio, Keras-Preprocessing, matplotlib, mediapipe, mkl-fft, mkl-random, moviepy, numba, numexpr, numpy-financial, opencv-contrib-python, opt-einsum, pandas, patsy, pyarrow, pyerfa, PyWavelets, scikit-image, scikit-learn, scipy, seaborn, statsmodels, tables, tensorboard, tensorflow, tensorflow-datasets, tifffile, transformers
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip3 install --upgrade tensorflow==2.7.0
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Collecting tensorflow==2.7.0
+  WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(<pip._vendor.urllib3.connection.HTTPSConnection object at 0x0000015C6BA70048>, 'Connection to files.pythonhosted.org timed out. (connect timeout=15)')': /packages/c8/fc/56c4e9818ebdcc2b7fa449001772227f0108ba152f36b3e2732d20d8c16c/tensorflow-2.7.0-cp37-cp37m-win_amd64.whl
+  Downloading tensorflow-2.7.0-cp37-cp37m-win_amd64.whl (430.8 MB)
+     ---------------------------------------- 430.8/430.8 MB 3.0 MB/s eta 0:00:00
+Requirement already satisfied: numpy>=1.14.5 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.7.0) (1.21.6)
+Requirement already satisfied: absl-py>=0.4.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.7.0) (0.12.0)
+Requirement already satisfied: astunparse>=1.6.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.7.0) (1.6.3)
+Requirement already satisfied: libclang>=9.0.1 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.7.0) (12.0.0)
+Requirement already satisfied: flatbuffers<3.0,>=1.12 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.7.0) (1.12)
+Requirement already satisfied: google-pasta>=0.1.1 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.7.0) (0.2.0)
+Requirement already satisfied: h5py>=2.9.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.7.0) (3.1.0)
+Requirement already satisfied: keras-preprocessing>=1.1.1 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.7.0) (1.1.2)
+Requirement already satisfied: opt-einsum>=2.3.2 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.7.0) (3.3.0)
+Requirement already satisfied: protobuf>=3.9.2 in c:\users\admin\appdata\roaming\python\python37\site-packages (from tensorflow==2.7.0) (3.19.0)
+Requirement already satisfied: six>=1.12.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.7.0) (1.15.0)
+Requirement already satisfied: termcolor>=1.1.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.7.0) (1.1.0)
+Requirement already satisfied: typing-extensions>=3.6.6 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.7.0) (4.7.1)
+Requirement already satisfied: wheel<1.0,>=0.32.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.7.0) (0.36.2)
+Requirement already satisfied: wrapt>=1.11.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.7.0) (1.12.1)
+Requirement already satisfied: gast<0.5.0,>=0.2.1 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.7.0) (0.4.0)
+Requirement already satisfied: tensorboard~=2.6 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.7.0) (2.7.0)
+Collecting tensorflow-estimator<2.8,~=2.7.0rc0 (from tensorflow==2.7.0)
+  Downloading tensorflow_estimator-2.7.0-py2.py3-none-any.whl (463 kB)
+     ---------------------------------------- 463.1/463.1 kB 1.3 MB/s eta 0:00:00
+Requirement already satisfied: keras<2.8,>=2.7.0rc0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.7.0) (2.7.0)
+Requirement already satisfied: tensorflow-io-gcs-filesystem>=0.21.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.7.0) (0.21.0)
+Requirement already satisfied: grpcio<2.0,>=1.24.3 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.7.0) (1.34.1)
+Requirement already satisfied: cached-property in c:\programdata\anaconda3\lib\site-packages (from h5py>=2.9.0->tensorflow==2.7.0) (1.5.2)
+Requirement already satisfied: google-auth<3,>=1.6.3 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow==2.7.0) (1.35.0)
+Requirement already satisfied: google-auth-oauthlib<0.5,>=0.4.1 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow==2.7.0) (0.4.6)
+Requirement already satisfied: markdown>=2.6.8 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow==2.7.0) (3.3.4)
+Requirement already satisfied: requests<3,>=2.21.0 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow==2.7.0) (2.25.1)
+Requirement already satisfied: setuptools>=41.0.0 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow==2.7.0) (52.0.0.post20210125)
+Requirement already satisfied: tensorboard-data-server<0.7.0,>=0.6.0 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow==2.7.0) (0.6.1)
+Requirement already satisfied: tensorboard-plugin-wit>=1.6.0 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow==2.7.0) (1.8.0)
+Requirement already satisfied: werkzeug>=0.11.15 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow==2.7.0) (1.0.1)
+Requirement already satisfied: cachetools<5.0,>=2.0.0 in c:\programdata\anaconda3\lib\site-packages (from google-auth<3,>=1.6.3->tensorboard~=2.6->tensorflow==2.7.0) (4.2.2)
+Requirement already satisfied: pyasn1-modules>=0.2.1 in c:\programdata\anaconda3\lib\site-packages (from google-auth<3,>=1.6.3->tensorboard~=2.6->tensorflow==2.7.0) (0.2.8)
+Requirement already satisfied: rsa<5,>=3.1.4 in c:\programdata\anaconda3\lib\site-packages (from google-auth<3,>=1.6.3->tensorboard~=2.6->tensorflow==2.7.0) (4.7.2)
+Requirement already satisfied: requests-oauthlib>=0.7.0 in c:\programdata\anaconda3\lib\site-packages (from google-auth-oauthlib<0.5,>=0.4.1->tensorboard~=2.6->tensorflow==2.7.0) (1.3.0)
+Requirement already satisfied: importlib-metadata in c:\programdata\anaconda3\lib\site-packages (from markdown>=2.6.8->tensorboard~=2.6->tensorflow==2.7.0) (3.10.0)
+Requirement already satisfied: chardet<5,>=3.0.2 in c:\programdata\anaconda3\lib\site-packages (from requests<3,>=2.21.0->tensorboard~=2.6->tensorflow==2.7.0) (4.0.0)
+Requirement already satisfied: idna<3,>=2.5 in c:\programdata\anaconda3\lib\site-packages (from requests<3,>=2.21.0->tensorboard~=2.6->tensorflow==2.7.0) (2.10)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in c:\programdata\anaconda3\lib\site-packages (from requests<3,>=2.21.0->tensorboard~=2.6->tensorflow==2.7.0) (1.26.4)
+Requirement already satisfied: certifi>=2017.4.17 in c:\programdata\anaconda3\lib\site-packages (from requests<3,>=2.21.0->tensorboard~=2.6->tensorflow==2.7.0) (2020.12.5)
+Requirement already satisfied: pyasn1<0.5.0,>=0.4.6 in c:\programdata\anaconda3\lib\site-packages (from pyasn1-modules>=0.2.1->google-auth<3,>=1.6.3->tensorboard~=2.6->tensorflow==2.7.0) (0.4.8)
+Requirement already satisfied: oauthlib>=3.0.0 in c:\programdata\anaconda3\lib\site-packages (from requests-oauthlib>=0.7.0->google-auth-oauthlib<0.5,>=0.4.1->tensorboard~=2.6->tensorflow==2.7.0) (3.1.1)
+Requirement already satisfied: zipp>=0.5 in c:\programdata\anaconda3\lib\site-packages (from importlib-metadata->markdown>=2.6.8->tensorboard~=2.6->tensorflow==2.7.0) (3.4.1)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+DEPRECATION: pyodbc 4.0.0-unsupported has a non-standard version number. pip 24.0 will enforce this behaviour change. A possible replacement is to upgrade to a newer version of pyodbc or contact the author to suggest that they release a version with a conforming version number. Discussion can be found at https://github.com/pypa/pip/issues/12063
+Installing collected packages: tensorflow-estimator, tensorflow
+  Attempting uninstall: tensorflow-estimator
+    WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+    Found existing installation: tensorflow-estimator 2.5.0
+    Uninstalling tensorflow-estimator-2.5.0:
+      Successfully uninstalled tensorflow-estimator-2.5.0
+  Attempting uninstall: tensorflow
+    WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+    Found existing installation: tensorflow 2.5.0
+    Uninstalling tensorflow-2.5.0:
+      Successfully uninstalled tensorflow-2.5.0
+  WARNING: Failed to remove contents in a temporary directory 'c:\programdata\anaconda3\lib\site-packages\~ensorflow'.
+  You can safely remove it manually.
+Successfully installed tensorflow-2.7.0 tensorflow-estimator-2.7.0
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip3 uninstall keras
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+Found existing installation: keras 2.7.0
+Uninstalling keras-2.7.0:
+  Would remove:
+    c:\programdata\anaconda3\lib\site-packages\keras-2.7.0.dist-info\*
+    c:\programdata\anaconda3\lib\site-packages\keras\*
+  Would not remove (might be manually added):
+    c:\programdata\anaconda3\lib\site-packages\keras\layers\core.py
+    c:\programdata\anaconda3\lib\site-packages\keras\layers\normalization.py
+    c:\programdata\anaconda3\lib\site-packages\keras\layers\normalization_v2.py
+    c:\programdata\anaconda3\lib\site-packages\keras\layers\preprocessing\reduction.py
+    c:\programdata\anaconda3\lib\site-packages\keras\layers\preprocessing\table_utils.py
+Proceed (Y/n)? y
+  Successfully uninstalled keras-2.7.0
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip3 install keras --upgrade
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Collecting keras
+  Downloading keras-2.11.0-py2.py3-none-any.whl (1.7 MB)
+     ---------------------------------------- 1.7/1.7 MB 1.7 MB/s eta 0:00:00
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+DEPRECATION: pyodbc 4.0.0-unsupported has a non-standard version number. pip 24.0 will enforce this behaviour change. A possible replacement is to upgrade to a newer version of pyodbc or contact the author to suggest that they release a version with a conforming version number. Discussion can be found at https://github.com/pypa/pip/issues/12063
+Installing collected packages: keras
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+tensorflow 2.7.0 requires keras<2.8,>=2.7.0rc0, but you have keras 2.11.0 which is incompatible.
+Successfully installed keras-2.11.0
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip3 show keras
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Name: keras
+Version: 2.11.0
+Summary: Deep learning for humans.
+Home-page: https://keras.io/
+Author: Keras team
+Author-email: keras-users@googlegroups.com
+License: Apache 2.0
+Location: c:\programdata\anaconda3\lib\site-packages
+Requires:
+Required-by: tensorflow
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip3 show tensorflow
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Name: tensorflow
+Version: 2.7.0
+Summary: TensorFlow is an open source machine learning framework for everyone.
+Home-page: https://www.tensorflow.org/
+Author: Google Inc.
+Author-email: packages@tensorflow.org
+License: Apache 2.0
+Location: c:\programdata\anaconda3\lib\site-packages
+Requires: absl-py, astunparse, flatbuffers, gast, google-pasta, grpcio, h5py, keras, keras-preprocessing, libclang, numpy, opt-einsum, protobuf, six, tensorboard, tensorflow-estimator, tensorflow-io-gcs-filesystem, termcolor, typing-extensions, wheel, wrapt
+Required-by: tensorflow-serving-api
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>pip install --disable-pip-version-check --no-cache-dir tensorflow
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+Requirement already satisfied: tensorflow in c:\programdata\anaconda3\lib\site-packages (2.7.0)
+Requirement already satisfied: numpy>=1.14.5 in c:\programdata\anaconda3\lib\site-packages (from tensorflow) (1.21.6)
+Requirement already satisfied: absl-py>=0.4.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow) (0.12.0)
+Requirement already satisfied: astunparse>=1.6.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow) (1.6.3)
+Requirement already satisfied: libclang>=9.0.1 in c:\programdata\anaconda3\lib\site-packages (from tensorflow) (12.0.0)
+Requirement already satisfied: flatbuffers<3.0,>=1.12 in c:\programdata\anaconda3\lib\site-packages (from tensorflow) (1.12)
+Requirement already satisfied: google-pasta>=0.1.1 in c:\programdata\anaconda3\lib\site-packages (from tensorflow) (0.2.0)
+Requirement already satisfied: h5py>=2.9.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow) (3.1.0)
+Requirement already satisfied: keras-preprocessing>=1.1.1 in c:\programdata\anaconda3\lib\site-packages (from tensorflow) (1.1.2)
+Requirement already satisfied: opt-einsum>=2.3.2 in c:\programdata\anaconda3\lib\site-packages (from tensorflow) (3.3.0)
+Requirement already satisfied: protobuf>=3.9.2 in c:\users\admin\appdata\roaming\python\python37\site-packages (from tensorflow) (3.19.0)
+Requirement already satisfied: six>=1.12.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow) (1.15.0)
+Requirement already satisfied: termcolor>=1.1.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow) (1.1.0)
+Requirement already satisfied: typing-extensions>=3.6.6 in c:\programdata\anaconda3\lib\site-packages (from tensorflow) (4.7.1)
+Requirement already satisfied: wheel<1.0,>=0.32.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow) (0.36.2)
+Requirement already satisfied: wrapt>=1.11.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow) (1.12.1)
+Requirement already satisfied: gast<0.5.0,>=0.2.1 in c:\programdata\anaconda3\lib\site-packages (from tensorflow) (0.4.0)
+Requirement already satisfied: tensorboard~=2.6 in c:\programdata\anaconda3\lib\site-packages (from tensorflow) (2.7.0)
+Requirement already satisfied: tensorflow-estimator<2.8,~=2.7.0rc0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow) (2.7.0)
+Collecting keras<2.8,>=2.7.0rc0 (from tensorflow)
+  Downloading keras-2.7.0-py2.py3-none-any.whl (1.3 MB)
+     ---------------------------------------- 1.3/1.3 MB 1.7 MB/s eta 0:00:00
+Requirement already satisfied: tensorflow-io-gcs-filesystem>=0.21.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow) (0.21.0)
+Requirement already satisfied: grpcio<2.0,>=1.24.3 in c:\programdata\anaconda3\lib\site-packages (from tensorflow) (1.34.1)
+Requirement already satisfied: cached-property in c:\programdata\anaconda3\lib\site-packages (from h5py>=2.9.0->tensorflow) (1.5.2)
+Requirement already satisfied: google-auth<3,>=1.6.3 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow) (1.35.0)
+Requirement already satisfied: google-auth-oauthlib<0.5,>=0.4.1 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow) (0.4.6)
+Requirement already satisfied: markdown>=2.6.8 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow) (3.3.4)
+Requirement already satisfied: requests<3,>=2.21.0 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow) (2.25.1)
+Requirement already satisfied: setuptools>=41.0.0 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow) (52.0.0.post20210125)
+Requirement already satisfied: tensorboard-data-server<0.7.0,>=0.6.0 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow) (0.6.1)
+Requirement already satisfied: tensorboard-plugin-wit>=1.6.0 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow) (1.8.0)
+Requirement already satisfied: werkzeug>=0.11.15 in c:\programdata\anaconda3\lib\site-packages (from tensorboard~=2.6->tensorflow) (1.0.1)
+Requirement already satisfied: cachetools<5.0,>=2.0.0 in c:\programdata\anaconda3\lib\site-packages (from google-auth<3,>=1.6.3->tensorboard~=2.6->tensorflow) (4.2.2)
+Requirement already satisfied: pyasn1-modules>=0.2.1 in c:\programdata\anaconda3\lib\site-packages (from google-auth<3,>=1.6.3->tensorboard~=2.6->tensorflow) (0.2.8)
+Requirement already satisfied: rsa<5,>=3.1.4 in c:\programdata\anaconda3\lib\site-packages (from google-auth<3,>=1.6.3->tensorboard~=2.6->tensorflow) (4.7.2)
+Requirement already satisfied: requests-oauthlib>=0.7.0 in c:\programdata\anaconda3\lib\site-packages (from google-auth-oauthlib<0.5,>=0.4.1->tensorboard~=2.6->tensorflow) (1.3.0)
+Requirement already satisfied: importlib-metadata in c:\programdata\anaconda3\lib\site-packages (from markdown>=2.6.8->tensorboard~=2.6->tensorflow) (3.10.0)
+Requirement already satisfied: chardet<5,>=3.0.2 in c:\programdata\anaconda3\lib\site-packages (from requests<3,>=2.21.0->tensorboard~=2.6->tensorflow) (4.0.0)
+Requirement already satisfied: idna<3,>=2.5 in c:\programdata\anaconda3\lib\site-packages (from requests<3,>=2.21.0->tensorboard~=2.6->tensorflow) (2.10)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in c:\programdata\anaconda3\lib\site-packages (from requests<3,>=2.21.0->tensorboard~=2.6->tensorflow) (1.26.4)
+Requirement already satisfied: certifi>=2017.4.17 in c:\programdata\anaconda3\lib\site-packages (from requests<3,>=2.21.0->tensorboard~=2.6->tensorflow) (2020.12.5)
+Requirement already satisfied: pyasn1<0.5.0,>=0.4.6 in c:\programdata\anaconda3\lib\site-packages (from pyasn1-modules>=0.2.1->google-auth<3,>=1.6.3->tensorboard~=2.6->tensorflow) (0.4.8)
+Requirement already satisfied: oauthlib>=3.0.0 in c:\programdata\anaconda3\lib\site-packages (from requests-oauthlib>=0.7.0->google-auth-oauthlib<0.5,>=0.4.1->tensorboard~=2.6->tensorflow) (3.1.1)
+Requirement already satisfied: zipp>=0.5 in c:\programdata\anaconda3\lib\site-packages (from importlib-metadata->markdown>=2.6.8->tensorboard~=2.6->tensorflow) (3.4.1)
+WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+WARNING: Ignoring invalid distribution -inja2 (c:\programdata\anaconda3\lib\site-packages)
+WARNING: Ignoring invalid distribution -ip (c:\programdata\anaconda3\lib\site-packages)
+DEPRECATION: pyodbc 4.0.0-unsupported has a non-standard version number. pip 24.0 will enforce this behaviour change. A possible replacement is to upgrade to a newer version of pyodbc or contact the author to suggest that they release a version with a conforming version number. Discussion can be found at https://github.com/pypa/pip/issues/12063
+Installing collected packages: keras
+  Attempting uninstall: keras
+    WARNING: Ignoring invalid distribution -rotobuf (c:\users\admin\appdata\roaming\python\python37\site-packages)
+    Found existing installation: keras 2.11.0
+    Uninstalling keras-2.11.0:
+      Successfully uninstalled keras-2.11.0
+Successfully installed keras-2.7.0
+
+(Tensorflow) D:\Analytics\Deep_learning_Tuto\potato_disease\api>

@@ -1,0 +1,109 @@
+Deploying the TF Lite on GCP
+Create a GCP account.
+Create a Project on GCP (Keep note of the project id).
+Create a GCP bucket.
+Upload the potatoes.h5 model in the bucket in the path models/potatos.h5.
+Install Google Cloud SDK (Setup instructions).
+Authenticate with Google Cloud SDK.
+
+## In gcloud console run following cmd 
+gcloud auth login  ##to be logged into account or used https://console.cloud.google.com/home/dashboard?invt=AbkqEA&walkthrough_id=storage--quickstart-basic-tasks&project=tonal-history-445301-v4
+
+## Run the deployment script.
+## for that go to
+
+cd gcp  ##folder gcp
+gcloud functions deploy predict_lite --runtime python38 --trigger-http --memory 512 --project project_id
+Your model is now deployed.
+
+Use Postman to test the GCF using the Trigger URL.
+Inspiration: https://cloud.google.com/blog/products/ai-machine-learning/how-to-serve-deep-learning-models-using-tensorflow-2-0-with-cloud-functions
+
+see following link for more detail: https://github.com/codebasics/potato-disease-classification/blob/main/README.md
+
+
+#### problem solution when testing using postman
+
+trying to use my deployed function by https://us-central1-tonal-history-445301-v4.cloudfunctions.net/predict using postman but i'm receiving this <head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>403 Forbidden</title>
+</head>
+
+<body text=#000000 bgcolor=#ffffff>
+	<h1>Error: Forbidden</h1>
+	<h2>Your client does not have permission to get URL <code>/predict</code> from this server.</h2>
+	<h2></h2>
+</body>
+
+The 403 Forbidden error indicates that your client does not have permission to access the deployed Cloud Function. This issue usually arises from either misconfigured permissions or missing authentication headers in your request. Here’s how to troubleshoot and resolve the issue:
+
+Steps to Resolve the 403 Error
+1. Check Function's Authentication Settings
+By default, Google Cloud Functions require authenticated access unless explicitly configured to allow unauthenticated requests.
+Run the following command to check if your function is set to allow unauthenticated access:
+bash
+
+gcloud functions describe predict --region=us-central1
+Look for the ingressSettings or securityLevel in the output.
+2. Allow Unauthenticated Access (Optional)
+If you want to allow unauthenticated access to the function (for example, to test it via Postman):
+
+bash
+
+gcloud functions add-iam-policy-binding predict \
+    --region=us-central1 \
+    --member="allUsers" \
+    --role="roles/cloudfunctions.invoker"
+allUsers: Allows public access to the function.
+roles/cloudfunctions.invoker: Grants permission to invoke the function.
+Warning: Allowing unauthenticated access makes your function publicly accessible. Ensure this is acceptable for your use case.
+
+3. Add Authentication Headers
+If unauthenticated access is not allowed, you must authenticate your request using an appropriate token.
+
+Generate an Identity and Access Management (IAM) token:
+bash
+
+gcloud auth print-identity-token
+Add the token to your Postman request as a header:
+makefile
+
+Authorization: Bearer <TOKEN>
+4. Verify the Endpoint URL
+Double-check the endpoint URL. Ensure it matches the one provided during deployment. A typo in the URL can lead to a 403 error.
+
+5. Test Using curl (Optional)
+To test if the function is reachable, you can use the curl command:
+
+For unauthenticated access:
+
+bash
+curl https://us-central1-tonal-history-445301-v4.cloudfunctions.net/predict
+For authenticated access:
+
+bash
+Copy code
+curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" \
+    https://us-central1-tonal-history-445301-v4.cloudfunctions.net/predict
+6. Check IAM Policies
+Ensure the user or service account invoking the function has the necessary permissions:
+
+roles/cloudfunctions.invoker
+You can assign this role using:
+bash
+gcloud functions add-iam-policy-binding predict \
+    --region=us-central1 \
+    --member="user:youremail@example.com" \
+    --role="roles/cloudfunctions.invoker"
+7. Review Logs
+If the above steps don’t resolve the issue, review the function logs for additional details:
+
+bash
+gcloud functions logs read predict --region=us-central1
+These steps should help you identify and resolve the root cause of the 403 error. Let me know if you need further clarification!
+
+
+https://us-central1-tonal-history-445301-v4.cloudfunctions.net/predict ##deployed link
+http://localhost:8000/predict
+http://localhost:8601/v1/models/potatoes_model/versions/1:predict
+http://localhost:8501/predict

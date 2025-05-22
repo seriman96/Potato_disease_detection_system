@@ -1,0 +1,215 @@
+GCP bucket is like amazon S3 or google drive, 
+it offers us some area in the cloud where 
+we'll deploy our object.
+
+bucket name: bucket-1-tf-model  //bucket is unique
+
+
+
+Welcome to the Google Cloud CLI! Run "gcloud -h" to get the list of available commands.
+---
+Welcome! This command will take you through the configuration of gcloud.
+
+Your current configuration has been set to: [default]
+
+You can skip diagnostics next time by using the following flag:
+  gcloud init --skip-diagnostics
+
+Network diagnostic detects and fixes local network connection issues.
+Checking network connection...done.
+Reachability Check passed.
+Network diagnostic passed (1/1 checks passed).
+
+You must sign in to continue. Would you like to sign in (Y/n)?  y
+
+Your browser has been opened to visit:
+
+    https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=32555940559.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A8085%2F&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fappengine.admin+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fsqlservice.login+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcompute+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Faccounts.reauth&state=MiGZjD2i3tB25m7pH9ZJAEGLtapzYI&access_type=offline&code_challenge=i3RHBlUjUUoykL_D-hQ9Wz7R-KyW7YgJjzXQ5RZ0pmA&code_challenge_method=S256
+
+You are signed in as: [doumbiaseriman@gmail.com].
+
+Pick cloud project to use:
+ [1] aerial-rush-329319
+ [2] big-dynamo-445300-f3
+ [3] tonal-history-445301-v4
+ [4] Enter a project ID
+ [5] Create a new project
+Please enter numeric choice or text value (must exactly match list item):  3
+
+Your current project has been set to: [tonal-history-445301-v4].
+
+Not setting default zone/region (this feature makes it easier to use
+[gcloud compute] by setting an appropriate default value for the
+--zone and --region flag).
+See https://cloud.google.com/compute/docs/gcloud-compute section on how to set
+default compute region and zone manually. If you would like [gcloud init] to be
+able to do this for you the next time you run it, make sure the
+Compute Engine API is enabled for your project on the
+https://console.developers.google.com/apis page.
+
+Created a default .boto configuration file at [C:\Users\Admin\.boto]. See this file and
+[https://cloud.google.com/storage/docs/gsutil/commands/config] for more
+information about configuring Google Cloud Storage.
+The Google Cloud CLI is configured and ready to use!
+
+* Commands that require authentication will use doumbiaseriman@gmail.com by default
+* Commands will reference project `tonal-history-445301-v4` by default
+Run `gcloud help config` to learn how to change individual settings
+
+This gcloud configuration is called [default]. You can create additional configurations if you work with multiple accounts and/or projects.
+Run `gcloud topic configurations` to learn more.
+
+Some things to try next:
+
+* Run `gcloud --help` to see the Cloud Platform services you can interact with. And run `gcloud help COMMAND` to get help on any gcloud command.
+* Run `gcloud topic --help` to learn about advanced features of the CLI like arg files and output formatting
+* Run `gcloud cheat-sheet` to see a roster of go-to `gcloud` commands.
+
+C:\Program Files (x86)\Google\Cloud SDK>gcloud auth login
+
+# We've to use google cloud console in order to deploy our 
+# model which is nothing but main.py file under gcp
+
+C:\Program Files (x86)\Google\Cloud SDK>cd to gcp_folder
+
+# C:\ProgramData\Anaconda3
+
+D:\Analytics\Deep_learning_Tuto\potato_disease\gcp>conda activate deployed
+
+(deployed) D:\Analytics\Deep_learning_Tuto\potato_disease\gcp>gcloud functions deploy predict --runtime python310 --trigger-http --memory 512 --project tonal-history-445301-v4
+Preparing function...done.
+X  Updating function (may take a while)...
+  OK [Build] Logs are available at [https://console.cloud.google.com/cloud-build/builds;region=us-central1/6534d18e-beec-4309-849d-75
+  e2c50ee1e5?project=930897870023]
+     [Service]
+  .  [ArtifactRegistry]
+  .  [Healthcheck]
+  .  [Triggercheck]
+Completed with warnings:
+  [WARNING] Cloud Run service projects/tonal-history-445301-v4/locations/us-central1/services/predict for the function was not found. The service was redeployed with default values.
+You can view your function in the Cloud Console here: https://console.cloud.google.com/functions/details/us-central1/predict?project=tonal-history-445301-v4
+
+buildConfig:
+  automaticUpdatePolicy: {}
+  build: projects/930897870023/locations/us-central1/builds/6534d18e-beec-4309-849d-75e2c50ee1e5
+  dockerRegistry: ARTIFACT_REGISTRY
+  dockerRepository: projects/tonal-history-445301-v4/locations/us-central1/repositories/gcf-artifacts
+  entryPoint: predict
+  runtime: python310
+  serviceAccount: projects/tonal-history-445301-v4/serviceAccounts/930897870023-compute@developer.gserviceaccount.com
+  source:
+    storageSource:
+      bucket: gcf-v2-sources-930897870023-us-central1
+      generation: '1734747571694881'
+      object: predict/function-source.zip
+  sourceProvenance:
+    resolvedStorageSource:
+      bucket: gcf-v2-sources-930897870023-us-central1
+      generation: '1734747571694881'
+      object: predict/function-source.zip
+createTime: '2024-12-20T22:23:02.504373450Z'
+environment: GEN_2
+labels:
+  deployment-tool: cli-gcloud
+name: projects/tonal-history-445301-v4/locations/us-central1/functions/predict
+serviceConfig:
+  allTrafficOnLatestRevision: true
+  availableCpu: '0.3333'
+  availableMemory: 512M
+  environmentVariables:
+    LOG_EXECUTION_ID: 'true'
+  ingressSettings: ALLOW_ALL
+  maxInstanceCount: 100
+  maxInstanceRequestConcurrency: 1
+  revision: predict-00001-zuw
+  service: projects/tonal-history-445301-v4/locations/us-central1/services/predict
+  serviceAccountEmail: 930897870023-compute@developer.gserviceaccount.com
+  timeoutSeconds: 60
+  uri: https://predict-jwltywb3oq-uc.a.run.app
+state: ACTIVE
+updateTime: '2024-12-21T02:24:37.395656668Z'
+url: https://us-central1-tonal-history-445301-v4.cloudfunctions.net/predict
+
+
+Updates are available for some Google Cloud CLI components.  To install them,
+please run:
+  $ gcloud components update
+
+##############Change cloud deployment region
+(deployed) D:\Analytics\Deep_learning_Tuto\potato_disease\gcp>gcloud functions describe predict --region=us-central1
+buildConfig:
+  automaticUpdatePolicy: {}
+  build: projects/930897870023/locations/us-central1/builds/6534d18e-beec-4309-849d-75e2c50ee1e5
+  dockerRegistry: ARTIFACT_REGISTRY
+  dockerRepository: projects/tonal-history-445301-v4/locations/us-central1/repositories/gcf-artifacts
+  entryPoint: predict
+  runtime: python310
+  serviceAccount: projects/tonal-history-445301-v4/serviceAccounts/930897870023-compute@developer.gserviceaccount.com
+  source:
+    storageSource:
+      bucket: gcf-v2-sources-930897870023-us-central1
+      generation: '1734747571694881'
+      object: predict/function-source.zip
+  sourceProvenance:
+    resolvedStorageSource:
+      bucket: gcf-v2-sources-930897870023-us-central1
+      generation: '1734747571694881'
+      object: predict/function-source.zip
+createTime: '2024-12-20T22:23:02.504373450Z'
+environment: GEN_2
+labels:
+  deployment-tool: cli-gcloud
+name: projects/tonal-history-445301-v4/locations/us-central1/functions/predict
+serviceConfig:
+  allTrafficOnLatestRevision: true
+  availableCpu: '0.3333'
+  availableMemory: 512M
+  environmentVariables:
+    LOG_EXECUTION_ID: 'true'
+  ingressSettings: ALLOW_ALL
+  maxInstanceCount: 100
+  maxInstanceRequestConcurrency: 1
+  revision: predict-00001-zuw
+  service: projects/tonal-history-445301-v4/locations/us-central1/services/predict
+  serviceAccountEmail: 930897870023-compute@developer.gserviceaccount.com
+  timeoutSeconds: 60
+  uri: https://predict-jwltywb3oq-uc.a.run.app
+state: ACTIVE
+updateTime: '2024-12-21T02:24:37.395656668Z'
+url: https://us-central1-tonal-history-445301-v4.cloudfunctions.net/predict
+
+(deployed) D:\Analytics\Deep_learning_Tuto\potato_disease\gcp>
+(deployed) D:\Analytics\Deep_learning_Tuto\potato_disease\gcp>gcloud functions add-iam-policy-binding predict \
+ERROR: (gcloud.functions.add-iam-policy-binding) unrecognized arguments: \
+
+To search the help text of gcloud commands, run:
+  gcloud help -- SEARCH_TERMS
+
+(deployed) D:\Analytics\Deep_learning_Tuto\potato_disease\gcp>    --region=us-central1 \
+'--region' is not recognized as an internal or external command,
+operable program or batch file.
+
+(deployed) D:\Analytics\Deep_learning_Tuto\potato_disease\gcp>    --member="allUsers" \
+'--member' is not recognized as an internal or external command,
+operable program or batch file.
+
+(deployed) D:\Analytics\Deep_learning_Tuto\potato_disease\gcp>    --role="roles/cloudfunctions.invoker"
+'--role' is not recognized as an internal or external command,
+operable program or batch file.
+
+(deployed) D:\Analytics\Deep_learning_Tuto\potato_disease\gcp>gcloud functions add-iam-policy-binding predict --region=us-central1 --member="allUsers" --role="roles/cloudfunctions.invoker"
+WARNING: The role [roles/cloudfunctions.invoker] was successfully bound to member [allUsers] but this does not grant the member permission to invoke 2nd gen function [predict]. Instead, the role [roles/run.invoker] must be granted on the underlying Cloud Run service. This can be done by running the `gcloud functions add-invoker-policy-binding` command.
+
+Would you like to run this command and additionally grant [allUsers] permission to invoke function [predict] (Y/n)?  y
+
+The role [roles/run.invoker] was successfully bound to the underlying Cloud Run service. You can view its IAM policy by running:
+gcloud run services get-iam-policy projects/tonal-history-445301-v4/locations/us-central1/services/predict
+
+bindings:
+- members:
+  - allUsers
+  role: roles/cloudfunctions.invoker
+etag: BwYpvrHfI50=
+version: 1
+
+(deployed) D:\Analytics\Deep_learning_Tuto\potato_disease\gcp>
