@@ -1,116 +1,154 @@
 # 🥔 Potato Disease Detection System
-A computer-vision project that uses a convolutional neural network (CNN) to classify potato leaf images into three categories: Early Blight, Late Blight, and Healthy. The repository brings together model training, a FastAPI prediction service, a React web interface, a React Native mobile client, and Google Cloud deployment code.
-Project status: This repository contains several training and serving experiments. The setup instructions below describe the components present in the source code; they should be treated as a development guide rather than a guarantee that every deployment path is currently production-ready.
 
-# Overview
-Potato plants can be affected by diseases that appear as visible symptoms on their leaves. This project explores the use of deep learning to recognize three potato-leaf classes from an image.
+A deep learning-based application for detecting potato leaf diseases using Convolutional Neural Networks (CNN). The system classifies potato leaf images into three categories: **Early Blight, Late Blight, and Healthy**.
 
-The main workflow is:
-1. A user selects or captures a potato leaf image.
-2. The image is sent to a prediction endpoint.
-3. A TensorFlow/Keras model produces class scores.
-4. The service returns the predicted class and a confidence value.
-5. The client displays the result.
+The project combines machine learning, computer vision, backend API development, and web and mobile application integration to provide an accessible disease classification solution.
 
-# Supported classes
-| Class | Description |
-|---|---|
-| Early Blight | Potato leaf image labelled as early blight |
-| Late Blight | Potato leaf image labelled as late blight |
-| Healthy | Potato leaf image labelled as healthy |
+## 📌 Project Overview
 
-The class labels in the serving code are Early Blight, Late Blight, and Healthy.
+Potato crops are susceptible to several diseases that can negatively affect agricultural productivity. Early identification of visible symptoms can help farmers and agricultural professionals make more informed decisions.
 
-# Main components
-# 1. Model training
-The training/ directory contains Jupyter notebooks and the PlantVillage potato-leaf image folders.
+This project explores the use of deep learning and image classification to identify potato leaf conditions from images.
 
-The primary notebook, training/training.ipynb, documents a CNN training workflow with:
-- TensorFlow and Keras
-- Three output classes
-- 256 × 256 image dimensions
-- Batch size of 32
-- An 80% / 10% / 10% training, validation, and test split
-- Random horizontal/vertical flips and rotation augmentation
-- Convolutional and max-pooling layers
-- ReLU hidden-layer activations and a softmax output layer
-- Adam optimizer and sparse categorical cross-entropy loss
-- Training configured for up to 50 epochs
-A second notebook, training/training-using-image-data-generator.ipynb, explores an ImageDataGenerator-based pipeline with rescaling, rotation, and horizontal flipping.
+The application integrates a trained TensorFlow/Keras model with a FastAPI backend, a React web application, and a React Native mobile application.
 
-The notebooks save model artifacts under saved_models/.
+## 🎯 Main Objectives
 
-# 2. Prediction API
-The api/ directory contains two FastAPI implementations:
-- api/main.py loads the TensorFlow SavedModel from saved_models/1/.
-- api/main-tf-serving.py forwards prediction requests to a TensorFlow Serving endpoint.
-The direct FastAPI implementation exposes:
-| Method | Endpoint | Purpose |
-|---|---|---|
-| `GET` | `/ping` | Basic service health response |
-| `POST` | `/predict` | Accept an uploaded image and return a prediction |n
+- Develop a CNN model capable of classifying potato leaf images.
+- Train and evaluate the model using the PlantVillage dataset.
+- Build an API to serve model predictions.
+- Develop a web interface for uploading and analyzing leaf images.
+- Provide a mobile interface for capturing or selecting images.
+- Explore cloud deployment using Google Cloud services.
 
+## 🌱 Disease Classification
 
-A successful prediction response has this shape:
-{
-  "class": "Early Blight",
-  "confidence": 0.98
-}
-The confidence value in this API implementation is a model score between 0 and 1. The web and mobile interfaces format confidence values for display.
+The model identifies three categories:
 
-# 3. Web application
-The frontend/ directory contains a React application built with React 17 and Create React App.
+**1. Early Blight**
 
-The interface supports:
-- Selecting or dragging and dropping a leaf image
-- Previewing the selected image
-- Sending the image to the prediction API
-- Displaying the predicted class and confidence
-The frontend uses Axios for HTTP requests, Material-UI for interface components, and material-ui-dropzone for image selection.
+Identifies potato leaves classified as affected by Early Blight.
 
-# 4. Mobile application
-The mobile_app/ directory contains a React Native application.
+**2. Late Blight**
 
-The source code includes:
-- Camera capture and photo-library selection
-- Image preview
-- Image upload to the prediction API
-- Display of the predicted class and confidence
-- A control to clear the current result
-The mobile client reads its API address from the URL environment setting. Although a TensorFlow Lite React Native dependency is present, the current App.js prediction flow sends the selected image to the configured API.
+Identifies potato leaves classified as affected by Late Blight.
 
-# 5. Google Cloud deployment
-The gcp/ directory contains a Google Cloud Function implementation and deployment notes.
+**3. Healthy**
 
-The function in gcp/main.py:
-1. Downloads the 2.h5 model artifact from a Google Cloud Storage bucket.
-2. Loads the model when the function first needs it.
-3. Reads an uploaded image and resizes it to 256 × 256.
-4. Normalizes pixel values and runs inference.
-5. Returns the predicted class and confidence.
-The source currently specifies a bucket name in the Python file. Configure your own bucket and access permissions before attempting deployment. Do not publish credentials or private cloud configuration.
+Identifies potato leaves classified as healthy.
 
-# Technology stack
-| Area | Technologies |
-|---|---|
-| Machine learning | Python, TensorFlow, Keras |
-| Image processing | NumPy, Pillow |
-| Model development | Jupyter Notebook, Matplotlib |
-| Prediction API | FastAPI, Uvicorn |
-| Web client | React 17, Material-UI, Axios |
-| Mobile client | React Native, React Native Image Picker, Axios |
-| Model serving experiment | TensorFlow Serving |
-| Cloud deployment | Google Cloud Functions, Google Cloud Storage |
-| Model formats | TensorFlow SavedModel, HDF5 (`.h5`) |
-# Repository structure
+## ✨ Key Features
+
+- Deep learning-based image classification using CNN.
+- Training and experimentation with TensorFlow and Keras.
+- Image augmentation to improve model training.
+- REST API developed with FastAPI.
+- Web application developed with React.
+- Mobile application developed with React Native.
+- Image upload and camera capture functionality.
+- Prediction results with confidence scores.
+- Alternative model-serving implementation using TensorFlow Serving.
+- Google Cloud Functions integration for cloud-based prediction.
+
+## 🧠 Machine Learning Model
+
+The project uses a Convolutional Neural Network (CNN) implemented with TensorFlow/Keras.
+
+The main training notebook includes:
+
+- Image dimensions: 256 × 256 pixels.
+- Batch size: 32.
+- Three classification categories.
+- Training, validation, and testing dataset splits.
+- Image augmentation, including rotation and flipping.
+- Convolutional and max-pooling layers.
+- ReLU activation functions.
+- Softmax output layer.
+- Adam optimizer.
+- Sparse categorical cross-entropy loss.
+- Training configured for up to 50 epochs.
+
+The repository also contains an alternative training notebook using Keras ImageDataGenerator.
+
+## 🏗️ System Architecture
+
+The application is organized into several independent components:
+
+**1. Training Module**
+
+Responsible for dataset preparation, image preprocessing, CNN construction, model training, and evaluation.
+
+**2. Prediction API**
+
+Built with FastAPI, it receives uploaded images, processes prediction requests, and returns classification results.
+
+**3. Web Application**
+
+Built with React, it allows users to upload potato leaf images and visualize prediction results.
+
+**4. Mobile Application**
+
+Built with React Native, it allows users to capture images using their device camera or select images from their gallery.
+
+**5. Cloud Deployment**
+
+The project includes Google Cloud Functions and Google Cloud Storage integration for cloud-based model inference.
+
+### Prediction Workflow
+
+1. The user uploads or captures a potato leaf image.
+2. The image is submitted to the prediction API.
+3. The trained CNN model processes the image.
+4. The model generates classification scores.
+5. The API returns the predicted category and confidence value.
+6. The web or mobile application displays the result.
+
+## 🛠️ Technology Stack
+
+**Machine Learning and Data Science**
+- Python
+- TensorFlow
+- Keras
+- NumPy
+- Matplotlib
+- Jupyter Notebook
+
+**Backend and API**
+- FastAPI
+- Uvicorn
+- Python
+
+**Web Development**
+- React
+- JavaScript
+- Material-UI
+- Axios
+
+**Mobile Development**
+- React Native
+- React Native Image Picker
+- Axios
+
+**Cloud and Model Deployment**
+- Google Cloud Functions
+- Google Cloud Storage
+- TensorFlow Serving
+- Docker-related deployment experiments
+
+**Dataset**
+- PlantVillage Dataset
+
+## 📂 Project Structure
+
+```text
 Potato_disease_detection_system/
 │
 ├── api/
-│   ├── main.py                    # FastAPI app loading SavedModel
-│   ├── main-tf-serving.py         # FastAPI app forwarding to TF Serving
-│   └── requirement.txt            # API Python dependencies
+│   ├── main.py
+│   ├── main-tf-serving.py
+│   └── requirement.txt
 │
-├── docker/                        # Docker-related notes and experiments
+├── docker/
 │
 ├── frontend/
 │   ├── public/
@@ -119,7 +157,7 @@ Potato_disease_detection_system/
 │   └── package.json
 │
 ├── gcp/
-│   ├── main.py                    # Google Cloud Function prediction handler
+│   ├── main.py
 │   ├── requirements.txt
 │   └── steps_of_gcp_deployment.txt
 │
@@ -127,168 +165,226 @@ Potato_disease_detection_system/
 │   ├── android/
 │   ├── ios/
 │   ├── App.js
-│   ├── .env.example
 │   └── package.json
 │
 ├── saved_models/
-│   ├── 1/                         # TensorFlow SavedModel
-│   └── 2.h5                       # Keras HDF5 model
+│   ├── 1/
+│   └── 2.h5
 │
 └── training/
-    ├── PlantVillage/              # Potato leaf image dataset
+    ├── PlantVillage/
     ├── training.ipynb
     └── training-using-image-data-generator.ipynb
+```
 
-# Getting started
-The repository has separate environments for the API, web client, and mobile client. Start with the API and web client if you want to run the browser-based workflow.
+## 🚀 Installation and Setup
 
-## Prerequisites
-- Python environment compatible with the TensorFlow version in api/requirement.txt
+### Prerequisites
+
+Make sure you have installed:
+
+- Python
 - Node.js and npm
-- A local copy of the repository, including the model artifact used by the selected API implementation
+- MongoDB is not required for this project.
 - Git
 
-# 1. Clone the repository
+You will also need the appropriate Python and TensorFlow versions for the dependencies specified in the repository.
 
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/seriman96/Potato_disease_detection_system.git
 
 cd Potato_disease_detection_system
+```
 
-# 2. Set up the prediction API
+### 2. Configure the Backend API
 
-Create and activate a Python virtual environment, then install the API dependencies:
+Navigate to the API directory:
 
+```bash
 cd api
+```
 
+Create and activate a Python virtual environment:
+
+```bash
 python -m venv .venv
+```
 
-On Windows PowerShell:
+Activate it on Windows:
 
-.venv\Scripts\Activate.ps1
+```bash
+.venv\Scripts\activate
+```
 
-On macOS or Linux:
+On Linux or macOS:
 
+```bash
 source .venv/bin/activate
+```
 
 Install the dependencies:
 
+```bash
 pip install -r requirement.txt
+```
 
-The direct API in api/main.py loads the model using a path relative to the API working directory. From inside api/, start the service with:
+Start the FastAPI application:
 
+```bash
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
+```
 
-API documentation is available at:
+The API will be available at:
 
+```text
+http://127.0.0.1:8000
+```
+
+Interactive API documentation:
+
+```text
 http://127.0.0.1:8000/docs
+```
 
-Health check:
+### 3. Run the Web Application
 
-http://127.0.0.1:8000/ping
+Open another terminal and navigate to the frontend directory:
 
-Prediction endpoint:
-
-POST http://127.0.0.1:8000/predict
-
-Send a multipart/form-data request with an image field named file.
-
-# 3. Set up the web application
-
-Open a second terminal:
-
+```bash
 cd frontend
+```
 
+Install the dependencies:
+
+```bash
 npm install
+```
 
-Create a local .env file based on .env.example and set the API URL:
+Configure the API endpoint in your local environment file, based on `.env.example`:
 
+```env
 REACT_APP_API_URL=http://127.0.0.1:8000/predict
+```
 
-Start the React development server:
+Start the React application:
 
+```bash
 npm start
+```
 
-The web application should be available at:
+The web application will be available at:
 
+```text
 http://localhost:3000
+```
 
-Keep the API running while using the frontend.
+Make sure the FastAPI backend is running before submitting images.
 
-# 4. Set up the mobile application
+### 4. Run the Mobile Application
 
-The mobile project requires the React Native development environment for the target platform. From the repository root:
+Navigate to the mobile application directory:
 
+```bash
 cd mobile_app
+```
 
+Install dependencies:
+
+```bash
 npm install
+```
 
-Create a local .env file based on .env.example and configure the API address:
+Configure the API address in your local environment file:
 
+```env
 URL=http://YOUR_COMPUTER_LAN_IP:8000/predict
+```
 
-For a physical phone, use the computer's reachable LAN IP address rather than localhost or 0.0.0.0. Ensure the phone and development computer can reach each other and that the API server accepts connections on the required network interface.
+Replace `YOUR_COMPUTER_LAN_IP` with your computer's accessible local network IP address.
 
-Start Metro:
+Start the React Native development server:
 
+```bash
 npm start
+```
 
-In another terminal, run the Android or iOS application:
+For Android:
 
+```bash
 npm run android
+```
 
-or:
+For iOS:
 
+```bash
 npm run ios
+```
 
-Platform-specific native dependencies and permissions may require additional setup.
+Additional native development environment configuration may be required.
 
-# Training the model
-1. Open the training/ directory in Jupyter Notebook.
-2. Install TensorFlow, NumPy, and Matplotlib in the notebook environment.
-3. Make sure the PlantVillage directory is available at the path expected by the notebook.
-4. Run the cells in training.ipynb in order.
-5. Review the training and validation accuracy/loss plots and evaluate the model on the test split.
-6. Save the trained model under saved_models/.
-The notebook includes code for dataset partitioning, augmentation, model construction, training, evaluation, and sample predictions.
+## 📊 Model Training and Evaluation
 
-Important: The repository contains more than one model artifact and more than one preprocessing/serving path. Check that the selected model, input dimensions, pixel scaling, class order, and API implementation match before running inference. The training notebooks and serving scripts should not be assumed to share an identical preprocessing pipeline.
+The training notebooks are located in the `training/` directory.
 
-# Model evaluation
-The training notebook evaluates the model on a held-out test dataset and plots training and validation accuracy and loss. It also displays sample predictions with their actual labels and confidence scores.
+They cover:
 
-No verified final test accuracy, precision, recall, F1-score, or confusion matrix is documented in this repository's README. Those metrics should be added only after rerunning evaluation and recording the results.
+- Dataset preparation.
+- Image preprocessing.
+- Data augmentation.
+- CNN architecture construction.
+- Model training.
+- Training and validation performance visualization.
+- Model evaluation.
+- Sample image predictions.
 
-# Deployment notes
-The repository includes experiments and notes for TensorFlow Serving and Google Cloud Functions. These are alternative serving approaches, not steps that must all be run together.
-- FastAPI: Loads the SavedModel locally.
-- TensorFlow Serving: Exposes a model-serving endpoint that the alternate FastAPI app calls.
-- Google Cloud Functions: Uses the handler in gcp/main.py and downloads a Keras model from Cloud Storage.
-Cloud deployment requires a configured Google Cloud project, storage bucket, runtime dependencies, function permissions, and a correctly configured entry point. Review and update the deployment notes and hard-coded resource names before deploying.
+The trained models are stored in the `saved_models/` directory.
 
-# Current limitations and considerations
-- The repository contains multiple model artifacts and serving implementations; their preprocessing assumptions need to be aligned.
-- The direct FastAPI implementation does not explicitly resize or normalize the uploaded image before prediction. Confirm the model's expected input shape and preprocessing before relying on this endpoint.
-- The web and mobile clients depend on a reachable prediction API.
-- The mobile client currently sends images to the API; the presence of a TensorFlow Lite package alone does not mean on-device inference is implemented.
-- A successful classification is not a substitute for expert agricultural diagnosis.
-- Model performance metrics should be documented after reproducible evaluation.
+**Note:** Model performance metrics should be obtained by running the evaluation notebook. No final verified accuracy or classification metrics are claimed in this documentation.
 
-# Possible future improvements
-- Standardize image resizing and normalization across training, API, web, mobile, and cloud inference.
-- Add a reproducible Python environment file and document tested dependency versions.
-- Add API tests for valid images, invalid files, and model errors.
-- Record class-wise precision, recall, F1-score, and a confusion matrix.
-- Add prediction history and clearer error handling in the clients.
-- Complete and document an on-device TensorFlow Lite inference path if desired.
-- Add a reproducible Dockerfile and deployment configuration.
-- Add screenshots or a short demonstration video of the web and mobile applications.
+## ☁️ Deployment
 
-# Author
-Seriman Doumbia
+The repository explores different model-serving and deployment approaches:
 
-GitHub: @seriman96
+- FastAPI for local prediction services.
+- TensorFlow Serving for model-serving integration.
+- Google Cloud Functions for cloud-based inference.
+- Google Cloud Storage for model artifact storage.
+- Docker-related deployment experiments.
 
-Repository: Potato Disease Detection System
+Refer to the `gcp/steps_of_gcp_deployment.txt` file for the Google Cloud deployment notes.
 
+Cloud deployment requires appropriate project configuration, storage permissions, and environment setup.
 
-This project is an applied machine-learning and software engineering project combining image classification, API development, and client application integration.
+## ⚠️ Limitations
+
+- Model predictions depend on the quality and characteristics of input images.
+- Different model-serving implementations may require consistent image preprocessing.
+- Model performance should be evaluated on independent test data.
+- Predictions should not be considered a replacement for professional agricultural diagnosis.
+- The web and mobile applications require a reachable prediction API.
+
+## 🔮 Future Improvements
+
+- Improve model accuracy and generalization.
+- Add detailed classification reports and confusion matrices.
+- Standardize preprocessing across all application components.
+- Improve API testing and error handling.
+- Implement a fully documented TensorFlow Lite mobile inference workflow.
+- Enhance the web and mobile user interfaces.
+- Add Docker-based reproducible deployment.
+- Improve cloud deployment automation.
+- Introduce prediction history and reporting features.
+
+## 👨‍💻 Author
+
+**Seriman Doumbia**
+
+GitHub: [@seriman96](https://github.com/seriman96)
+
+Project Repository: [Potato Disease Detection System](https://github.com/seriman96/Potato_disease_detection_system)
+
+---
+
+*This project demonstrates the practical application of deep learning and computer vision to agricultural challenges, combining model development with backend, web, mobile, and cloud technologies.*
