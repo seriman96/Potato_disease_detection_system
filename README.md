@@ -11,6 +11,7 @@ The main workflow is:
 3. A TensorFlow/Keras model produces class scores.
 4. The service returns the predicted class and a confidence value.
 5. The client displays the result.
+
 # Supported classes
 | Class | Description |
 |---|---|
@@ -19,6 +20,7 @@ The main workflow is:
 | Healthy | Potato leaf image labelled as healthy |
 
 The class labels in the serving code are Early Blight, Late Blight, and Healthy.
+
 # Main components
 # 1. Model training
 The training/ directory contains Jupyter notebooks and the PlantVillage potato-leaf image folders.
@@ -37,6 +39,7 @@ The primary notebook, training/training.ipynb, documents a CNN training workflow
 A second notebook, training/training-using-image-data-generator.ipynb, explores an ImageDataGenerator-based pipeline with rescaling, rotation, and horizontal flipping.
 
 The notebooks save model artifacts under saved_models/.
+
 # 2. Prediction API
 The api/ directory contains two FastAPI implementations:
 - api/main.py loads the TensorFlow SavedModel from saved_models/1/.
@@ -54,6 +57,7 @@ A successful prediction response has this shape:
   "confidence": 0.98
 }
 The confidence value in this API implementation is a model score between 0 and 1. The web and mobile interfaces format confidence values for display.
+
 # 3. Web application
 The frontend/ directory contains a React application built with React 17 and Create React App.
 
@@ -63,6 +67,7 @@ The interface supports:
 - Sending the image to the prediction API
 - Displaying the predicted class and confidence
 The frontend uses Axios for HTTP requests, Material-UI for interface components, and material-ui-dropzone for image selection.
+
 # 4. Mobile application
 The mobile_app/ directory contains a React Native application.
 
@@ -73,6 +78,7 @@ The source code includes:
 - Display of the predicted class and confidence
 - A control to clear the current result
 The mobile client reads its API address from the URL environment setting. Although a TensorFlow Lite React Native dependency is present, the current App.js prediction flow sends the selected image to the configured API.
+
 # 5. Google Cloud deployment
 The gcp/ directory contains a Google Cloud Function implementation and deployment notes.
 
@@ -83,6 +89,7 @@ The function in gcp/main.py:
 4. Normalizes pixel values and runs inference.
 5. Returns the predicted class and confidence.
 The source currently specifies a bucket name in the Python file. Configure your own bucket and access permissions before attempting deployment. Do not publish credentials or private cloud configuration.
+
 # Technology stack
 | Area | Technologies |
 |---|---|
@@ -134,59 +141,107 @@ Potato_disease_detection_system/
 
 # Getting started
 The repository has separate environments for the API, web client, and mobile client. Start with the API and web client if you want to run the browser-based workflow.
+
 ## Prerequisites
 - Python environment compatible with the TensorFlow version in api/requirement.txt
 - Node.js and npm
 - A local copy of the repository, including the model artifact used by the selected API implementation
 - Git
+
 # 1. Clone the repository
+
 git clone https://github.com/seriman96/Potato_disease_detection_system.git
+
 cd Potato_disease_detection_system
+
 # 2. Set up the prediction API
+
 Create and activate a Python virtual environment, then install the API dependencies:
+
 cd api
+
 python -m venv .venv
+
 On Windows PowerShell:
+
 .venv\Scripts\Activate.ps1
+
 On macOS or Linux:
+
 source .venv/bin/activate
+
 Install the dependencies:
+
 pip install -r requirement.txt
+
 The direct API in api/main.py loads the model using a path relative to the API working directory. From inside api/, start the service with:
+
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
+
 API documentation is available at:
+
 http://127.0.0.1:8000/docs
+
 Health check:
+
 http://127.0.0.1:8000/ping
+
 Prediction endpoint:
+
 POST http://127.0.0.1:8000/predict
+
 Send a multipart/form-data request with an image field named file.
+
 # 3. Set up the web application
+
 Open a second terminal:
+
 cd frontend
+
 npm install
+
 Create a local .env file based on .env.example and set the API URL:
+
 REACT_APP_API_URL=http://127.0.0.1:8000/predict
+
 Start the React development server:
+
 npm start
+
 The web application should be available at:
+
 http://localhost:3000
+
 Keep the API running while using the frontend.
+
 # 4. Set up the mobile application
+
 The mobile project requires the React Native development environment for the target platform. From the repository root:
+
 cd mobile_app
+
 npm install
+
 Create a local .env file based on .env.example and configure the API address:
+
 URL=http://YOUR_COMPUTER_LAN_IP:8000/predict
+
 For a physical phone, use the computer's reachable LAN IP address rather than localhost or 0.0.0.0. Ensure the phone and development computer can reach each other and that the API server accepts connections on the required network interface.
 
 Start Metro:
+
 npm start
+
 In another terminal, run the Android or iOS application:
+
 npm run android
+
 or:
+
 npm run ios
+
 Platform-specific native dependencies and permissions may require additional setup.
+
 # Training the model
 1. Open the training/ directory in Jupyter Notebook.
 2. Install TensorFlow, NumPy, and Matplotlib in the notebook environment.
@@ -197,16 +252,19 @@ Platform-specific native dependencies and permissions may require additional set
 The notebook includes code for dataset partitioning, augmentation, model construction, training, evaluation, and sample predictions.
 
 Important: The repository contains more than one model artifact and more than one preprocessing/serving path. Check that the selected model, input dimensions, pixel scaling, class order, and API implementation match before running inference. The training notebooks and serving scripts should not be assumed to share an identical preprocessing pipeline.
+
 # Model evaluation
 The training notebook evaluates the model on a held-out test dataset and plots training and validation accuracy and loss. It also displays sample predictions with their actual labels and confidence scores.
 
 No verified final test accuracy, precision, recall, F1-score, or confusion matrix is documented in this repository's README. Those metrics should be added only after rerunning evaluation and recording the results.
+
 # Deployment notes
 The repository includes experiments and notes for TensorFlow Serving and Google Cloud Functions. These are alternative serving approaches, not steps that must all be run together.
 - FastAPI: Loads the SavedModel locally.
 - TensorFlow Serving: Exposes a model-serving endpoint that the alternate FastAPI app calls.
 - Google Cloud Functions: Uses the handler in gcp/main.py and downloads a Keras model from Cloud Storage.
 Cloud deployment requires a configured Google Cloud project, storage bucket, runtime dependencies, function permissions, and a correctly configured entry point. Review and update the deployment notes and hard-coded resource names before deploying.
+
 # Current limitations and considerations
 - The repository contains multiple model artifacts and serving implementations; their preprocessing assumptions need to be aligned.
 - The direct FastAPI implementation does not explicitly resize or normalize the uploaded image before prediction. Confirm the model's expected input shape and preprocessing before relying on this endpoint.
@@ -214,6 +272,7 @@ Cloud deployment requires a configured Google Cloud project, storage bucket, run
 - The mobile client currently sends images to the API; the presence of a TensorFlow Lite package alone does not mean on-device inference is implemented.
 - A successful classification is not a substitute for expert agricultural diagnosis.
 - Model performance metrics should be documented after reproducible evaluation.
+
 # Possible future improvements
 - Standardize image resizing and normalization across training, API, web, mobile, and cloud inference.
 - Add a reproducible Python environment file and document tested dependency versions.
@@ -223,6 +282,7 @@ Cloud deployment requires a configured Google Cloud project, storage bucket, run
 - Complete and document an on-device TensorFlow Lite inference path if desired.
 - Add a reproducible Dockerfile and deployment configuration.
 - Add screenshots or a short demonstration video of the web and mobile applications.
+
 # Author
 Seriman Doumbia
 
